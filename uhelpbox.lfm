@@ -1,0 +1,39 @@
+object HelpBox: THelpBox
+  Left = 99
+  Height = 500
+  Top = 88
+  Width = 450
+  BorderIcons = [biMaximize]
+  Caption = 'About'
+  ClientHeight = 500
+  ClientWidth = 450
+  Constraints.MinHeight = 200
+  Constraints.MinWidth = 350
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  LCLVersion = '1.8.4.0'
+  object Content: TMemo
+    Left = 10
+    Height = 445
+    Top = 10
+    Width = 430
+    Lines.Strings = (
+      'Content'
+    )
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 1
+  end
+  object OK: TButton
+    Left = 365
+    Height = 25
+    Top = 465
+    Width = 75
+    Cancel = True
+    Caption = 'OK'
+    ModalResult = 1
+    OnClick = OKClick
+    TabOrder = 0
+  end
+end

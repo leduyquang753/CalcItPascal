@@ -1,0 +1,315 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Lê Duy Quang <leduyquang753@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Generator: Poedit 2.2\n"
+
+#: main.msgconsolebegin
+msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
+msgstr "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
+
+#: main.msgerror
+msgid "ERROR: "
+msgstr "ERROR: "
+
+#: thelpbox.caption
+msgid "About"
+msgstr "About"
+
+#: thelpbox.ok.caption
+msgctxt "thelpbox.ok.caption"
+msgid "OK"
+msgstr "OK"
+
+#: tlangselector.btncancel.caption
+msgid "Cancel"
+msgstr "Cancel"
+
+#: tlangselector.btnok.caption
+msgctxt "tlangselector.btnok.caption"
+msgid "OK"
+msgstr "OK"
+
+#: tlangselector.caption
+msgid "Choose a language"
+msgstr "Choose a language"
+
+#: tmainwindow.btnvariables.caption
+msgid "&Variables"
+msgstr "&Variables"
+
+#: tmainwindow.calculate.caption
+msgid "&Calculate"
+msgstr "&Calculate"
+
+#: tmainwindow.caption
+msgid "CalcIt (Pascal port)"
+msgstr "CalcIt (Pascal port)"
+
+#: tmainwindow.consolelabel.caption
+msgid "Console"
+msgstr "Console"
+
+#: tmainwindow.expression.texthint
+msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
+msgstr "Enter any expression, \"help\", \"vars\" or \"exit\"."
+
+#: tmainwindow.help.caption
+msgid "?"
+msgstr "?"
+
+#: tmainwindow.inputlabel.caption
+msgid "Input"
+msgstr "Input"
+
+#: tmainwindow.language.caption
+msgid "EN"
+msgstr "EN"
+
+#: tvariables.a.caption
+msgid "&A"
+msgstr "&A"
+
+#: tvariables.ans.caption
+msgid "A&ns"
+msgstr "A&ns"
+
+#: tvariables.ans.hint
+msgid "The value of the latest expression."
+msgstr "The value of the latest expression."
+
+#: tvariables.ansvalue.text
+msgid "AnsValue"
+msgstr "AnsValue"
+
+#: tvariables.avalue.text
+msgid "AValue"
+msgstr "AValue"
+
+#: tvariables.b.caption
+msgid "&B"
+msgstr "&B"
+
+#: tvariables.buttonclose.caption
+msgctxt "tvariables.buttonclose.caption"
+msgid "Close"
+msgstr "Close"
+
+#: tvariables.bvalue.text
+msgid "BValue"
+msgstr "BValue"
+
+#: tvariables.c.caption
+msgid "&C"
+msgstr "&C"
+
+#: tvariables.caption
+msgid "Variables"
+msgstr "Variables"
+
+#: tvariables.cvalue.text
+msgid "CValue"
+msgstr "CValue"
+
+#: tvariables.d.caption
+msgid "&D"
+msgstr "&D"
+
+#: tvariables.dvalue.text
+msgid "DValue"
+msgstr "DValue"
+
+#: tvariables.e.caption
+msgid "&E"
+msgstr "&E"
+
+#: tvariables.evalue.text
+msgid "EValue"
+msgstr "EValue"
+
+#: tvariables.f.caption
+msgid "&F"
+msgstr "&F"
+
+#: tvariables.fvalue.text
+msgid "FValue"
+msgstr "FValue"
+
+#: tvariables.preans.caption
+msgid "&PreAns"
+msgstr "&PreAns"
+
+#: tvariables.preans.hint
+msgid "The value of the calculation right before the last."
+msgstr "The value of the calculation right before the last."
+
+#: tvariables.preansvalue.text
+msgid "PreAnsValue"
+msgstr "PreAnsValue"
+
+#: ucalculatorengine.msgandcalc
+msgid "AND calculation only supports two integers, but given %s and %s."
+msgstr "AND calculation only supports two integers, but given %s and %s."
+
+#: ucalculatorengine.msgdivbyzero
+msgid "Division by zero."
+msgstr "Division by zero."
+
+#: ucalculatorengine.msginvalidnumbers
+msgid "Invalid numbers: %s; %s."
+msgstr "Invalid numbers: %s; %s."
+
+#: ucalculatorengine.msginvalidoperatorplacement
+msgid "Invalid operator placement."
+msgstr "Invalid operator placement."
+
+#: ucalculatorengine.msgmixedcharsandnums
+msgid "Mixed characters and numbers."
+msgstr "Mixed characters and numbers."
+
+#: ucalculatorengine.msgmultiplecommas
+msgid "Multiple commas in the same number."
+msgstr "Multiple commas in the same number."
+
+#: ucalculatorengine.msgorcalc
+msgid "OR calculation only supports two integers, but given %s and %s."
+msgstr "OR calculation only supports two integers, but given %s and %s."
+
+#: ucalculatorengine.msgsuddenbrace
+msgid "Sudden closing brace."
+msgstr "Sudden closing brace."
+
+#: ucalculatorengine.msgunexpectedend
+msgid "Unexpected end of expression."
+msgstr "Unexpected end of expression."
+
+#: ucalculatorengine.msgunexpectedequal
+msgid "Unexpected equal sign."
+msgstr "Unexpected equal sign."
+
+#: ucalculatorengine.msgunexpectedpercent
+msgid "Unexpected percent sign."
+msgstr "Unexpected percent sign."
+
+#: ucalculatorengine.msgunexpectedpercentnotoperator
+msgid "Unexpected percent sign. Please note that % is not an operator."
+msgstr "Unexpected percent sign. Please note that % is not an operator."
+
+#: ucalculatorengine.msgunexpectedpercentonlyone
+msgid "Unexpected percent sign. Please note that only one percent sign is permitted at the end of a number."
+msgstr "Unexpected percent sign. Please note that only one percent sign is permitted at the end of a number."
+
+#: ucalculatorengine.msgunknownfunc
+msgid "Unknown function."
+msgstr "Unknown function."
+
+#: ucalculatorengine.msgunknownstuff
+msgid "Unknown stuff."
+msgstr "Unknown stuff."
+
+#: ucalculatorengine.msgunknownsymbol
+msgid "Unknown symbol."
+msgstr "Unknown symbol."
+
+#: ucalculatorengine.msgunknownvar
+msgid "Unknown variable."
+msgstr "Unknown variable."
+
+#: ucalculatorengine.msgunmatchingbrace
+msgid "Unmatching closing brace."
+msgstr "Unmatching closing brace."
+
+#: ucalculatorengine.msgxorcalc
+msgid "XOR calculation only supports two integers, but given %s and %s."
+msgstr "XOR calculation only supports two integers, but given %s and %s."
+
+#: uhelpbox.msghelp1
+msgid "CalcIt is a simple-to-use Java library/program used to perform single to medium-level mathematic expressions."
+msgstr "CalcIt is a simple-to-use Java library/program used to perform single to medium-level mathematic expressions."
+
+#: uhelpbox.msghelp10
+msgid "    &  AND (for integers)"
+msgstr "    &  AND (for integers)"
+
+#: uhelpbox.msghelp11
+msgid "    |  OR (for integers)"
+msgstr "    |  OR (for integers)"
+
+#: uhelpbox.msghelp12
+msgid "    !  XOR (for integers)"
+msgstr "    !  XOR (for integers)"
+
+#: uhelpbox.msghelp13
+msgid "Functions suported (syntax: <name>([value = 0])):"
+msgstr "Functions suported (syntax: <name>([value = 0])):"
+
+#: uhelpbox.msghelp14
+msgid "    sin  Trigonometric sine"
+msgstr "    sin  Trigonometric sine"
+
+#: uhelpbox.msghelp15
+msgid "    cos  Trigonometric cosine"
+msgstr "    cos  Trigonometric cosine"
+
+#: uhelpbox.msghelp16
+msgid "    tan  Trigonometric tangent"
+msgstr "    tan  Trigonometric tangent"
+
+#: uhelpbox.msghelp17
+msgid "    cot  Trigonometric cotangent"
+msgstr "    cot  Trigonometric cotangent"
+
+#: uhelpbox.msghelp18
+msgid "    log  Base 10 logarithm"
+msgstr "    log  Base 10 logarithm"
+
+#: uhelpbox.msghelp19
+msgid "    ln   Natural (base e) logarithm"
+msgstr "    ln   Natural (base e) logarithm"
+
+#: uhelpbox.msghelp2
+msgid "This program is a port to Delphi for a GUI and ease of use (no need to install a JRE)."
+msgstr "This program is a port to Delphi for a GUI and ease of use (no need to install a JRE)."
+
+#: uhelpbox.msghelp20
+msgid "The program takes operators' priorities into account."
+msgstr "The program takes operators' priorities into account."
+
+#: uhelpbox.msghelp21
+msgid "Version %s built at %s. Copyright © 2019 Lê Duy Quang"
+msgstr "Version %s built at %s. Copyright © 2019 Lê Duy Quang"
+
+#: uhelpbox.msghelp3
+msgid "Operators supported:"
+msgstr "Operators supported:"
+
+#: uhelpbox.msghelp4
+msgid "    +  Addition"
+msgstr "    +  Addition"
+
+#: uhelpbox.msghelp5
+msgid "    -  Subtraction"
+msgstr "    -  Subtraction"
+
+#: uhelpbox.msghelp6
+msgid "    .  Multiplication"
+msgstr "    .  Multiplication"
+
+#: uhelpbox.msghelp7
+msgid "    :  Division"
+msgstr "    :  Division"
+
+#: uhelpbox.msghelp8
+msgid "    ^  Exponentiation"
+msgstr "    ^  Exponentiation"
+
+#: uhelpbox.msghelp9
+msgid "    v  Root"
+msgstr "    v  Root"

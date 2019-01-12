@@ -1,0 +1,101 @@
+object MainWindow: TMainWindow
+  Left = 10
+  Height = 375
+  Top = 10
+  Width = 575
+  Anchors = [akRight, akBottom]
+  Caption = 'CalcIt (Pascal port)'
+  ClientHeight = 375
+  ClientWidth = 575
+  Constraints.MinHeight = 200
+  Constraints.MinWidth = 250
+  OnChangeBounds = FormChangeBounds
+  OnCreate = FormCreate
+  ShowInTaskBar = stNever
+  LCLVersion = '1.8.4.0'
+  object ConsoleLabel: TLabel
+    Left = 10
+    Height = 15
+    Top = 8
+    Width = 43
+    Caption = 'Console'
+    ParentColor = False
+  end
+  object Console: TMemo
+    Left = 10
+    Height = 265
+    Top = 25
+    Width = 555
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 4
+  end
+  object InputLabel: TLabel
+    Left = 10
+    Height = 15
+    Top = 295
+    Width = 28
+    Caption = 'Input'
+    ParentColor = False
+  end
+  object Expression: TEdit
+    Left = 10
+    Height = 23
+    Top = 311
+    Width = 555
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 40
+    OnKeyPress = ExpressionKeyPress
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    TextHint = 'Enter any expression, "help", "vars" or "exit".'
+  end
+  object Calculate: TButton
+    Left = 490
+    Height = 25
+    Top = 341
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    Caption = '&Calculate'
+    OnClick = CalculateClick
+    TabOrder = 1
+  end
+  object BtnVariables: TButton
+    Left = 408
+    Height = 25
+    Top = 341
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 90
+    BorderSpacing.Bottom = 10
+    Caption = '&Variables'
+    OnClick = BtnVariablesClick
+    TabOrder = 2
+  end
+  object Help: TButton
+    Left = 375
+    Height = 25
+    Top = 341
+    Width = 25
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 170
+    BorderSpacing.Bottom = 10
+    Caption = '?'
+    OnClick = HelpClick
+    TabOrder = 3
+  end
+  object Language: TButton
+    Left = 9
+    Height = 25
+    Top = 341
+    Width = 30
+    Anchors = [akLeft, akBottom]
+    Caption = 'EN'
+    OnClick = LanguageClick
+    TabOrder = 5
+  end
+end

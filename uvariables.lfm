@@ -1,0 +1,178 @@
+object Variables: TVariables
+  Left = 499
+  Height = 285
+  Top = 104
+  Width = 581
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Variables'
+  ClientHeight = 285
+  ClientWidth = 581
+  Constraints.MaxHeight = 285
+  Constraints.MaxWidth = 581
+  Constraints.MinHeight = 285
+  Constraints.MinWidth = 581
+  ShowInTaskBar = stAlways
+  LCLVersion = '1.8.4.0'
+  object A: TButton
+    Left = 10
+    Height = 25
+    Top = 10
+    Width = 75
+    Caption = '&A'
+    OnClick = AClick
+    TabOrder = 0
+  end
+  object B: TButton
+    Left = 10
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = '&B'
+    OnClick = BClick
+    TabOrder = 1
+  end
+  object C: TButton
+    Left = 10
+    Height = 25
+    Top = 70
+    Width = 75
+    Caption = '&C'
+    OnClick = CClick
+    TabOrder = 2
+  end
+  object D: TButton
+    Left = 10
+    Height = 25
+    Top = 100
+    Width = 75
+    Caption = '&D'
+    OnClick = DClick
+    TabOrder = 3
+  end
+  object E: TButton
+    Left = 10
+    Height = 25
+    Top = 130
+    Width = 75
+    Caption = '&E'
+    OnClick = EClick
+    TabOrder = 4
+  end
+  object F: TButton
+    Left = 10
+    Height = 25
+    Top = 160
+    Width = 75
+    Caption = '&F'
+    OnClick = FClick
+    TabOrder = 5
+  end
+  object Ans: TButton
+    Left = 10
+    Height = 25
+    Hint = 'The value of the latest expression.'
+    Top = 219
+    Width = 75
+    Caption = 'A&ns'
+    OnClick = AnsClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 6
+  end
+  object PreAns: TButton
+    Left = 10
+    Height = 25
+    Hint = 'The value of the calculation right before the last.'
+    Top = 190
+    Width = 75
+    Caption = '&PreAns'
+    OnClick = PreAnsClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 7
+  end
+  object ButtonClose: TButton
+    Left = 496
+    Height = 25
+    Top = 250
+    Width = 75
+    Cancel = True
+    Caption = 'Close'
+    ModalResult = 2
+    OnClick = ButtonCloseClick
+    TabOrder = 8
+  end
+  object AValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 11
+    Width = 483
+    ReadOnly = True
+    TabOrder = 9
+    Text = 'AValue'
+  end
+  object BValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 41
+    Width = 483
+    ReadOnly = True
+    TabOrder = 10
+    Text = 'BValue'
+  end
+  object CValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 71
+    Width = 483
+    ReadOnly = True
+    TabOrder = 11
+    Text = 'CValue'
+  end
+  object DValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 101
+    Width = 483
+    ReadOnly = True
+    TabOrder = 12
+    Text = 'DValue'
+  end
+  object EValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 131
+    Width = 483
+    ReadOnly = True
+    TabOrder = 13
+    Text = 'EValue'
+  end
+  object FValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 161
+    Width = 483
+    ReadOnly = True
+    TabOrder = 14
+    Text = 'FValue'
+  end
+  object AnsValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 220
+    Width = 483
+    ReadOnly = True
+    TabOrder = 15
+    Text = 'AnsValue'
+  end
+  object PreAnsValue: TEdit
+    Left = 88
+    Height = 23
+    Top = 191
+    Width = 483
+    ReadOnly = True
+    TabOrder = 16
+    Text = 'PreAnsValue'
+  end
+end

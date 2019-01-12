@@ -1,0 +1,318 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: CalcIt\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Lê Duy Quang <leduyquang753@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi_VN\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: %s\n"
+
+#: main.msgconsolebegin
+msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
+msgstr "Nhập một biểu thức để tính, \"help\" để xem trợ giúp, \"vars\" để xem và chọn các biến, hoặc \"exit\"."
+
+#: main.msgerror
+msgid "ERROR: "
+msgstr "LỖI: "
+
+#: thelpbox.caption
+msgid "About"
+msgstr "Về chương trình"
+
+#: thelpbox.ok.caption
+msgctxt "thelpbox.ok.caption"
+msgid "OK"
+msgstr "OK"
+
+#: tlangselector.btncancel.caption
+msgid "Cancel"
+msgstr "Hủy"
+
+#: tlangselector.btnok.caption
+msgctxt "tlangselector.btnok.caption"
+msgid "OK"
+msgstr "OK"
+
+#: tlangselector.caption
+msgid "Choose a language"
+msgstr "Chọn ngôn ngữ"
+
+#: tmainwindow.btnvariables.caption
+msgid "&Variables"
+msgstr "&Biến"
+
+#: tmainwindow.calculate.caption
+msgid "&Calculate"
+msgstr "&Tính"
+
+#: tmainwindow.caption
+msgid "CalcIt (Pascal port)"
+msgstr "CalcIt (bản port sang Pascal)"
+
+#: tmainwindow.consolelabel.caption
+msgid "Console"
+msgstr "Phản hồi"
+
+#: tmainwindow.expression.texthint
+msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
+msgstr "Nhập một biểu thức, \"help\", \"vars\" hoặc \"exit\"."
+
+#: tmainwindow.help.caption
+msgid "?"
+msgstr "?"
+
+#: tmainwindow.inputlabel.caption
+msgid "Input"
+msgstr "Nhập"
+
+#: tmainwindow.language.caption
+msgid "EN"
+msgstr "VI"
+
+#: tvariables.a.caption
+msgid "&A"
+msgstr "&A"
+
+#: tvariables.ans.caption
+msgid "A&ns"
+msgstr "A&ns"
+
+#: tvariables.ans.hint
+msgid "The value of the latest expression."
+msgstr "Giá trị của biểu thức vừa tính."
+
+#: tvariables.ansvalue.text
+msgid "AnsValue"
+msgstr "AnsValue"
+
+#: tvariables.avalue.text
+msgid "AValue"
+msgstr "AValue"
+
+#: tvariables.b.caption
+msgid "&B"
+msgstr "&B"
+
+#: tvariables.buttonclose.caption
+msgctxt "tvariables.buttonclose.caption"
+msgid "Close"
+msgstr "Đóng"
+
+#: tvariables.bvalue.text
+msgid "BValue"
+msgstr "BValue"
+
+#: tvariables.c.caption
+msgid "&C"
+msgstr "&C"
+
+#: tvariables.caption
+msgid "Variables"
+msgstr "Biến"
+
+#: tvariables.cvalue.text
+msgid "CValue"
+msgstr "CValue"
+
+#: tvariables.d.caption
+msgid "&D"
+msgstr "&D"
+
+#: tvariables.dvalue.text
+msgid "DValue"
+msgstr "DValue"
+
+#: tvariables.e.caption
+msgid "&E"
+msgstr "&E"
+
+#: tvariables.evalue.text
+msgid "EValue"
+msgstr "EValue"
+
+#: tvariables.f.caption
+msgid "&F"
+msgstr "&F"
+
+#: tvariables.fvalue.text
+msgid "FValue"
+msgstr "FValue"
+
+#: tvariables.preans.caption
+msgid "&PreAns"
+msgstr "&PreAns"
+
+#: tvariables.preans.hint
+msgid "The value of the calculation right before the last."
+msgstr "Giá trị của biểu thức ngay trước biểu thức vừa tính."
+
+#: tvariables.preansvalue.text
+msgid "PreAnsValue"
+msgstr "PreAnsValue"
+
+#: ucalculatorengine.msgandcalc
+msgid "AND calculation only supports two integers, but given %s and %s."
+msgstr "Phép AND chỉ hỗ trợ hai số nguyên, nhưng lại có %s và %s."
+
+#: ucalculatorengine.msgdivbyzero
+msgid "Division by zero."
+msgstr "Chia cho không."
+
+#: ucalculatorengine.msginvalidnumbers
+msgid "Invalid numbers: %s; %s."
+msgstr "Số không hợp lệ: %s; %s."
+
+#: ucalculatorengine.msginvalidoperatorplacement
+msgid "Invalid operator placement."
+msgstr "Đặt dấu không hợp lệ."
+
+#: ucalculatorengine.msgmixedcharsandnums
+msgid "Mixed characters and numbers."
+msgstr "Chữ và số lẫn lộn."
+
+#: ucalculatorengine.msgmultiplecommas
+msgid "Multiple commas in the same number."
+msgstr "Nhiều dấu phẩy trong cùng một số."
+
+#: ucalculatorengine.msgorcalc
+msgid "OR calculation only supports two integers, but given %s and %s."
+msgstr "Phép OR chỉ hỗ trợ hai số nguyên, nhưng lại có %s và %s."
+
+#: ucalculatorengine.msgsuddenbrace
+msgid "Sudden closing brace."
+msgstr "Dấu đóng ngoặc đột ngột."
+
+#: ucalculatorengine.msgunexpectedend
+msgid "Unexpected end of expression."
+msgstr "Biểu thức kết thúc đột ngột."
+
+#: ucalculatorengine.msgunexpectedequal
+msgid "Unexpected equal sign."
+msgstr "Dấu bằng không hợp lệ."
+
+#: ucalculatorengine.msgunexpectedpercent
+msgid "Unexpected percent sign."
+msgstr "Dấu phần trăm không hợp lệ."
+
+#: ucalculatorengine.msgunexpectedpercentnotoperator
+msgid "Unexpected percent sign. Please note that % is not an operator."
+msgstr "Dấu phần trăm không hợp lệ. Xin lưu ý % không phải là toán tử."
+
+#: ucalculatorengine.msgunexpectedpercentonlyone
+msgid "Unexpected percent sign. Please note that only one percent sign is permitted at the end of a number."
+msgstr "Dấu phần trăm không hợp lệ. Xin lưu ý chỉ một dấu phần trăm được đặt ở cuối một số."
+
+#: ucalculatorengine.msgunknownfunc
+msgid "Unknown function."
+msgstr "Hàm không hợp lệ."
+
+#: ucalculatorengine.msgunknownstuff
+msgid "Unknown stuff."
+msgstr "Có thứ không hợp lệ."
+
+#: ucalculatorengine.msgunknownsymbol
+msgid "Unknown symbol."
+msgstr "Kí tự không hợp lệ."
+
+#: ucalculatorengine.msgunknownvar
+msgid "Unknown variable."
+msgstr "Biến không hợp lệ."
+
+#: ucalculatorengine.msgunmatchingbrace
+msgid "Unmatching closing brace."
+msgstr "Dấu đóng ngoặc không hợp lệ."
+
+#: ucalculatorengine.msgxorcalc
+msgid "XOR calculation only supports two integers, but given %s and %s."
+msgstr "Phép XOR chỉ hỗ trợ hai số nguyên, nhưng lại có %s và %s."
+
+#: uhelpbox.msghelp1
+msgid "CalcIt is a simple-to-use Java library/program used to perform single to medium-level mathematic expressions."
+msgstr "CalcIt là một thư viện/chương trình Java đơn giản để tính các biểu thức từ đơn giản đến trung bình."
+
+#: uhelpbox.msghelp10
+msgid "    &  AND (for integers)"
+msgstr "    &  AND (cho số nguyên)"
+
+#: uhelpbox.msghelp11
+msgid "    |  OR (for integers)"
+msgstr "    | OR (cho số nguyên)"
+
+#: uhelpbox.msghelp12
+msgid "    !  XOR (for integers)"
+msgstr "    ! XOR (cho số nguyên)"
+
+#: uhelpbox.msghelp13
+msgid "Functions suported (syntax: <name>([value = 0])):"
+msgstr "Các hàm được hỗ trợ (cú pháp: <tên>([giá trị = 0])):"
+
+#: uhelpbox.msghelp14
+msgid "    sin  Trigonometric sine"
+msgstr "    sin  Hàm lượng giác sine"
+
+#: uhelpbox.msghelp15
+msgid "    cos  Trigonometric cosine"
+msgstr "    cos  Hàm lượng giác cosine"
+
+#: uhelpbox.msghelp16
+msgid "    tan  Trigonometric tangent"
+msgstr "    tan  Hàm lượng giác tang"
+
+#: uhelpbox.msghelp17
+msgid "    cot  Trigonometric cotangent"
+msgstr "    cot  Hàm lượng giác cotang"
+
+#: uhelpbox.msghelp18
+msgid "    log  Base 10 logarithm"
+msgstr "    log  Logarid cơ số 10"
+
+#: uhelpbox.msghelp19
+msgid "    ln   Natural (base e) logarithm"
+msgstr "    ln   Logarid tự nhiên (cơ số e)"
+
+#: uhelpbox.msghelp2
+msgid "This program is a port to Delphi for a GUI and ease of use (no need to install a JRE)."
+msgstr "Chương trình là một bản port sang Dephi để có một GUI và dễ sử dụng (không phải cài JRE)."
+
+#: uhelpbox.msghelp20
+msgid "The program takes operators' priorities into account."
+msgstr "Chương trình có tính đến thứ tự ưu tiên của các biểu thức."
+
+#: uhelpbox.msghelp21
+msgid "Version %s built at %s. Copyright © 2019 Lê Duy Quang"
+msgstr "Phiên bản %s dựng lúc %s. Bản quyền © 2019 Lê Duy Quang"
+
+#: uhelpbox.msghelp3
+msgid "Operators supported:"
+msgstr "Các toán tử được hỗ trợ:"
+
+#: uhelpbox.msghelp4
+msgid "    +  Addition"
+msgstr "    +  Cộng"
+
+#: uhelpbox.msghelp5
+msgid "    -  Subtraction"
+msgstr "    -  Trừ"
+
+#: uhelpbox.msghelp6
+msgid "    .  Multiplication"
+msgstr "    .  Nhân"
+
+#: uhelpbox.msghelp7
+msgid "    :  Division"
+msgstr "    :  Chia"
+
+#: uhelpbox.msghelp8
+msgid "    ^  Exponentiation"
+msgstr "    ^  Lũy thừa"
+
+#: uhelpbox.msghelp9
+msgid "    v  Root"
+msgstr "    v  Căn"

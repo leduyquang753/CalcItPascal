@@ -1,0 +1,10 @@
+/backup/
+/lib/
+/internationalization/Calculator.en.mo
+/internationalization/Calculator.vi.mo
+/internationalization/Calculator.lrs
+/internationalization/lazres.exe
+/internationalization/makeLaz.bat
+Calculator.exe
+Calculator.exe.sig
+moveToSys32.ps1

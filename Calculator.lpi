@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <LRSInOutputDirectory Value="False"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="Calculator"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <TextName Value="cf.leduyquang753.Calculator"/>
+        <TextDesc Value="An easy-to-use calculator."/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="internationalization"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="2"/>
+      <BuildNr Value="29"/>
+      <Attributes pvaPreRelease="True"/>
+      <StringTable Comments="Beta testing." LegalCopyright="© 2019 Lê Duy Quang. MIT" ProductName="CalcIt" ProductVersion="0.1"/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="Calculator.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Main"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="uhelpbox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="HelpBox"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UHelpBox"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="uvariables.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Variables"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UVariables"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="ucalculatorengine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCalculatorEngine"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uexpressioninvalidexception.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UExpressionInvalidException"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="dbgconsole.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DbgWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="DbgConsole"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="ulangselector.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LangSelector"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ULangSelector"/>
+      </Unit7>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Calculator"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+      </Optimizations>
+      <SmallerCode Value="True"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <DebugInfoType Value="dsDwarf2Set"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="5">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="ExpressionInvalidException"/>
+      </Item4>
+      <Item5>
+        <Name Value="EConvertError"/>
+      </Item5>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,25 @@
+object DbgWindow: TDbgWindow
+  Left = 447
+  Height = 523
+  Top = 111
+  Width = 409
+  Caption = 'Debug'
+  ClientHeight = 523
+  ClientWidth = 409
+  ShowInTaskBar = stAlways
+  LCLVersion = '1.8.4.0'
+  object DebugConsole: TMemo
+    Left = 10
+    Height = 503
+    Top = 10
+    Width = 389
+    Align = alCustom
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+end
