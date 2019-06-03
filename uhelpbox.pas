@@ -5,7 +5,7 @@ unit UHelpBox;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, Main, UVariables;
+  Classes, SysUtils, FileUtil, FileInfo, DateUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Main, UVariables;
 
 type
 
@@ -57,9 +57,21 @@ resourcestring
   msgHelp20 = 'The program takes operators'' priorities into account.';
   msgHelp21 = 'Version %s built at %s. Copyright © 2019 Lê Duy Quang';
 
-const
-  appVer = '0.2 (build 28)';
-  appBuildTime = '14h26 12/1/2019 UTC';
+var
+  appVer: string = '0.2.1 (build 2)';
+  appBuildTime: string = '12h23 13/1/2019 UTC';
+
+// Conditional string.
+function CS(condition: boolean; value1, value2: string): string;
+begin
+  if condition then exit(value1) else exit(value2);
+end;
+
+// Conditional integer
+function CI(condition: boolean; value1, value2: longint): longint;
+begin
+  if condition then exit(value1) else exit(value2);
+end;
 
 function contentToInject: string;
 begin
@@ -97,7 +109,21 @@ begin
 end;
 
 procedure THelpBox.FormCreate(Sender: TObject);
+var Info: TVersionInfo; buildTime: TDateTime; tmpNum: longint;
 begin
+  DefaultFormatSettings.shortDateFormat := 'y/m/d';
+  DefaultFormatSettings.longTimeFormat := 'HH:MM:SS';
+  Info := TVersionInfo.Create;
+  Info.Load(HINSTANCE);
+  appVer := intToStr(Info.FixedInfo.FileVersion[0]) + '.' + intToStr(Info.FixedInfo.FileVersion[1]) + '.' + intToStr(Info.FixedInfo.FileVersion[2]) + ' (build ' + intToStr(Info.FixedInfo.FileVersion[3]) + ')';
+  buildTime := strToDateTime({$I %DATE%} + ' ' + {$I %TIME%}, DefaultFormatSettings);
+  appBuildTime := intToStr(hourOf(buildTime)) + 'h';
+  tmpNum := minuteOf(buildTime);
+  appBuildTime += CS(tmpNum < 10, '0', '') + intToStr(tmpNum) + ':';
+  tmpNum := secondOf(buildTime);
+  appBuildTime += CS(tmpNum < 10, '0', '') + intToStr(tmpNum) + '  ';
+  tmpNum := dayOfWeek(buildTime);
+  appBuildTime += intToStr(CI(tmpNum = 1, 8, tmpNum)) + ' | ' + intToStr(dayOfTheMonth(buildTime)) + '/' + intToStr(monthOfTheYear(buildTime)) + '/' + intToStr(yearOf(buildTime));
   readLangConfig;
   MainWindow.Console.Append(msgConsoleBegin);
 end;

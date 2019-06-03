@@ -37,6 +37,8 @@ type
 
 implementation
 
+uses Main;
+
 resourcestring
   msgDivByZero = 'Division by zero.';
   msgUnexpectedEnd = 'Unexpected end of expression.';
@@ -131,8 +133,8 @@ begin
   case operand of
     '+': exit(number1 + number2);
     '-': exit(number1 - number2);
-    '.': exit(number1 * number2);
-    ':': begin
+    '.', '*', 'x': exit(number1 * number2);
+    ':', '/': begin
            if number2 = 0 then raise ExpressionInvalidException.createNew(msgDivByZero);
            exit(number1 / number2);
          end;
@@ -179,7 +181,7 @@ begin
     '|', '!': exit(1);
     '&'     : exit(2);
     '+', '-': exit(3);
-    '.', ':': exit(4);
+    '.', ':', '*', 'x', '/': exit(4);
     '^'     : exit(5);
     'v'     : exit(6);
     else      exit(0);
@@ -347,7 +349,7 @@ begin
                continue;
              end else raise ExpressionInvalidException.createNew(msgInvalidOperatorPlacement, currentPos);
            end;
-      '.', ':', '^', 'v', '|', '&', '!':
+      '.', '*', 'x', ':', '/', '^', 'v', '|', '&', '!':
         begin
           if hadNumber or (current = 'pi') or (strInArray(current, variables)) or (strInArray(current, ansVars)) then begin
             resultList.add(CS(sign, '', '-') + current);
@@ -458,7 +460,8 @@ var
   matched,
   beginsWithMinus,
   hasMinusSign,
-  endsWithPercent: boolean;
+  endsWithPercent,
+  shouldContinue: boolean;
 
   value: byte;
 
@@ -481,9 +484,11 @@ begin
   sub := nil;
 
   while true do begin
+    //MainWindow.Console.Append('');
     if modified <> nil then input := modified;
     modified := TStringList.create;
     for tmpc := 0 to input.count-1 do modified.add(input.strings[tmpc]);
+    //for tmpc := 0 to modified.Count-1 do MainWindow.Console.Append(modified.strings[tmpc]);
     currentPos := -1;
     maxPos := -1;
     max := 0;
@@ -491,9 +496,10 @@ begin
     subBraces := -1;
     operand := true;
     seeking := false;
+    shouldContinue := false;
 
     // Scan every component in the expression.
-    for tmpc := 0 to input.Count-1 do begin
+    for tmpc := 0 to modified.Count-1 do begin
       s := input.strings[tmpc];
       currentPos += 1;
 
@@ -506,6 +512,7 @@ begin
             for j:=0 to currentPos-beginPos do modified.delete(beginPos);
             modified.insert(beginPos, stringReplace(floatToStr(self.calculate(sub, opening)), '.', ',', rFlags));
             seeking := false;
+            shouldContinue := true;
             break;
           end;
         end;
@@ -553,6 +560,11 @@ begin
           maxPos := currentPos;
         end;
       end;
+    end;
+
+    if shouldContinue then begin
+       shouldContinue := false;
+       continue;
     end;
 
     if currentPos = 0 then begin

@@ -22,7 +22,10 @@ type
     InputLabel: TLabel;
     Engine: CalculatorEngine;
     procedure CalculateClick(Sender: TObject);
-    procedure ExpressionKeyPress(Sender: TObject; var Key: char);
+    procedure ExpressionKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure ExpressionKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
     procedure FormChangeBounds(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure HelpClick(Sender: TObject);
@@ -83,6 +86,7 @@ begin
       do LocalTranslator.UpdateTranslation(Screen.DataModules[ii]);
     LRSTranslator:= nil;
     LocalTranslator.Destroy;
+    Application.Title:=MainWindow.Caption;
   finally end;
 end;
 
@@ -152,7 +156,8 @@ begin
                 exit;
               end;
       'vars': begin
-                Variables.showForm(self);
+                Variables.showForm(Self);
+                Variables.show;
                 self.expression.text := '';
                 exit;
               end;
@@ -193,7 +198,9 @@ begin
   confDir := GetEnvironmentVariable('appdata') + '\CalcIt';
   Application.UpdateFormatSettings := false;
   DecimalSeparator := '.';
+  self.KeyPreview := false;
   Engine := CalculatorEngine.new;
+  Application.Title:=MainWindow.Caption;
   //Console.Append(confFileName);
 end;
 
@@ -221,12 +228,19 @@ begin
   LangSelector.showModal;
 end;
 
-procedure TMainWindow.ExpressionKeyPress(Sender: TObject; var Key: char);
+procedure TMainWindow.ExpressionKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
-  if (key = #13) or (key = #10) then begin
-    key := #0;
+  if key = 13 then begin
     self.calculateIt;
+    key := 0;
   end;
+end;
+
+procedure TMainWindow.ExpressionKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = 13 then key := 0;
 end;
 
 procedure TMainWindow.updateVariables;

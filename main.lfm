@@ -1,7 +1,7 @@
 object MainWindow: TMainWindow
-  Left = 10
+  Left = 471
   Height = 375
-  Top = 10
+  Top = 62
   Width = 575
   Anchors = [akRight, akBottom]
   Caption = 'CalcIt (Pascal port)'
@@ -46,7 +46,8 @@ object MainWindow: TMainWindow
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 10
     BorderSpacing.Bottom = 40
-    OnKeyPress = ExpressionKeyPress
+    OnKeyDown = ExpressionKeyDown
+    OnKeyUp = ExpressionKeyUp
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0

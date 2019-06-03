@@ -1,7 +1,7 @@
 object HelpBox: THelpBox
-  Left = 99
+  Left = 314
   Height = 500
-  Top = 88
+  Top = 138
   Width = 450
   BorderIcons = [biMaximize]
   Caption = 'About'
