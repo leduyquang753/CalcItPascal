@@ -4,14 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="16">
+    <Units Count="22">
       <Unit0>
         <Filename Value="Calculator.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="26" Y="17"/>
-        <UsageCount Value="68"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="71"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -20,10 +19,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="160"/>
-        <UsageCount Value="68"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="71"/>
       </Unit1>
       <Unit2>
         <Filename Value="uhelpbox.pas"/>
@@ -32,12 +30,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UHelpBox"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos X="68" Y="124"/>
-        <UsageCount Value="68"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="71"/>
       </Unit2>
       <Unit3>
         <Filename Value="uvariables.pas"/>
@@ -46,38 +42,33 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UVariables"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="89" Y="48"/>
-        <UsageCount Value="68"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="71"/>
       </Unit3>
       <Unit4>
         <Filename Value="ucalculatorengine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UCalculatorEngine"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="472"/>
-        <CursorPos X="7" Y="491"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
-          <TopLine Value="-1"/>
-          <CursorPos X="-1" Y="-1"/>
+          <TopLine Value="472"/>
+          <CursorPos X="7" Y="491"/>
         </ExtraEditor1>
-        <UsageCount Value="68"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="71"/>
       </Unit4>
       <Unit5>
         <Filename Value="uexpressioninvalidexception.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UExpressionInvalidException"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="16" Y="6"/>
-        <UsageCount Value="68"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="71"/>
       </Unit5>
       <Unit6>
         <Filename Value="dbgconsole.pas"/>
@@ -86,12 +77,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="DbgConsole"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="6"/>
         <CursorPos X="43" Y="15"/>
-        <UsageCount Value="39"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="42"/>
       </Unit6>
       <Unit7>
         <Filename Value="ulangselector.pas"/>
@@ -100,11 +89,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ULangSelector"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="23"/>
         <CursorPos X="32" Y="61"/>
-        <UsageCount Value="34"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="37"/>
       </Unit7>
       <Unit8>
         <Filename Value="D:\Laxarus\lcl\stdctrls.pp"/>
@@ -162,127 +150,170 @@
         <CursorPos X="3" Y="443"/>
         <UsageCount Value="10"/>
       </Unit15>
+      <Unit16>
+        <Filename Value="..\MoveThatBaseline\Package\AVDCommonLaz.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="10"/>
+        <UsageCount Value="11"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="..\MoveThatBaseline\Source\DAVDComplex.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="21" Y="118"/>
+        <UsageCount Value="10"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="D:\MoveThatBaseline\Package\AVDCommonLaz.pas"/>
+        <CursorPos X="3" Y="10"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="771"/>
+        <CursorPos X="26" Y="787"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="D:\MoveThatBaseline\Package\AVDDSPLaz.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="3" Y="11"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="D:\MoveThatBaseline\Source\DVSTCustomModule.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="23" Y="5"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit21>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="ulangselector.pas"/>
-        <Caret Line="4" Column="20"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1196" Column="9" TopLine="1171"/>
       </Position1>
       <Position2>
-        <Filename Value="ulangselector.pas"/>
-        <Caret Line="10" Column="20"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1197" Column="16" TopLine="1172"/>
       </Position2>
       <Position3>
-        <Filename Value="ulangselector.pas"/>
-        <Caret Line="40" Column="20" TopLine="25"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1198" Column="9" TopLine="1173"/>
       </Position3>
       <Position4>
-        <Filename Value="main.pas"/>
-        <Caret Line="8" Column="169"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1213" Column="8" TopLine="1188"/>
       </Position4>
       <Position5>
-        <Filename Value="main.pas"/>
-        <Caret Line="52" Column="42" TopLine="40"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1216" Column="16" TopLine="1191"/>
       </Position5>
       <Position6>
-        <Filename Value="main.pas"/>
-        <Caret Line="34" Column="53" TopLine="22"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1218" Column="16" TopLine="1193"/>
       </Position6>
       <Position7>
-        <Filename Value="uvariables.pas"/>
-        <Caret Line="80" Column="21" TopLine="53"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1220" Column="16" TopLine="1195"/>
       </Position7>
       <Position8>
-        <Filename Value="uhelpbox.pas"/>
-        <Caret Line="20" Column="25" TopLine="11"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1222" Column="9" TopLine="1197"/>
       </Position8>
       <Position9>
-        <Filename Value="ulangselector.pas"/>
-        <Caret Line="61" Column="32" TopLine="37"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1223" Column="16" TopLine="1198"/>
       </Position9>
       <Position10>
-        <Filename Value="uhelpbox.pas"/>
-        <Caret Line="102" Column="18" TopLine="72"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1224" Column="9" TopLine="1199"/>
       </Position10>
       <Position11>
-        <Filename Value="uhelpbox.pas"/>
-        <Caret Line="62" Column="24" TopLine="44"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1240" Column="8" TopLine="1215"/>
       </Position11>
       <Position12>
-        <Filename Value="main.pas"/>
-        <Caret Line="86" Column="21" TopLine="70"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="9" Column="86"/>
       </Position12>
       <Position13>
-        <Filename Value="main.pas"/>
-        <Caret Line="228" Column="16" TopLine="205"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="306" Column="9" TopLine="281"/>
       </Position13>
       <Position14>
-        <Filename Value="main.pas"/>
-        <Caret Line="233" Column="31" TopLine="212"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="557" Column="15" TopLine="532"/>
       </Position14>
       <Position15>
-        <Filename Value="main.pas"/>
-        <Caret Line="225" Column="5" TopLine="216"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="559" Column="16" TopLine="534"/>
       </Position15>
       <Position16>
-        <Filename Value="main.pas"/>
-        <Caret Line="227" Column="40" TopLine="220"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="560" Column="16" TopLine="535"/>
       </Position16>
       <Position17>
-        <Filename Value="main.pas"/>
-        <Caret Line="225" Column="12" TopLine="218"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="580" Column="15" TopLine="555"/>
       </Position17>
       <Position18>
-        <Filename Value="main.pas"/>
-        <Caret Line="231" Column="21" TopLine="209"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="582" Column="16" TopLine="557"/>
       </Position18>
       <Position19>
-        <Filename Value="main.pas"/>
-        <Caret Line="232" Column="28" TopLine="224"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="583" Column="16" TopLine="558"/>
       </Position19>
       <Position20>
-        <Filename Value="uhelpbox.pas"/>
-        <Caret Line="106" Column="29" TopLine="81"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="747" Column="12" TopLine="722"/>
       </Position20>
       <Position21>
-        <Filename Value="uhelpbox.pas"/>
-        <Caret Line="124" Column="180" TopLine="98"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="749" Column="19" TopLine="724"/>
       </Position21>
       <Position22>
-        <Filename Value="uhelpbox.pas"/>
-        <Caret Line="8" Column="41"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="750" Column="12" TopLine="725"/>
       </Position22>
       <Position23>
-        <Filename Value="uhelpbox.pas"/>
-        <Caret Line="115" Column="35" TopLine="100"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="755" Column="12" TopLine="730"/>
       </Position23>
       <Position24>
-        <Filename Value="ulangselector.pas"/>
-        <Caret Line="61" Column="32" TopLine="38"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="778" Column="48" TopLine="773"/>
       </Position24>
       <Position25>
-        <Filename Value="main.pas"/>
-        <Caret Line="49" Column="42" TopLine="41"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="839" Column="10" TopLine="824"/>
       </Position25>
       <Position26>
-        <Filename Value="main.pas"/>
-        <Caret Line="195" Column="63" TopLine="170"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1319" Column="32" TopLine="1300"/>
       </Position26>
       <Position27>
-        <Filename Value="ucalculatorengine.pas"/>
-        <Caret Line="484" Column="50" TopLine="481"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="1463" Column="16" TopLine="1448"/>
       </Position27>
       <Position28>
-        <Filename Value="ucalculatorengine.pas"/>
-        <Caret Line="490" Column="91" TopLine="478"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="776" TopLine="769"/>
       </Position28>
       <Position29>
-        <Filename Value="ucalculatorengine.pas"/>
-        <Caret Line="513" Column="42" TopLine="492"/>
+        <Filename Value="D:\MoveThatBaseline\Source\DAVDCommon.pas"/>
+        <Caret Line="787" Column="26" TopLine="771"/>
       </Position29>
       <Position30>
-        <Filename Value="ucalculatorengine.pas"/>
-        <Caret Line="567" Column="17" TopLine="548"/>
+        <Filename Value="D:\MoveThatBaseline\Package\AVDDSPLaz.pas"/>
+        <Caret Line="11" Column="3"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
