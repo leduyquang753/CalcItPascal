@@ -24,7 +24,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="3"/>
-      <BuildNr Value="3"/>
+      <BuildNr Value="4"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable Comments="Beta testing." LegalCopyright="© 2019 Lê Duy Quang. MIT" ProductName="CalcIt" ProductVersion="0.1"/>
     </VersionInfo>
