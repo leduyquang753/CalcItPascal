@@ -217,7 +217,10 @@ begin
   registerFunction(FuncIsGreater.create);
   registerFunction(FuncIsSmaller.create);
   registerFunction(FuncIsEqual.create);
-  registerFunction(FuncIf.create);
+  registerFunction(FuncIf.create);     
+  registerFunction(FuncAnd.create);
+  registerFunction(FuncOr.create);
+  registerFunction(FuncNot.create);
 end;
 
 // Conditional string.

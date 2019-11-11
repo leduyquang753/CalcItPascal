@@ -53,7 +53,10 @@ type
   FuncIsGreater = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;
   FuncIsSmaller = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;
   FuncIsEqual = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;
-  FuncIf = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;
+  FuncIf = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;      
+  FuncAnd = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;
+  FuncOr = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;
+  FuncNot = class(Func) constructor create; function calculate(arguments: AoE): extended; override; end;
 
 resourcestring
   msgDivByZero = 'Division by zero.';
@@ -68,7 +71,8 @@ resourcestring
   msgRandomInvalidNumberOfArguments = 'Wrong number of arguments for random function, there must be at most two.';
   msgComparisonInvalidNumberOfArguments = 'Wrong number of arguments for comparison function, there must be (only) two.'; 
   msgIsEqualInvalidNumberOfArguments = 'Wrong number of arguments for equation checking function, there must be at least two.';
-  msgIfInvalidNumberOfArguments = 'Wrong number of arguments for conditional function, there must be at most three.';
+  msgIfInvalidNumberOfArguments = 'Wrong number of arguments for conditional function, there must be at most three.';           
+  msgNotInvalidNumberOfArguments = 'Wrong number of arguments for invertion function, there must be (only) one.';
 
 implementation
 
@@ -743,6 +747,47 @@ begin
     arguments[length(arguments)-1] := 0;
   end;
   if arguments[0] > 0 then exit(arguments[1]) else exit(arguments[2]);
+end;
+
+// FuncAnd
+constructor FuncAnd.create;
+begin
+  setlength(names, 1);
+  names[0] := 'and';
+end;
+
+function FuncAnd.calculate(arguments: AoE): extended;
+var res: boolean = true; n: extended;
+begin
+  for n in arguments do res := res and (n > 0);
+  if res then exit(1) else exit(0);
+end;
+
+// FuncOr
+constructor FuncOr.create;
+begin
+  setlength(names, 1);
+  names[0] := 'or';
+end;
+
+function FuncOr.calculate(arguments: AoE): extended;
+var res: boolean = false; n: extended;
+begin
+  for n in arguments do res := res or (n > 0);
+  if res then exit(1) else exit(0);
+end;
+
+// FuncNot
+constructor FuncNot.create;
+begin
+  setlength(names, 1);
+  names[0] := 'not';
+end;
+
+function FuncNot.calculate(arguments: AoE): extended;
+begin
+  if length(arguments) <> 1 then raise ExpressionInvalidException.createNew(msgNotInvalidNumberOfArguments);
+  if arguments[0] > 0 then exit(0) else exit(1);
 end;
 
 end.

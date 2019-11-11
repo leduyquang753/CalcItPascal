@@ -13,6 +13,7 @@ object Variables: TVariables
   Constraints.MinWidth = 581
   OnCreate = FormCreate
   OnResize = FormResize
+  Position = poDefault
   ShowInTaskBar = stAlways
   LCLVersion = '2.0.6.0'
   object ButtonClose: TButton

@@ -52,6 +52,10 @@ msgstr ""
 msgid "Wrong number of arguments for equation checking function, there must be at least two."
 msgstr ""
 
+#: functions.msgnotinvalidnumberofarguments
+msgid "Wrong number of arguments for invertion function, there must be (only) one."
+msgstr ""
+
 #: functions.msgpermutationnegativeparameters
 msgid "Permutation function's arguments must not be negative."
 msgstr ""
@@ -83,6 +87,60 @@ msgstr ""
 
 #: operands.msgunsupportedexponentiation
 msgid "Unsupported exponentiation operation."
+msgstr ""
+
+#: thelpbox.caption
+msgid "About"
+msgstr ""
+
+#: thelpbox.ok.caption
+msgctxt "thelpbox.ok.caption"
+msgid "OK"
+msgstr ""
+
+#: tlangselector.btncancel.caption
+msgid "Cancel"
+msgstr ""
+
+#: tlangselector.btnok.caption
+msgctxt "tlangselector.btnok.caption"
+msgid "OK"
+msgstr ""
+
+#: tlangselector.caption
+msgid "Choose a language"
+msgstr ""
+
+#: tmainwindow.btnvariables.caption
+msgid "&Variables"
+msgstr ""
+
+#: tmainwindow.calculate.caption
+msgid "&Calculate"
+msgstr ""
+
+#: tmainwindow.caption
+msgid "CalcIt"
+msgstr ""
+
+#: tmainwindow.consolelabel.caption
+msgid "Console"
+msgstr ""
+
+#: tmainwindow.expression.texthint
+msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
+msgstr ""
+
+#: tmainwindow.help.caption
+msgid "?"
+msgstr ""
+
+#: tmainwindow.inputlabel.caption
+msgid "Input"
+msgstr ""
+
+#: tmainwindow.language.caption
+msgid "EN"
 msgstr ""
 
 #: tvariables.boxa.text
