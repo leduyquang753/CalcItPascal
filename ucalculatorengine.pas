@@ -405,7 +405,7 @@ begin
     else if c = ',' then
       if length(currentToken) = 0 then begin
         if hadClosingBrace then begin
-          if OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) then performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
           OS.push(dotlessMulOp);
           hadClosingBrace := false;
         end;
@@ -425,7 +425,7 @@ begin
     else if isNumber(c) then
       if length(currentToken) = 0 then begin
         if hadClosingBrace then begin
-          if OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) then performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
           OS.push(dotlessMulOp);
           hadClosingBrace := false;
         end;
@@ -445,7 +445,7 @@ begin
     else if isChar(c) then begin
       if hadClosingBrace or ((length(currentToken) <> 0) and not isVar) then begin
         if (length(currentToken) <> 0) and not isVar then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS));
-        if OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) then performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+        while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
         OS.push(dotlessMulOp);
         hadClosingBrace := false;
       end;
@@ -456,7 +456,7 @@ begin
       if currentOp is OpeningBrace then begin
         if hadClosingBrace or ((length(currentToken) <> 0) and not isVar) then begin
           if (length(currentToken) <> 0) and not isVar then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS));
-          if OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) then performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
           OS.push(dotlessMulOp);
           hadClosingBrace := false;
         end;
@@ -496,7 +496,7 @@ begin
         if status then begin
           if length(currentToken) <> 0 then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS))
           else if hadNegation then raise ExpressionInvalidException.createNew(msgUnexpectedOperand, i);
-          if OS.isNotEmpty and (currentOp.priority < OS.peekPriority) then performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          while OS.isNotEmpty and (currentOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
           OS.push(currentOp);
           status := false;
           hadClosingBrace := false;

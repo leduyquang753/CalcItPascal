@@ -736,7 +736,6 @@ begin
 end;
 
 function FuncIf.calculate(arguments: AoE): extended;
-var v: extended;
 begin
   if length(arguments) > 3 then raise ExpressionInvalidException.createNew(msgIfInvalidNumberOfArguments);
   while length(arguments) < 3 do begin
