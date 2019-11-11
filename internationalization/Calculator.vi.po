@@ -14,6 +14,59 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: %s\n"
 
+#: functions.msgcombinationnegativeparameters
+msgid "Combination function's arguments must not be negative."
+msgstr ""
+
+#: functions.msgcombinationwrongnumberofparameters
+msgid "Wrong number of arguments for combination function, there must be (only) two."
+msgstr ""
+
+#: functions.msgcomparisoninvalidnumberofarguments
+msgid "Wrong number of arguments for comparison function, there must be (only) two."
+msgstr ""
+
+#: functions.msgdivbyzero
+msgctxt "functions.msgdivbyzero"
+msgid "Division by zero."
+msgstr ""
+
+#: functions.msgifinvalidnumberofarguments
+msgid "Wrong number of arguments for conditional function, there must be at most three."
+msgstr ""
+
+#: functions.msginvalidfactorial
+msgid "Factorial's argument must not be negative."
+msgstr ""
+
+#: functions.msginvalidfunctionargument
+msgid "Invalid function argument."
+msgstr ""
+
+#: functions.msginvalidlogarithmnonpositivebase
+msgid "Logarithm's base must be positive."
+msgstr ""
+
+#: functions.msginvalidlogarithmnonpositiveinput
+msgid "Logarithm's input must be positive."
+msgstr ""
+
+#: functions.msgisequalinvalidnumberofarguments
+msgid "Wrong number of arguments for equation checking function, there must be at least two."
+msgstr ""
+
+#: functions.msgpermutationnegativeparameters
+msgid "Permutation function's arguments must not be negative."
+msgstr ""
+
+#: functions.msgpermutationwrongnumberofparameters
+msgid "Wrong number of arguments for permutation function, there must be (only) two."
+msgstr ""
+
+#: functions.msgrandominvalidnumberofarguments
+msgid "Wrong number of arguments for random function, there must be at most two."
+msgstr ""
+
 #: main.msgconsolebegin
 msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
 msgstr "Nhập một biểu thức để tính, \"help\" để xem trợ giúp, \"vars\" để xem và chọn các biến, hoặc \"exit\"."
@@ -21,6 +74,19 @@ msgstr "Nhập một biểu thức để tính, \"help\" để xem trợ giúp, 
 #: main.msgerror
 msgid "ERROR: "
 msgstr "LỖI: "
+
+#: operands.msgbracecalculated
+msgid "Brace is involved as an operator. This is a BUG, report it to the author."
+msgstr ""
+
+#: operands.msgdivbyzero
+msgctxt "operands.msgdivbyzero"
+msgid "Division by zero."
+msgstr ""
+
+#: operands.msgunsupportedexponentiation
+msgid "Unsupported exponentiation operation."
+msgstr ""
 
 #: thelpbox.caption
 msgid "About"
@@ -53,7 +119,9 @@ msgid "&Calculate"
 msgstr "&Tính"
 
 #: tmainwindow.caption
-msgid "CalcIt (Pascal port)"
+#, fuzzy
+#| msgid "CalcIt (Pascal port)"
+msgid "CalcIt"
 msgstr "CalcIt (bản port sang Pascal)"
 
 #: tmainwindow.consolelabel.caption
@@ -76,243 +144,337 @@ msgstr "Nhập"
 msgid "EN"
 msgstr "VI"
 
-#: tvariables.a.caption
-msgid "&A"
-msgstr "&A"
+#: tvariables.boxa.text
+msgid "BoxA"
+msgstr ""
 
-#: tvariables.ans.caption
-msgid "A&ns"
-msgstr "A&ns"
+#: tvariables.boxans.text
+msgid "BoxAns"
+msgstr ""
 
-#: tvariables.ans.hint
-msgid "The value of the latest expression."
-msgstr "Giá trị của biểu thức vừa tính."
+#: tvariables.boxb.text
+msgid "BoxB"
+msgstr ""
 
-#: tvariables.ansvalue.text
-msgid "AnsValue"
-msgstr "AnsValue"
+#: tvariables.boxc.text
+msgid "BoxC"
+msgstr ""
 
-#: tvariables.avalue.text
-msgid "AValue"
-msgstr "AValue"
+#: tvariables.boxd.text
+msgid "BoxD"
+msgstr ""
 
-#: tvariables.b.caption
-msgid "&B"
-msgstr "&B"
+#: tvariables.boxe.text
+msgid "BoxE"
+msgstr ""
+
+#: tvariables.boxf.text
+msgid "BoxF"
+msgstr ""
+
+#: tvariables.boxg.text
+msgid "BoxG"
+msgstr ""
+
+#: tvariables.boxh.text
+msgid "BoxH"
+msgstr ""
+
+#: tvariables.boxi.text
+msgid "BoxI"
+msgstr ""
+
+#: tvariables.boxj.text
+msgid "BoxJ"
+msgstr ""
+
+#: tvariables.boxk.text
+msgid "BoxK"
+msgstr ""
+
+#: tvariables.boxl.text
+msgid "BoxL"
+msgstr ""
+
+#: tvariables.boxm.text
+msgid "BoxM"
+msgstr ""
+
+#: tvariables.boxn.text
+msgid "BoxN"
+msgstr ""
+
+#: tvariables.boxo.text
+msgid "BoxO"
+msgstr ""
+
+#: tvariables.boxp.text
+msgid "BoxP"
+msgstr ""
+
+#: tvariables.boxpreans.text
+msgid "BoxPreAns"
+msgstr ""
+
+#: tvariables.boxq.text
+msgid "BoxQ"
+msgstr ""
+
+#: tvariables.boxr.text
+msgid "BoxR"
+msgstr ""
+
+#: tvariables.boxs.text
+msgid "BoxS"
+msgstr ""
+
+#: tvariables.boxt.text
+msgid "BoxT"
+msgstr ""
+
+#: tvariables.boxu.text
+msgid "BoxU"
+msgstr ""
+
+#: tvariables.boxv.text
+msgid "BoxV"
+msgstr ""
+
+#: tvariables.boxvarname.texthint
+msgid "Custom"
+msgstr ""
+
+#: tvariables.boxvarval.text
+msgid "BoxVarVal"
+msgstr ""
+
+#: tvariables.boxw.text
+msgid "BoxW"
+msgstr ""
+
+#: tvariables.boxx.text
+msgid "BoxX"
+msgstr ""
+
+#: tvariables.boxy.text
+msgid "BoxY"
+msgstr ""
+
+#: tvariables.boxz.text
+msgid "BoxZ"
+msgstr ""
+
+#: tvariables.buttona.caption
+msgid "A"
+msgstr ""
+
+#: tvariables.buttonans.caption
+msgid "Ans"
+msgstr ""
+
+#: tvariables.buttonb.caption
+msgid "B"
+msgstr ""
+
+#: tvariables.buttonc.caption
+msgid "C"
+msgstr ""
 
 #: tvariables.buttonclose.caption
 msgctxt "tvariables.buttonclose.caption"
 msgid "Close"
 msgstr "Đóng"
 
-#: tvariables.bvalue.text
-msgid "BValue"
-msgstr "BValue"
+#: tvariables.buttond.caption
+msgid "D"
+msgstr ""
 
-#: tvariables.c.caption
-msgid "&C"
-msgstr "&C"
+#: tvariables.buttone.caption
+msgid "E"
+msgstr ""
+
+#: tvariables.buttonf.caption
+msgid "F"
+msgstr ""
+
+#: tvariables.buttong.caption
+msgid "G"
+msgstr ""
+
+#: tvariables.buttonh.caption
+msgid "H"
+msgstr ""
+
+#: tvariables.buttoni.caption
+msgid "I"
+msgstr ""
+
+#: tvariables.buttonj.caption
+msgid "J"
+msgstr ""
+
+#: tvariables.buttonk.caption
+msgid "K"
+msgstr ""
+
+#: tvariables.buttonl.caption
+msgid "L"
+msgstr ""
+
+#: tvariables.buttonm.caption
+msgid "M"
+msgstr ""
+
+#: tvariables.buttonn.caption
+msgid "N"
+msgstr ""
+
+#: tvariables.buttono.caption
+msgid "O"
+msgstr ""
+
+#: tvariables.buttonp.caption
+msgid "P"
+msgstr ""
+
+#: tvariables.buttonpreans.caption
+msgid "PreAns"
+msgstr ""
+
+#: tvariables.buttonq.caption
+msgid "Q"
+msgstr ""
+
+#: tvariables.buttonr.caption
+msgid "R"
+msgstr ""
+
+#: tvariables.buttons.caption
+msgid "S"
+msgstr ""
+
+#: tvariables.buttont.caption
+msgid "T"
+msgstr ""
+
+#: tvariables.buttonu.caption
+msgid "U"
+msgstr ""
+
+#: tvariables.buttonv.caption
+msgid "V"
+msgstr ""
+
+#: tvariables.buttonw.caption
+msgid "W"
+msgstr ""
+
+#: tvariables.buttonx.caption
+msgid "X"
+msgstr ""
+
+#: tvariables.buttony.caption
+msgid "Y"
+msgstr ""
+
+#: tvariables.buttonz.caption
+msgid "Z"
+msgstr ""
 
 #: tvariables.caption
+msgctxt "tvariables.caption"
 msgid "Variables"
 msgstr "Biến"
 
-#: tvariables.cvalue.text
-msgid "CValue"
-msgstr "CValue"
+#: ucalculatorengine.msgemptyvariablename
+msgid "[Empty variable name.]"
+msgstr ""
 
-#: tvariables.d.caption
-msgid "&D"
-msgstr "&D"
+#: ucalculatorengine.msginvalidvariable
+msgid "Invalid variable name \"%s\", it must not start with a digit."
+msgstr ""
 
-#: tvariables.dvalue.text
-msgid "DValue"
-msgstr "DValue"
+#: ucalculatorengine.msginvalidvariablenamewindow
+msgid "[Invalid variable name.]"
+msgstr ""
 
-#: tvariables.e.caption
-msgid "&E"
-msgstr "&E"
+#: ucalculatorengine.msgnonalphanumericvariablename
+msgid "Invalid variable name \"%s\", it must include only a÷z, 0÷9 and _ characters."
+msgstr ""
 
-#: tvariables.evalue.text
-msgid "EValue"
-msgstr "EValue"
+#: ucalculatorengine.msgnothingtocalculate
+msgid "There is nothing to calculate and assign to the variables."
+msgstr ""
 
-#: tvariables.f.caption
-msgid "&F"
-msgstr "&F"
+#: ucalculatorengine.msgnotset
+msgid "[Not set]"
+msgstr ""
 
-#: tvariables.fvalue.text
-msgid "FValue"
-msgstr "FValue"
+#: ucalculatorengine.msgreservedvariable
+msgid "Ans and PreAns are reserved variables and cannot be assigned."
+msgstr ""
 
-#: tvariables.preans.caption
-msgid "&PreAns"
-msgstr "&PreAns"
+#: ucalculatorengine.msgtrailingnegativepositivesign
+msgid "Trailing negative/positive sign(s)."
+msgstr ""
 
-#: tvariables.preans.hint
-msgid "The value of the calculation right before the last."
-msgstr "Giá trị của biểu thức ngay trước biểu thức vừa tính."
+#: ucalculatorengine.msgunexpectedclosingbrace
+msgid "Unexpected closing brace."
+msgstr ""
 
-#: tvariables.preansvalue.text
-msgid "PreAnsValue"
-msgstr "PreAnsValue"
+#: ucalculatorengine.msgunexpectedcomma
+msgctxt "ucalculatorengine.msgunexpectedcomma"
+msgid "Unexpected comma."
+msgstr ""
 
-#: ucalculatorengine.msgandcalc
-msgid "AND calculation only supports two integers, but given %s and %s."
-msgstr "Phép AND chỉ hỗ trợ hai số nguyên, nhưng lại có %s và %s."
-
-#: ucalculatorengine.msgdivbyzero
-msgid "Division by zero."
-msgstr "Chia cho không."
-
-#: ucalculatorengine.msginvalidnumbers
-msgid "Invalid numbers: %s; %s."
-msgstr "Số không hợp lệ: %s; %s."
-
-#: ucalculatorengine.msginvalidoperatorplacement
-msgid "Invalid operator placement."
-msgstr "Đặt dấu không hợp lệ."
-
-#: ucalculatorengine.msgmixedcharsandnums
-msgid "Mixed characters and numbers."
-msgstr "Chữ và số lẫn lộn."
-
-#: ucalculatorengine.msgmultiplecommas
-msgid "Multiple commas in the same number."
-msgstr "Nhiều dấu phẩy trong cùng một số."
-
-#: ucalculatorengine.msgorcalc
-msgid "OR calculation only supports two integers, but given %s and %s."
-msgstr "Phép OR chỉ hỗ trợ hai số nguyên, nhưng lại có %s và %s."
-
-#: ucalculatorengine.msgsuddenbrace
-msgid "Sudden closing brace."
-msgstr "Dấu đóng ngoặc đột ngột."
+#: ucalculatorengine.msgunexpecteddigit
+msgid "Unexpected digit."
+msgstr ""
 
 #: ucalculatorengine.msgunexpectedend
 msgid "Unexpected end of expression."
-msgstr "Biểu thức kết thúc đột ngột."
+msgstr ""
 
 #: ucalculatorengine.msgunexpectedequal
 msgid "Unexpected equal sign."
-msgstr "Dấu bằng không hợp lệ."
+msgstr ""
+
+#: ucalculatorengine.msgunexpectedoperand
+msgid "Unexpected operand."
+msgstr ""
 
 #: ucalculatorengine.msgunexpectedpercent
 msgid "Unexpected percent sign."
-msgstr "Dấu phần trăm không hợp lệ."
+msgstr ""
 
-#: ucalculatorengine.msgunexpectedpercentnotoperator
-msgid "Unexpected percent sign. Please note that % is not an operator."
-msgstr "Dấu phần trăm không hợp lệ. Xin lưu ý % không phải là toán tử."
+#: ucalculatorengine.msgunexpectedsemicolon
+msgid "Unexpected semicolon."
+msgstr ""
 
-#: ucalculatorengine.msgunexpectedpercentonlyone
-msgid "Unexpected percent sign. Please note that only one percent sign is permitted at the end of a number."
-msgstr "Dấu phần trăm không hợp lệ. Xin lưu ý chỉ một dấu phần trăm được đặt ở cuối một số."
-
-#: ucalculatorengine.msgunknownfunc
-msgid "Unknown function."
-msgstr "Hàm không hợp lệ."
-
-#: ucalculatorengine.msgunknownstuff
-msgid "Unknown stuff."
-msgstr "Có thứ không hợp lệ."
+#: ucalculatorengine.msgunknownfunction
+msgid "Unknown function \"%s\"."
+msgstr ""
 
 #: ucalculatorengine.msgunknownsymbol
 msgid "Unknown symbol."
-msgstr "Kí tự không hợp lệ."
+msgstr ""
 
-#: ucalculatorengine.msgunknownvar
+#: ucalculatorengine.msgunknownvariable
+msgctxt "ucalculatorengine.msgunknownvariable"
 msgid "Unknown variable."
-msgstr "Biến không hợp lệ."
+msgstr ""
 
-#: ucalculatorengine.msgunmatchingbrace
-msgid "Unmatching closing brace."
-msgstr "Dấu đóng ngoặc không hợp lệ."
+#: ucalculatorengine.msgunmatchingbraces
+msgid "Unmatching braces."
+msgstr ""
 
-#: ucalculatorengine.msgxorcalc
-msgid "XOR calculation only supports two integers, but given %s and %s."
-msgstr "Phép XOR chỉ hỗ trợ hai số nguyên, nhưng lại có %s và %s."
+#: uhelpbox.msghelp
+msgid ""
+"CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.\n"
+"Operator priorities are taken into account.\n"
+"\n"
+"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.\n"
+"\n"
+"Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
+msgstr ""
 
-#: uhelpbox.msghelp1
-msgid "CalcIt is a simple-to-use Java library/program used to perform single to medium-level mathematic expressions."
-msgstr "CalcIt là một thư viện/chương trình Java đơn giản để tính các biểu thức từ đơn giản đến trung bình."
-
-#: uhelpbox.msghelp10
-msgid "    &  AND (for integers)"
-msgstr "    &  AND (cho số nguyên)"
-
-#: uhelpbox.msghelp11
-msgid "    |  OR (for integers)"
-msgstr "    | OR (cho số nguyên)"
-
-#: uhelpbox.msghelp12
-msgid "    !  XOR (for integers)"
-msgstr "    ! XOR (cho số nguyên)"
-
-#: uhelpbox.msghelp13
-msgid "Functions suported (syntax: <name>([value = 0])):"
-msgstr "Các hàm được hỗ trợ (cú pháp: <tên>([giá trị = 0])):"
-
-#: uhelpbox.msghelp14
-msgid "    sin  Trigonometric sine"
-msgstr "    sin  Hàm lượng giác sine"
-
-#: uhelpbox.msghelp15
-msgid "    cos  Trigonometric cosine"
-msgstr "    cos  Hàm lượng giác cosine"
-
-#: uhelpbox.msghelp16
-msgid "    tan  Trigonometric tangent"
-msgstr "    tan  Hàm lượng giác tang"
-
-#: uhelpbox.msghelp17
-msgid "    cot  Trigonometric cotangent"
-msgstr "    cot  Hàm lượng giác cotang"
-
-#: uhelpbox.msghelp18
-msgid "    log  Base 10 logarithm"
-msgstr "    log  Logarid cơ số 10"
-
-#: uhelpbox.msghelp19
-msgid "    ln   Natural (base e) logarithm"
-msgstr "    ln   Logarid tự nhiên (cơ số e)"
-
-#: uhelpbox.msghelp2
-msgid "This program is a port to Delphi for a GUI and ease of use (no need to install a JRE)."
-msgstr "Chương trình là một bản port sang Dephi để có một GUI và dễ sử dụng (không phải cài JRE)."
-
-#: uhelpbox.msghelp20
-msgid "The program takes operators' priorities into account."
-msgstr "Chương trình có tính đến thứ tự ưu tiên của các biểu thức."
-
-#: uhelpbox.msghelp21
-msgid "Version %s built at %s. Copyright © 2019 Lê Duy Quang"
-msgstr "Phiên bản %s dựng lúc %s. Bản quyền © 2019 Lê Duy Quang"
-
-#: uhelpbox.msghelp3
-msgid "Operators supported:"
-msgstr "Các toán tử được hỗ trợ:"
-
-#: uhelpbox.msghelp4
-msgid "    +  Addition"
-msgstr "    +  Cộng"
-
-#: uhelpbox.msghelp5
-msgid "    -  Subtraction"
-msgstr "    -  Trừ"
-
-#: uhelpbox.msghelp6
-msgid "    .  Multiplication"
-msgstr "    .  Nhân"
-
-#: uhelpbox.msghelp7
-msgid "    :  Division"
-msgstr "    :  Chia"
-
-#: uhelpbox.msghelp8
-msgid "    ^  Exponentiation"
-msgstr "    ^  Lũy thừa"
-
-#: uhelpbox.msghelp9
-msgid "    v  Root"
-msgstr "    v  Căn"

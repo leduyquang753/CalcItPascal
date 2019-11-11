@@ -5,7 +5,9 @@ unit Main;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, UCalculatorEngine, UExpressionInvalidException, StrUtils, LCLType, LResources, Translations, LCLTranslator{, DbgConsole};
+  Classes, SysUtils, {FileUtil, }Forms, Controls, Graphics, Dialogs, StdCtrls,
+  UCalculatorEngine, UExpressionInvalidException, StrUtils, LCLType, LResources,
+  Translations, LCLTranslator, Menus{, DbgConsole};
 
 type
 
@@ -24,20 +26,15 @@ type
     procedure CalculateClick(Sender: TObject);
     procedure ExpressionKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure ExpressionKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState
-      );
+    procedure ExpressionKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormChangeBounds(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure HelpClick(Sender: TObject);
     procedure BtnVariablesClick(Sender: TObject);
     procedure calculateIt;
-    function getVariable(variable: integer): string;
+    function getVariable(variable: string): string;
     procedure LanguageClick(Sender: TObject);
     procedure updateVariables;
-  private
-
-  public
-
   end;
 
 var
@@ -52,6 +49,7 @@ resourcestring
 function Translate(POFileName: string): boolean;
 procedure readLangConfig;
 procedure writeLangConfig(confLang: string);
+function formatNumber(num: extended): string;
 
 implementation
 
@@ -136,11 +134,6 @@ end;
 
 const rFlags = [rfReplaceAll, rfIgnoreCase];
 
-function formatNumber(numberIn: extended): string;
-begin
-  exit(stringReplace(formatFloat('0.##########', numberIn), '.', ',', rFlags));
-end;
-
 procedure TMainWindow.calculateIt;
 var calculatedResult: extended;
 begin
@@ -193,9 +186,9 @@ begin
 end;
 
 procedure TMainWindow.FormCreate(Sender: TObject);
-begin
-  confFileName := GetEnvironmentVariable('appdata') + '\CalcIt\calcitlang.dat';
-  confDir := GetEnvironmentVariable('appdata') + '\CalcIt';
+begin                                                        
+  confDir := getAppConfigDir(false);
+  confFileName := confDir + '\calcitlang.dat';
   Application.UpdateFormatSettings := false;
   DecimalSeparator := '.';
   self.KeyPreview := false;
@@ -215,12 +208,17 @@ begin
   Variables.show;
 end;
 
-function TMainWindow.getVariable(variable: integer): string;
+function TMainWindow.getVariable(variable: string): string;
+begin
+  exit(formatNumber(Engine.getVariable(variable)));
+end;
+
+function formatNumber(num: extended): string;
 begin
   exit(
-  stringReplace(formatFloat('0.##########',
-  self.Engine.getVariable(variable)), '.', ',', rFlags));
-  //exit('0a');
+  stringReplace(
+  stringReplace(formatFloat('#,##0.##########',
+  num), ',', ' ', rFlags), '.', ',', rFlags));
 end;
 
 procedure TMainWindow.LanguageClick(Sender: TObject);
@@ -245,14 +243,7 @@ end;
 
 procedure TMainWindow.updateVariables;
 begin
-  Variables.AValue.Text := getVariable(1);
-  Variables.BValue.Text := getVariable(2);
-  Variables.CValue.Text := getVariable(3);
-  Variables.DValue.Text := getVariable(4);
-  Variables.EValue.Text := getVariable(5);
-  Variables.FValue.Text := getVariable(6);
-  Variables.AnsValue.Text := getVariable(0);
-  Variables.PreAnsValue.Text := getVariable(-1);
+  Variables.updateStuff;
 end;
 
 procedure TMainWindow.CalculateClick(Sender: TObject);
@@ -261,7 +252,7 @@ begin
 end;
 
 initialization
-  {$I internationalization/Calculator.lrs}
+  {$I Calculator.lrs}
 
 end.
 

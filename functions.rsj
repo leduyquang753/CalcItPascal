@@ -1,0 +1,4 @@
+{"version":1,"strings":[
+{"hash":47170702,"name":"functions.msgdivbyzero","sourcebytes":[68,105,118,105,115,105,111,110,32,98,121,32,122,101,114,111,46],"value":"Division by zero."},
+{"hash":66571566,"name":"functions.msginvalidfunctionargument","sourcebytes":[73,110,118,97,108,105,100,32,102,117,110,99,116,105,111,110,32,97,114,103,117,109,101,110,116,46],"value":"Invalid function argument."}
+]}

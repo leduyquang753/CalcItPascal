@@ -12,37 +12,76 @@ type
   { TVariables }
 
   TVariables = class(TForm)
-    A: TButton;
-    B: TButton;
-    Ans: TButton;
+    BoxVarVal: TEdit;
+    BoxVarName: TEdit;
+    ButtonA: TButton;
+    ButtonJ: TButton;
+    ButtonK: TButton;
+    ButtonL: TButton;
+    ButtonP: TButton;
+    ButtonN: TButton;
+    ButtonM: TButton;
+    ButtonO: TButton;
+    ButtonQ: TButton;
+    ButtonR: TButton;
+    ButtonB: TButton;
+    ButtonS: TButton;
+    ButtonT: TButton;
+    ButtonW: TButton;
+    ButtonV: TButton;
+    ButtonU: TButton;
+    ButtonX: TButton;
+    ButtonY: TButton;
+    ButtonZ: TButton;
+    ButtonD: TButton;
+    ButtonC: TButton;
+    ButtonF: TButton;
+    ButtonE: TButton;
+    ButtonG: TButton;
+    ButtonH: TButton;
+    ButtonI: TButton;
+    ButtonAns: TButton;
+    ButtonPreAns: TButton;
     ButtonClose: TButton;
-    AValue: TEdit;
-    BValue: TEdit;
-    CValue: TEdit;
-    DValue: TEdit;
-    EValue: TEdit;
-    FValue: TEdit;
-    AnsValue: TEdit;
-    PreAnsValue: TEdit;
-    PreAns: TButton;
-    F: TButton;
-    E: TButton;
-    D: TButton;
-    C: TButton;
-    procedure AClick(Sender: TObject);
-    procedure AnsClick(Sender: TObject);
-    procedure BClick(Sender: TObject);
+    BoxA: TEdit;
+    BoxH: TEdit;
+    BoxI: TEdit;
+    BoxJ: TEdit;
+    BoxK: TEdit;
+    BoxL: TEdit;
+    BoxP: TEdit;
+    BoxO: TEdit;
+    BoxN: TEdit;
+    BoxM: TEdit;
+    BoxQ: TEdit;
+    BoxB: TEdit;
+    BoxT: TEdit;
+    BoxU: TEdit;
+    BoxW: TEdit;
+    BoxY: TEdit;
+    BoxZ: TEdit;
+    BoxV: TEdit;
+    BoxX: TEdit;
+    BoxS: TEdit;
+    BoxR: TEdit;
+    BoxAns: TEdit;
+    BoxPreAns: TEdit;
+    BoxC: TEdit;
+    BoxD: TEdit;
+    BoxE: TEdit;
+    BoxF: TEdit;
+    BoxG: TEdit;
+    AtoZContainer: TScrollBox;
+    procedure BoxVarNameChange(Sender: TObject);
     procedure ButtonCloseClick(Sender: TObject);
-    procedure CClick(Sender: TObject);
-    procedure DClick(Sender: TObject);
-    procedure EClick(Sender: TObject);
-    procedure FClick(Sender: TObject);
-    procedure PreAnsClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
     procedure showForm(ParentIn: TMainWindow);
     procedure updateStuff;
+    procedure VarButtonClick(Sender: TObject);
   private
     MainForm: TMainWindow;
-
+    boxes: array['a'..'z'] of TEdit;
   public
 
   end;
@@ -64,7 +103,7 @@ begin
   //exit('0a');
 end;
 
-function getVariable(mainInstance: TMainWindow; variable: integer): string;
+function getVariable(mainInstance: TMainWindow; variable: string): string;
 begin
   exit(
   formatNumber(
@@ -81,15 +120,22 @@ begin
 end;
 
 procedure TVariables.updateStuff;
+var c: char;
 begin
-  AValue.Text := getVariable(Self.MainForm, 1);
-  BValue.Text := getVariable(Self.MainForm, 2);
-  CValue.Text := getVariable(Self.MainForm, 3);
-  DValue.Text := getVariable(Self.MainForm, 4);
-  EValue.Text := getVariable(Self.MainForm, 5);
-  FValue.Text := getVariable(Self.MainForm, 6);
-  AnsValue.Text := getVariable(Self.MainForm, 0);
-  PreAnsValue.Text := getVariable(Self.MainForm, -1);
+  for c:='a' to 'z' do boxes[c].Text := mainWindow.engine.getVariableString(c);
+  BoxAns.Text := mainWindow.engine.getVariableString('Ans');
+  BoxPreAns.Text := mainWindow.engine.getVariableString('PreAns');
+  boxVarVal.text := mainWindow.engine.getVariableString(boxVarName.text);
+end;
+
+procedure TVariables.VarButtonClick(Sender: TObject);
+var oldPos: longint; s: string;
+begin
+  oldPos := Self.MainForm.Expression.SelStart;
+  s := Self.MainForm.Expression.Text;
+  Insert((sender as TButton).Caption, s, oldPos+1);
+  Self.MainForm.Expression.Text := s;
+  Self.MainForm.Expression.SelStart := oldPos + 6;
 end;
 
 procedure TVariables.ButtonCloseClick(Sender: TObject);
@@ -97,78 +143,52 @@ begin
   Self.Close;
 end;
 
-var s: string; oldPos: integer;
-
-procedure TVariables.CClick(Sender: TObject);
+procedure TVariables.BoxVarNameChange(Sender: TObject);
 begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('C', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 1;
+  boxVarVal.text := mainWindow.engine.getVariableString(boxVarName.text);
 end;
 
-procedure TVariables.DClick(Sender: TObject);
+procedure TVariables.FormCreate(Sender: TObject);
 begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('D', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 1;
+  boxes['a'] := BoxA;
+  boxes['b'] := BoxB;
+  boxes['c'] := BoxC;
+  boxes['d'] := BoxD;
+  boxes['e'] := BoxE;
+  boxes['f'] := BoxF;
+  boxes['g'] := BoxG;
+  boxes['h'] := BoxH;
+  boxes['i'] := BoxI;
+  boxes['j'] := BoxJ;
+  boxes['k'] := BoxK;
+  boxes['l'] := BoxL;
+  boxes['m'] := BoxM;
+  boxes['n'] := BoxN;
+  boxes['o'] := BoxO;
+  boxes['p'] := BoxP;
+  boxes['q'] := BoxQ;
+  boxes['r'] := BoxR;
+  boxes['s'] := BoxS;
+  boxes['t'] := BoxT;
+  boxes['u'] := BoxU;
+  boxes['v'] := BoxV;
+  boxes['w'] := BoxW;
+  boxes['x'] := BoxX;
+  boxes['y'] := BoxY;
+  boxes['z'] := BoxZ;
+  mainForm := mainWindow;
 end;
 
-procedure TVariables.EClick(Sender: TObject);
+procedure TVariables.FormResize(Sender: TObject);
 begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('E', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 1;
-end;
-
-procedure TVariables.FClick(Sender: TObject);
-begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('F', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 1;
-end;
-
-procedure TVariables.PreAnsClick(Sender: TObject);
-begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('PreAns', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 6;
-end;
-
-procedure TVariables.AClick(Sender: TObject);
-begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('A', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 1;
-end;
-
-procedure TVariables.AnsClick(Sender: TObject);
-begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('Ans', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 3;
-end;
-
-procedure TVariables.BClick(Sender: TObject);
-begin
-  oldPos := Self.MainForm.Expression.SelStart;
-  s := Self.MainForm.Expression.Text;
-  Insert('B', s, oldPos+1);
-  Self.MainForm.Expression.Text := s;
-  Self.MainForm.Expression.SelStart := oldPos + 1;
+  buttonClose.Top := variables.ClientHeight-33;
+  buttonPreAns.top := variables.clientHeight-81;
+  buttonAns.top := variables.clientHeight-57;   
+  boxPreAns.top := variables.clientHeight-81;
+  boxAns.top := variables.clientHeight-57;
+  boxVarName.top := variables.ClientHeight-113;
+  boxVarVal.top := variables.clientHeight-113;
+  AtoZContainer.height := variables.clientHeight-131;
 end;
 
 end.

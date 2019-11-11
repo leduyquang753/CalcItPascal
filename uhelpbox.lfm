@@ -1,7 +1,7 @@
 object HelpBox: THelpBox
-  Left = 314
+  Left = 439
   Height = 500
-  Top = 138
+  Top = 105
   Width = 450
   BorderIcons = [biMaximize]
   Caption = 'About'
@@ -12,7 +12,7 @@ object HelpBox: THelpBox
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnResize = FormResize
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.0.6.0'
   object Content: TMemo
     Left = 10
     Height = 445

@@ -1,5 +1,5 @@
 {"version":1,"strings":[
-{"hash":188215977,"name":"tmainwindow.caption","sourcebytes":[67,97,108,99,73,116,32,40,80,97,115,99,97,108,32,112,111,114,116,41],"value":"CalcIt (Pascal port)"},
+{"hash":77080580,"name":"tmainwindow.caption","sourcebytes":[67,97,108,99,73,116],"value":"CalcIt"},
 {"hash":174433893,"name":"tmainwindow.consolelabel.caption","sourcebytes":[67,111,110,115,111,108,101],"value":"Console"},
 {"hash":5265348,"name":"tmainwindow.inputlabel.caption","sourcebytes":[73,110,112,117,116],"value":"Input"},
 {"hash":175512478,"name":"tmainwindow.expression.texthint","sourcebytes":[69,110,116,101,114,32,97,110,121,32,101,120,112,114,101,115,115,105,111,110,44,32,34,104,101,108,112,34,44,32,34,118,97,114,115,34,32,111,114,32,34,101,120,105,116,34,46],"value":"Enter any expression, \"help\", \"vars\" or \"exit\"."},

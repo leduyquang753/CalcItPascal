@@ -5,7 +5,8 @@ unit UHelpBox;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, FileInfo, DateUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Main, UVariables;
+  Classes, SysUtils, FileUtil, FileInfo, DateUtils, Forms, Controls, Graphics,
+  Dialogs, StdCtrls, Menus, Main, UVariables;
 
 type
 
@@ -35,27 +36,12 @@ implementation
 { THelpBox }
 
 resourcestring
-  msgHelp1  = 'CalcIt is a simple-to-use Java library/program used to perform single to medium-level mathematic expressions.';
-  msgHelp2  = 'This program is a port to Delphi for a GUI and ease of use (no need to install a JRE).';
-  msgHelp3  = 'Operators supported:';
-  msgHelp4  = '    +  Addition';
-  msgHelp5  = '    -  Subtraction';
-  msgHelp6  = '    .  Multiplication';
-  msgHelp7  = '    :  Division';
-  msgHelp8  = '    ^  Exponentiation';
-  msgHelp9  = '    v  Root';
-  msgHelp10 = '    &  AND (for integers)';
-  msgHelp11 = '    |  OR (for integers)';
-  msgHelp12 = '    !  XOR (for integers)';
-  msgHelp13 = 'Functions suported (syntax: <name>([value = 0])):';
-  msgHelp14 = '    sin  Trigonometric sine';
-  msgHelp15 = '    cos  Trigonometric cosine';
-  msgHelp16 = '    tan  Trigonometric tangent';
-  msgHelp17 = '    cot  Trigonometric cotangent';
-  msgHelp18 = '    log  Base 10 logarithm';
-  msgHelp19 = '    ln   Natural (base e) logarithm';
-  msgHelp20 = 'The program takes operators'' priorities into account.';
-  msgHelp21 = 'Version %s built at %s. Copyright © 2019 Lê Duy Quang';
+  msgHelp = 'CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.' + sLineBreak
+          + 'Operator priorities are taken into account.'                                                                  + sLineBreak
+                                                                                                                           + sLineBreak
+          + 'For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.'       + sLineBreak
+                                                                                                                           + sLineBreak
+          + 'Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.';
 
 var
   appVer: string = '0.2.1 (build 2)';
@@ -71,15 +57,6 @@ end;
 function CI(condition: boolean; value1, value2: longint): longint;
 begin
   if condition then exit(value1) else exit(value2);
-end;
-
-function contentToInject: string;
-begin
-  exit(
-  msgHelp1 + sLineBreak + sLineBreak + msgHelp2 + sLineBreak + sLineBreak + msgHelp3 + sLineBreak + msgHelp4 + sLineBreak + msgHelp5 + sLineBreak + msgHelp6 + sLineBreak + msgHelp7 + sLineBreak +
-  msgHelp8 + sLineBreak + msgHelp9 + sLineBreak + msgHelp10 + sLineBreak + msgHelp11 + sLineBreak + msgHelp12 + sLineBreak + sLineBreak + msgHelp13 + sLineBreak + msgHelp14 + sLineBreak +
-  msgHelp15 + sLineBreak + msgHelp16 + sLineBreak + msgHelp17 + sLineBreak + msgHelp18 + sLineBreak + msgHelp19 + sLineBreak + sLineBreak + msgHelp20 + sLineBreak + sLineBreak + msgHelp21
-  );
 end;
 
 procedure THelpBox.FormResize(Sender: TObject);
@@ -99,7 +76,7 @@ procedure THelpBox.updateBox;
 begin
   Content.Lines.BeginUpdate;
   Content.Lines.Clear;
-  Content.Lines.Add(format(contentToInject, [appVer, appBuildTime]));
+  Content.Lines.Add(format(msgHelp, [appVer, appBuildTime]));
   Content.Lines.EndUpdate;
 end;
 
