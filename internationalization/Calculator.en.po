@@ -68,6 +68,10 @@ msgstr "Wrong number of arguments for permutation function, there must be (only)
 msgid "Wrong number of arguments for random function, there must be at most two."
 msgstr "Wrong number of arguments for random function, there must be at most two."
 
+#: functions.msgrandomnorandom
+msgid "There are no integers between the two numbers given to the random integer function."
+msgstr ""
+
 #: main.msgconsolebegin
 msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
 msgstr "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
@@ -480,3 +484,4 @@ msgstr ""
 "For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.\n"
 "\n"
 "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
+

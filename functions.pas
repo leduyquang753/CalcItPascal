@@ -73,6 +73,7 @@ resourcestring
   msgIsEqualInvalidNumberOfArguments = 'Wrong number of arguments for equation checking function, there must be at least two.';
   msgIfInvalidNumberOfArguments = 'Wrong number of arguments for conditional function, there must be at most three.';           
   msgNotInvalidNumberOfArguments = 'Wrong number of arguments for invertion function, there must be (only) one.';
+  msgRandomNoRandom = 'There are no integers between the two numbers given to the random integer function.';
 
 implementation
 
@@ -668,13 +669,29 @@ begin
   names[3] := 'random_integer';
 end;
 
+function roundUpForRandom(numberIn: extended): extended;
+begin
+  if (numberIn > 0) and (frac(numberIn) > 0) then exit(int(numberIn)+1) else exit(int(numberIn));
+end;
+
+function roundDownForRandom(numberIn: extended): extended;
+begin
+  if (numberIn < 0) and (frac(numberIn) < 0) then exit(int(numberIn)-1) else exit(int(numberIn));
+end;
+
 function FuncRandomInt.calculate(arguments: AoE): extended;
+var lower, higher, tmp: extended;
 begin
   case length(arguments) of
-  1: exit(int(random*arguments[0]));
-  2: exit(int(arguments[0]+(arguments[1]-arguments[0])*random));
+  1: begin lower := 0; higher := arguments[0]; end;
+  2: begin lower := arguments[0]; higher := arguments[1]; end;
   else raise ExpressionInvalidException.createNew(msgRandomInvalidNumberOfArguments);
   end;
+  if lower > higher then begin tmp := lower; lower := higher; higher := tmp; end;
+  lower := roundUpForRandom(lower);
+  higher := roundDownForRandom(higher);
+  if lower > higher then raise ExpressionInvalidException.createNew(msgRandomNoRandom);
+  exit(roundDownForRandom(lower+random*(higher-lower+1+1E-10)));
 end;
 
 // FuncRandomInList
@@ -688,7 +705,7 @@ end;
 
 function FuncRandomInList.calculate(arguments: AoE): extended;
 begin
-  exit(arguments[trunc(random*(length(arguments)-1))]);
+  exit(arguments[trunc(random*(length(arguments)-1E-10))]);
 end;
 
 // FuncIsGreater

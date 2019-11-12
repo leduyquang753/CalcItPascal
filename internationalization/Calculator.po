@@ -58,6 +58,10 @@ msgstr ""
 msgid "Wrong number of arguments for random function, there must be at most two."
 msgstr ""
 
+#: functions.msgrandomnorandom
+msgid "There are no integers between the two numbers given to the random integer function."
+msgstr ""
+
 #: main.msgconsolebegin
 msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
 msgstr ""

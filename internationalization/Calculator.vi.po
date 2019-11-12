@@ -71,6 +71,10 @@ msgstr "Số lượng tham số cho hàm chỉnh hợp không đúng, phải có
 msgid "Wrong number of arguments for random function, there must be at most two."
 msgstr "Số lượng tham số cho hàm ngẫu nhiên không đúng, phải có tối đa hai."
 
+#: functions.msgrandomnorandom
+msgid "There are no integers between the two numbers given to the random integer function."
+msgstr ""
+
 #: main.msgconsolebegin
 msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
 msgstr "Nhập một biểu thức để tính, \"help\" để xem trợ giúp, \"vars\" để xem và chọn các biến, hoặc \"exit\"."
@@ -483,3 +487,4 @@ msgstr ""
 "Để biết thông tin chi tiết về cách dùng, vui lòng truy cập https://leduyquang753.github.io/CalcIt.html.\n"
 "\n"
 "Phiên bản %s dựng lúc %s. Bản quyền © 2019 Lê Duy Quang. Phát hành dưới giấy phép MIT.\n"
+
