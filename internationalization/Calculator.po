@@ -70,6 +70,10 @@ msgstr ""
 msgid "ERROR: "
 msgstr ""
 
+#: main.msgoverflow
+msgid "Numbers in the calculation are too large, cannot compute."
+msgstr ""
+
 #: operands.msgbracecalculated
 msgid "Brace is involved as an operator. This is a BUG, report it to the author."
 msgstr ""
@@ -464,7 +468,7 @@ msgid ""
 "CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.\n"
 "Operator priorities are taken into account.\n"
 "\n"
-"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.\n"
+"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcItPascal.html.\n"
 "\n"
 "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
 msgstr ""

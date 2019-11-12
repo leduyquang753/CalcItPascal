@@ -73,7 +73,7 @@ msgstr "Số lượng tham số cho hàm ngẫu nhiên không đúng, phải có
 
 #: functions.msgrandomnorandom
 msgid "There are no integers between the two numbers given to the random integer function."
-msgstr ""
+msgstr "Không có số nguyên nào nằm giữa hai số được đưa vào hàm số nguyên ngẫu nhiên."
 
 #: main.msgconsolebegin
 msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
@@ -82,6 +82,10 @@ msgstr "Nhập một biểu thức để tính, \"help\" để xem trợ giúp, 
 #: main.msgerror
 msgid "ERROR: "
 msgstr "LỖI: "
+
+#: main.msgoverflow
+msgid "Numbers in the calculation are too large, cannot compute."
+msgstr "Các số trong phép tính quá lớn, không thể tính được."
 
 #: operands.msgbracecalculated
 msgid "Brace is involved as an operator. This is a BUG, report it to the author."
@@ -477,14 +481,13 @@ msgid ""
 "CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.\n"
 "Operator priorities are taken into account.\n"
 "\n"
-"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.\n"
+"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcItPascal.html.\n"
 "\n"
 "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
 msgstr ""
 "CalcIt Pascal là một ứng dụng dễ sử dụng để tính các biểu thức từ cơ bản đến trung bình.\n"
 "Thứ tự ưu tiên của biểu thức được tính đến.\n"
 "\n"
-"Để biết thông tin chi tiết về cách dùng, vui lòng truy cập https://leduyquang753.github.io/CalcIt.html.\n"
+"Để biết thông tin chi tiết về cách dùng, vui lòng truy cập https://leduyquang753.github.io/CalcItPascal.html.\n"
 "\n"
 "Phiên bản %s dựng lúc %s. Bản quyền © 2019 Lê Duy Quang. Phát hành dưới giấy phép MIT.\n"
-

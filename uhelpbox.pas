@@ -39,7 +39,7 @@ resourcestring
   msgHelp = 'CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.' + sLineBreak
           + 'Operator priorities are taken into account.'                                                                  + sLineBreak
                                                                                                                            + sLineBreak
-          + 'For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.'       + sLineBreak
+          + 'For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcItPascal.html.' + sLineBreak
                                                                                                                            + sLineBreak
           + 'Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.';
 

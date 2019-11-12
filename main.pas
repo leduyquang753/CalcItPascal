@@ -45,6 +45,7 @@ var
 resourcestring
   msgError = 'ERROR: ';
   msgConsoleBegin = 'Type any expression to calculate, "help", "vars" to view and select variables, or "exit".';
+  msgOverflow = 'Numbers in the calculation are too large, cannot compute.';
 
 function Translate(POFileName: string): boolean;
 procedure readLangConfig;
@@ -182,6 +183,7 @@ begin
         self.Expression.SelLength := 0;
       end;
     end;
+    on e: EOverflow do self.Console.Append(msgError + msgOverflow);
   end;
 end;
 

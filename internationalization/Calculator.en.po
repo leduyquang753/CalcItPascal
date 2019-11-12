@@ -70,7 +70,7 @@ msgstr "Wrong number of arguments for random function, there must be at most two
 
 #: functions.msgrandomnorandom
 msgid "There are no integers between the two numbers given to the random integer function."
-msgstr ""
+msgstr "There are no integers between the two numbers given to the random integer function."
 
 #: main.msgconsolebegin
 msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
@@ -79,6 +79,10 @@ msgstr "Type any expression to calculate, \"help\", \"vars\" to view and select 
 #: main.msgerror
 msgid "ERROR: "
 msgstr "ERROR: "
+
+#: main.msgoverflow
+msgid "Numbers in the calculation are too large, cannot compute."
+msgstr "Numbers in the calculation are too large, cannot compute."
 
 #: operands.msgbracecalculated
 msgid "Brace is involved as an operator. This is a BUG, report it to the author."
@@ -470,18 +474,24 @@ msgid "Unmatching braces."
 msgstr "Unmatching braces."
 
 #: uhelpbox.msghelp
+#| msgid ""
+#| "CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.\n"
+#| "Operator priorities are taken into account.\n"
+#| "\n"
+#| "For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.\n"
+#| "\n"
+#| "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
 msgid ""
 "CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.\n"
 "Operator priorities are taken into account.\n"
 "\n"
-"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.\n"
+"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcItPascal.html.\n"
 "\n"
 "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
 msgstr ""
 "CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.\n"
 "Operator priorities are taken into account.\n"
 "\n"
-"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcIt.html.\n"
+"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcItPascal.html.\n"
 "\n"
 "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
-
