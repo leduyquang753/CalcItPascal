@@ -1,7 +1,7 @@
 object MainWindow: TMainWindow
-  Left = 96
+  Left = 115
   Height = 375
-  Top = 158
+  Top = 204
   Width = 575
   Anchors = [akRight, akBottom]
   Caption = 'CalcIt'
@@ -9,10 +9,10 @@ object MainWindow: TMainWindow
   ClientWidth = 575
   Constraints.MinHeight = 200
   Constraints.MinWidth = 250
+  DefaultMonitor = dmMainForm
   OnChangeBounds = FormChangeBounds
   OnCreate = FormCreate
   Position = poDefault
-  ShowInTaskBar = stNever
   LCLVersion = '2.0.6.0'
   object ConsoleLabel: TLabel
     Left = 10

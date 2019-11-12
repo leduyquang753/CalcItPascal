@@ -121,11 +121,9 @@ implementation
   // Divide
   constructor Divide.create;
   begin
-    setlength(characters, 4);
+    setlength(characters, 2);
     characters[0] := ':';
     characters[1] := '/';
-    characters[2] := '∕';
-    characters[3] := '∕';
     reversed := false;
     priority := 2;
   end;

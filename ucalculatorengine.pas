@@ -171,7 +171,7 @@ begin
   registerOperand(Plus.create);
   registerOperand(Minus.create);
   registerOperand(Multiply.create);
-  registerOperand(Divide.create);
+  registerOperand(Divide.create);      
   registerOperand(Exponentiation.create);
   registerOperand(Root.create);
   registerOperand(OpeningBrace.create);
@@ -311,6 +311,7 @@ begin
   end;
   while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
   NS.push(currentNum);
+  OS.push(currentOp);
 end;
 
 procedure performBacktrackSameLevelCalculation(NS, TNS: NumberStack; OS, TOS: OperandStack);
@@ -339,6 +340,7 @@ begin
   end;
   while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
   NS.push(currentNum);
+  OS.push(currentOp);
 end;
 
 function CalculatorEngine.processNumberToken(var negativity, hadNegation, isVar, hadComma: boolean; var strIn: string; pos: longint; NS, TNS: NumberStack; OS, TOS: OperandStack): extended;

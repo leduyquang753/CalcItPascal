@@ -217,8 +217,9 @@ function formatNumber(num: extended): string;
 begin
   exit(
   stringReplace(
+  stringReplace(
   stringReplace(formatFloat('#,##0.##########',
-  num), ',', ' ', rFlags), '.', ',', rFlags));
+  num), ',', ' ', rFlags), '.', ',', rFlags), 'E', '.10^', rFlags));
 end;
 
 procedure TMainWindow.LanguageClick(Sender: TObject);
@@ -252,7 +253,7 @@ begin
 end;
 
 initialization
-  {$I Calculator.lrs}
+  {$I internationalization\Calculator.lrs}
 
 end.
 

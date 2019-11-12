@@ -57,7 +57,7 @@ msgstr "Số lượng tham số cho hàm kiểm tra bằng nhau không đúng, p
 
 #: functions.msgnotinvalidnumberofarguments
 msgid "Wrong number of arguments for invertion function, there must be (only) one."
-msgstr ""
+msgstr "Số lượng tham số cho hàm đối không đúng, phải có (chỉ) một."
 
 #: functions.msgpermutationnegativeparameters
 msgid "Permutation function's arguments must not be negative."
@@ -94,297 +94,297 @@ msgstr "Thao tác lũy thừa không được hỗ trợ."
 
 #: thelpbox.caption
 msgid "About"
-msgstr ""
+msgstr "Về chương trình"
 
 #: thelpbox.ok.caption
 msgctxt "thelpbox.ok.caption"
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: tlangselector.btncancel.caption
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy"
 
 #: tlangselector.btnok.caption
 msgctxt "tlangselector.btnok.caption"
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: tlangselector.caption
 msgid "Choose a language"
-msgstr ""
+msgstr "Chọn ngôn ngữ"
 
 #: tmainwindow.btnvariables.caption
 msgid "&Variables"
-msgstr ""
+msgstr "&Biến"
 
 #: tmainwindow.calculate.caption
 msgid "&Calculate"
-msgstr ""
+msgstr "&Tính"
 
 #: tmainwindow.caption
 msgid "CalcIt"
-msgstr ""
+msgstr "CalcIt"
 
 #: tmainwindow.consolelabel.caption
 msgid "Console"
-msgstr ""
+msgstr "Phản hồi"
 
 #: tmainwindow.expression.texthint
 msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
-msgstr ""
+msgstr "Nhập một biểu thức, \"help\", \"vars\" hoặc \"exit\"."
 
 #: tmainwindow.help.caption
 msgid "?"
-msgstr ""
+msgstr "?"
 
 #: tmainwindow.inputlabel.caption
 msgid "Input"
-msgstr ""
+msgstr "Nhập"
 
 #: tmainwindow.language.caption
 msgid "EN"
-msgstr ""
+msgstr "VI"
 
 #: tvariables.boxa.text
 msgid "BoxA"
-msgstr ""
+msgstr "BoxA"
 
 #: tvariables.boxans.text
 msgid "BoxAns"
-msgstr ""
+msgstr "BoxAns"
 
 #: tvariables.boxb.text
 msgid "BoxB"
-msgstr ""
+msgstr "BoxB"
 
 #: tvariables.boxc.text
 msgid "BoxC"
-msgstr ""
+msgstr "BoxC"
 
 #: tvariables.boxd.text
 msgid "BoxD"
-msgstr ""
+msgstr "BoxD"
 
 #: tvariables.boxe.text
 msgid "BoxE"
-msgstr ""
+msgstr "BoxE"
 
 #: tvariables.boxf.text
 msgid "BoxF"
-msgstr ""
+msgstr "BoxF"
 
 #: tvariables.boxg.text
 msgid "BoxG"
-msgstr ""
+msgstr "BoxG"
 
 #: tvariables.boxh.text
 msgid "BoxH"
-msgstr ""
+msgstr "BoxH"
 
 #: tvariables.boxi.text
 msgid "BoxI"
-msgstr ""
+msgstr "BoxI"
 
 #: tvariables.boxj.text
 msgid "BoxJ"
-msgstr ""
+msgstr "BoxJ"
 
 #: tvariables.boxk.text
 msgid "BoxK"
-msgstr ""
+msgstr "BoxK"
 
 #: tvariables.boxl.text
 msgid "BoxL"
-msgstr ""
+msgstr "BoxL"
 
 #: tvariables.boxm.text
 msgid "BoxM"
-msgstr ""
+msgstr "BoxM"
 
 #: tvariables.boxn.text
 msgid "BoxN"
-msgstr ""
+msgstr "BoxN"
 
 #: tvariables.boxo.text
 msgid "BoxO"
-msgstr ""
+msgstr "BoxO"
 
 #: tvariables.boxp.text
 msgid "BoxP"
-msgstr ""
+msgstr "BoxP"
 
 #: tvariables.boxpreans.text
 msgid "BoxPreAns"
-msgstr ""
+msgstr "BoxPreAns"
 
 #: tvariables.boxq.text
 msgid "BoxQ"
-msgstr ""
+msgstr "BoxQ"
 
 #: tvariables.boxr.text
 msgid "BoxR"
-msgstr ""
+msgstr "BoxR"
 
 #: tvariables.boxs.text
 msgid "BoxS"
-msgstr ""
+msgstr "BoxS"
 
 #: tvariables.boxt.text
 msgid "BoxT"
-msgstr ""
+msgstr "BoxT"
 
 #: tvariables.boxu.text
 msgid "BoxU"
-msgstr ""
+msgstr "BoxU"
 
 #: tvariables.boxv.text
 msgid "BoxV"
-msgstr ""
+msgstr "BoxV"
 
 #: tvariables.boxvarname.texthint
 msgid "Custom"
-msgstr ""
+msgstr "Tùy ý"
 
 #: tvariables.boxvarval.text
 msgid "BoxVarVal"
-msgstr ""
+msgstr "BoxVarVal"
 
 #: tvariables.boxw.text
 msgid "BoxW"
-msgstr ""
+msgstr "BoxW"
 
 #: tvariables.boxx.text
 msgid "BoxX"
-msgstr ""
+msgstr "BoxX"
 
 #: tvariables.boxy.text
 msgid "BoxY"
-msgstr ""
+msgstr "BoxY"
 
 #: tvariables.boxz.text
 msgid "BoxZ"
-msgstr ""
+msgstr "BoxZ"
 
 #: tvariables.buttona.caption
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: tvariables.buttonans.caption
 msgid "Ans"
-msgstr ""
+msgstr "Ans"
 
 #: tvariables.buttonb.caption
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: tvariables.buttonc.caption
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: tvariables.buttonclose.caption
 msgid "Close"
-msgstr ""
+msgstr "Đóng"
 
 #: tvariables.buttond.caption
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: tvariables.buttone.caption
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: tvariables.buttonf.caption
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: tvariables.buttong.caption
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: tvariables.buttonh.caption
 msgid "H"
-msgstr ""
+msgstr "H"
 
 #: tvariables.buttoni.caption
 msgid "I"
-msgstr ""
+msgstr "I"
 
 #: tvariables.buttonj.caption
 msgid "J"
-msgstr ""
+msgstr "J"
 
 #: tvariables.buttonk.caption
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: tvariables.buttonl.caption
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: tvariables.buttonm.caption
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: tvariables.buttonn.caption
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: tvariables.buttono.caption
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: tvariables.buttonp.caption
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: tvariables.buttonpreans.caption
 msgid "PreAns"
-msgstr ""
+msgstr "PreAns"
 
 #: tvariables.buttonq.caption
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: tvariables.buttonr.caption
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: tvariables.buttons.caption
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: tvariables.buttont.caption
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: tvariables.buttonu.caption
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #: tvariables.buttonv.caption
 msgid "V"
-msgstr ""
+msgstr "V"
 
 #: tvariables.buttonw.caption
 msgid "W"
-msgstr ""
+msgstr "W"
 
 #: tvariables.buttonx.caption
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: tvariables.buttony.caption
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: tvariables.buttonz.caption
 msgid "Z"
-msgstr ""
+msgstr "Z"
 
 #: tvariables.caption
 msgid "Variables"
-msgstr ""
+msgstr "Biến"
 
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
@@ -483,4 +483,3 @@ msgstr ""
 "Để biết thông tin chi tiết về cách dùng, vui lòng truy cập https://leduyquang753.github.io/CalcIt.html.\n"
 "\n"
 "Phiên bản %s dựng lúc %s. Bản quyền © 2019 Lê Duy Quang. Phát hành dưới giấy phép MIT.\n"
-

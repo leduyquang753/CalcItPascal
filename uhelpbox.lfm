@@ -9,6 +9,7 @@ object HelpBox: THelpBox
   ClientWidth = 450
   Constraints.MinHeight = 200
   Constraints.MinWidth = 350
+  DefaultMonitor = dmMainForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnResize = FormResize

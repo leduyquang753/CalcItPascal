@@ -8,7 +8,7 @@ Calculator.exe
 Calculator.exe.sig
 moveToSys32.ps1
 Calculator.lps
-Calculator.lrs
+/Calculator.lrs
 Calculator.res
 main.lrj
 operands.lsj
