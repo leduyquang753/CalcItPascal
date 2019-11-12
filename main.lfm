@@ -19,7 +19,8 @@ object MainWindow: TMainWindow
     Height = 15
     Top = 8
     Width = 43
-    Caption = 'Console'
+    Caption = 'C&onsole'
+    FocusControl = Console
     ParentColor = False
   end
   object Console: TMemo
@@ -36,7 +37,8 @@ object MainWindow: TMainWindow
     Height = 15
     Top = 295
     Width = 28
-    Caption = 'Input'
+    Caption = '&Input'
+    FocusControl = Expression
     ParentColor = False
   end
   object Expression: TEdit

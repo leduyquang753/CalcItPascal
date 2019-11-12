@@ -132,8 +132,9 @@ msgid "CalcIt"
 msgstr "CalcIt"
 
 #: tmainwindow.consolelabel.caption
-msgid "Console"
-msgstr "Console"
+#| msgid "Console"
+msgid "C&onsole"
+msgstr "C&onsole"
 
 #: tmainwindow.expression.texthint
 msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
@@ -144,8 +145,9 @@ msgid "?"
 msgstr "?"
 
 #: tmainwindow.inputlabel.caption
-msgid "Input"
-msgstr "Input"
+#| msgid "Input"
+msgid "&Input"
+msgstr "&Input"
 
 #: tmainwindow.language.caption
 msgid "EN"

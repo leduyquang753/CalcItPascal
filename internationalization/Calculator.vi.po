@@ -135,8 +135,8 @@ msgid "CalcIt"
 msgstr "CalcIt"
 
 #: tmainwindow.consolelabel.caption
-msgid "Console"
-msgstr "Phản hồi"
+msgid "C&onsole"
+msgstr "&Phản hồi"
 
 #: tmainwindow.expression.texthint
 msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
@@ -147,8 +147,8 @@ msgid "?"
 msgstr "?"
 
 #: tmainwindow.inputlabel.caption
-msgid "Input"
-msgstr "Nhập"
+msgid "&Input"
+msgstr "&Nhập"
 
 #: tmainwindow.language.caption
 msgid "EN"

@@ -122,7 +122,7 @@ msgid "CalcIt"
 msgstr ""
 
 #: tmainwindow.consolelabel.caption
-msgid "Console"
+msgid "C&onsole"
 msgstr ""
 
 #: tmainwindow.expression.texthint
@@ -134,7 +134,7 @@ msgid "?"
 msgstr ""
 
 #: tmainwindow.inputlabel.caption
-msgid "Input"
+msgid "&Input"
 msgstr ""
 
 #: tmainwindow.language.caption
