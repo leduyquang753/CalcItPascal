@@ -95,44 +95,29 @@ type
     function performCalculation(input: string): extended;
   end;
 
+  function lowercaseAndRemoveWhitespace(strIn: String): String;
+
 implementation
 
 uses Main;
 
 resourcestring
-  //msgDivByZero = 'Division by zero.';
   msgUnexpectedEnd = 'Unexpected end of expression.';
   msgUnexpectedEqual = 'Unexpected equal sign.';
   msgUnexpectedDigit = 'Unexpected digit.';
-  //msgUnexpectedVariable = 'Unexpected variable.';
-  //msgUnexpectedOpeningBrace = 'Unexpected opening brace.';
   msgUnexpectedClosingBrace = 'Unexpected closing brace.';
-  //msgUnexpectedCharacter = 'Unexpected character.';
   msgUnmatchingBraces = 'Unmatching braces.';
   msgUnexpectedOperand = 'Unexpected operand.';
-  //msgUnexpectedEqualNotOperator = 'Unexpected equal sign. Please note that = is not an operator.';
   msgUnexpectedPercent = 'Unexpected percent sign.';
-  //msgUnexpectedPercentNotOperator = 'Unexpected percent sign. Please note that % is not an operator.';
-  //msgUnexpectedPercentOnlyOne = 'Unexpected percent sign. Please note that only one percent sign is permitted at the end of a number.';
-  //msgAndCalc = 'AND calculation only supports two integers, but given %s and %s.';
-  //msgOrCalc = 'OR calculation only supports two integers, but given %s and %s.';
-  //msgXorCalc = 'XOR calculation only supports two integers, but given %s and %s.';
-  //msgInvalidNumbers = 'Invalid numbers: %s; %s.';
-  //msgSuddenBrace = 'Sudden closing brace.';
-  //msgUnmatchingBrace = 'Unmatching closing brace.';
   msgUnknownSymbol = 'Unknown symbol.';
-  //msgMixedCharsAndNums = 'Mixed characters and numbers.';
-  //msgInvalidOperatorPlacement = 'Invalid operator placement.';
   msgUnexpectedComma = 'Unexpected comma.';
   msgUnknownVariable = 'Unknown variable.';
-  //msgUnknownStuff = 'Unknown stuff.';
-  //msgAssignmentNotVariable = '%s is not a variable.';
   msgTrailingNegativePositiveSign = 'Trailing negative/positive sign(s).';
-  msgNothingToCalculate = 'There is nothing to calculate and assign to the variables.';
+  msgNothingToCalculate = 'There is nothing to calculate.';
   msgReservedVariable = 'Ans and PreAns are reserved variables and cannot be assigned.';
   msgInvalidVariable = 'Invalid variable name "%s", it must not start with a digit.';
   msgNonAlphanumericVariableName = 'Invalid variable name "%s", it must include only a÷z, 0÷9 and _ characters.';
-  msgNotset = '[Not set]';                   
+  msgNotset = '[Not set.]';
   msgEmptyVariableName = '[Empty variable name.]';
   msgInvalidVariableNameWindow = '[Invalid variable name.]';
   msgUnexpectedSemicolon = 'Unexpected semicolon.';
@@ -346,16 +331,17 @@ end;
 function CalculatorEngine.processNumberToken(var negativity, hadNegation, isVar, hadComma: boolean; var strIn: string; pos: longint; NS, TNS: NumberStack; OS, TOS: OperandStack): extended;
 var shouldDivide: boolean = false; res: extended;
 begin
+  if strIn[length(strIn)] = '%' then begin
+    shouldDivide := true;
+    setLength(strIn, length(strIn)-1);
+  end;
   if not isVar then begin
     strIn := stringReplace(strIn, ',', '.', rFlags);
-    if strIn[length(strIn)] = '%' then begin
-      shouldDivide := true;
-      setLength(strIn, length(strIn)-1);
-    end;
     res := strToFloat(strIn);
     if shouldDivide then res /= 100;
   end else begin
     res := getVariableInternal(strIn, pos);
+    if shouldDivide then res /= 100;
   end;
   if negativity then begin
     NS.push(-1);
@@ -390,7 +376,7 @@ begin
   for i:=1 to length(input) do begin
     c := input[i];
     if (c = '-') and not status then begin negativity := not negativity; hadNegation := true; end
-    else if c = '%' then if not status or (currentToken[length(currentToken)] = '%') or isVar then raise ExpressionInvalidException.createNew(msgUnexpectedPercent, i)
+    else if c = '%' then if not status or (currentToken[length(currentToken)] = '%') then raise ExpressionInvalidException.createNew(msgUnexpectedPercent, i)
       else currentToken += c
     else if c = ';' then begin
       if BS.isNotEmpty then begin
@@ -505,7 +491,7 @@ begin
           OS.push(currentOp);
           status := false;
           hadClosingBrace := false;
-        end else if c = '+' then begin hadNegation := true; status := true; end else raise ExpressionInvalidException.createNew(msgUnexpectedOperand, i);
+        end else if c = '+' then hadNegation := true else raise ExpressionInvalidException.createNew(msgUnexpectedOperand, i);
       end;
     end else raise ExpressionInvalidException.createNew(msgUnknownSymbol, i);
   end;
@@ -524,6 +510,11 @@ begin
   exit(NS.pop);
 end;
 
+function lowercaseAndRemoveWhitespace(strIn: String): String;
+begin
+  exit(lowercase(stringReplace(stringReplace(stringReplace(strIn, ' ', '', rFlags), '        ', '', rFlags), sLineBreak, '', rFlags)));
+end;
+
 function CalculatorEngine.calculate(expression: string): extended;
 var
   input, s: string;
@@ -532,7 +523,7 @@ var
   ps: longint;
   c: char;
 begin
-  input := lowercase(stringReplace(stringReplace(stringReplace(expression, ' ', '', rFlags), '        ', '', rFlags), sLineBreak, '', rFlags));
+  input := lowercaseAndRemoveWhitespace(expression);
   setlength(toAssign, 0);
   while true do begin
     ps := pos('=', input);
@@ -581,7 +572,7 @@ end;
 function CalculatorEngine.getVariableString(variable: string): string;
 var p: variable; c: char;
 begin
-  variable := lowercase(variable);
+  variable := lowercaseAndRemoveWhitespace(variable);
   if length(variable) = 0 then exit(msgEmptyVariableName);
   if isNumber(variable[1]) then exit(msgInvalidVariableNameWindow);
   for c in variable do if not isNumber(c) and not isChar(c) then exit(msgInvalidVariableNameWindow);
@@ -597,6 +588,7 @@ end;
 function CalculatorEngine.getVariableInternal(variable: string; pos: longint): extended;
 var p: Variable;
 begin
+  variable := lowercaseAndRemoveWhitespace(variable);
   if (length(variable) = 1) and (variable[1] >= 'a') and (variable[1] <= 'z') then exit(AtoZ[variable[1]]);
   case variable of
     'ans': exit(ans);

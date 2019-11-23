@@ -73,8 +73,9 @@ msgid "There are no integers between the two numbers given to the random integer
 msgstr "There are no integers between the two numbers given to the random integer function."
 
 #: main.msgconsolebegin
-msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
-msgstr "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
+#| msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
+msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
+msgstr "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
 
 #: main.msgerror
 msgid "ERROR: "
@@ -137,8 +138,9 @@ msgid "C&onsole"
 msgstr "C&onsole"
 
 #: tmainwindow.expression.texthint
-msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
-msgstr "Enter any expression, \"help\", \"vars\" or \"exit\"."
+#| msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
+msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
+msgstr "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
 
 #: tmainwindow.help.caption
 msgid "?"
@@ -410,12 +412,14 @@ msgid "Invalid variable name \"%s\", it must include only a÷z, 0÷9 and _ chara
 msgstr "Invalid variable name \"%s\", it must include only a÷z, 0÷9 and _ characters."
 
 #: ucalculatorengine.msgnothingtocalculate
-msgid "There is nothing to calculate and assign to the variables."
-msgstr "There is nothing to calculate and assign to the variables."
+#| msgid "There is nothing to calculate and assign to the variables."
+msgid "There is nothing to calculate."
+msgstr "There is nothing to calculate."
 
 #: ucalculatorengine.msgnotset
-msgid "[Not set]"
-msgstr "[Not set]"
+#| msgid "[Not set]"
+msgid "[Not set.]"
+msgstr "[Not set.]"
 
 #: ucalculatorengine.msgreservedvariable
 msgid "Ans and PreAns are reserved variables and cannot be assigned."

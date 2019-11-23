@@ -182,10 +182,10 @@ end;
 procedure TVariables.FormResize(Sender: TObject);
 begin
   buttonClose.Top := variables.ClientHeight-33;
-  buttonPreAns.top := variables.clientHeight-81;
-  buttonAns.top := variables.clientHeight-57;   
-  boxPreAns.top := variables.clientHeight-81;
-  boxAns.top := variables.clientHeight-57;
+  buttonPreAns.top := variables.clientHeight-85;
+  buttonAns.top := variables.clientHeight-59;
+  boxPreAns.top := variables.clientHeight-84;
+  boxAns.top := variables.clientHeight-58;
   boxVarName.top := variables.ClientHeight-113;
   boxVarVal.top := variables.clientHeight-113;
   AtoZContainer.height := variables.clientHeight-131;

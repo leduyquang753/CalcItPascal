@@ -63,7 +63,7 @@ msgid "There are no integers between the two numbers given to the random integer
 msgstr ""
 
 #: main.msgconsolebegin
-msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
+msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
 msgstr ""
 
 #: main.msgerror
@@ -126,7 +126,7 @@ msgid "C&onsole"
 msgstr ""
 
 #: tmainwindow.expression.texthint
-msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
+msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
 msgstr ""
 
 #: tmainwindow.help.caption
@@ -398,11 +398,11 @@ msgid "Invalid variable name \"%s\", it must include only a÷z, 0÷9 and _ chara
 msgstr ""
 
 #: ucalculatorengine.msgnothingtocalculate
-msgid "There is nothing to calculate and assign to the variables."
+msgid "There is nothing to calculate."
 msgstr ""
 
 #: ucalculatorengine.msgnotset
-msgid "[Not set]"
+msgid "[Not set.]"
 msgstr ""
 
 #: ucalculatorengine.msgreservedvariable

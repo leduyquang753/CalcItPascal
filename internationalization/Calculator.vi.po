@@ -76,8 +76,8 @@ msgid "There are no integers between the two numbers given to the random integer
 msgstr "Không có số nguyên nào nằm giữa hai số được đưa vào hàm số nguyên ngẫu nhiên."
 
 #: main.msgconsolebegin
-msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
-msgstr "Nhập một biểu thức để tính, \"help\" để xem trợ giúp, \"vars\" để xem và chọn các biến, hoặc \"exit\"."
+msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
+msgstr "Nhập một biểu thức để tính, \"/help\" để xem trợ giúp, \"/vars\" để xem và chọn các biến, hoặc \"/exit\"."
 
 #: main.msgerror
 msgid "ERROR: "
@@ -139,8 +139,8 @@ msgid "C&onsole"
 msgstr "&Phản hồi"
 
 #: tmainwindow.expression.texthint
-msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
-msgstr "Nhập một biểu thức, \"help\", \"vars\" hoặc \"exit\"."
+msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
+msgstr "Nhập một biểu thức, \"/help\", \"/vars\" hoặc \"/exit\"."
 
 #: tmainwindow.help.caption
 msgid "?"
@@ -411,12 +411,12 @@ msgid "Invalid variable name \"%s\", it must include only a÷z, 0÷9 and _ chara
 msgstr "Tên biến \"%s\" không hợp lệ, nó chỉ được phép chứa các kí tự a÷z, 0÷9 và _."
 
 #: ucalculatorengine.msgnothingtocalculate
-msgid "There is nothing to calculate and assign to the variables."
-msgstr "Không có gì để tính và gán cho các biến."
+msgid "There is nothing to calculate."
+msgstr "Không có gì để tính."
 
 #: ucalculatorengine.msgnotset
-msgid "[Not set]"
-msgstr "[Chưa gán]"
+msgid "[Not set.]"
+msgstr "[Chưa gán.]"
 
 #: ucalculatorengine.msgreservedvariable
 msgid "Ans and PreAns are reserved variables and cannot be assigned."

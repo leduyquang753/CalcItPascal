@@ -17,7 +17,7 @@ object Variables: TVariables
   ShowInTaskBar = stAlways
   LCLVersion = '2.0.6.0'
   object ButtonClose: TButton
-    Left = 473
+    Left = 474
     Height = 25
     Top = 353
     Width = 75
@@ -546,7 +546,7 @@ object Variables: TVariables
     Left = 98
     Height = 23
     Top = 328
-    Width = 449
+    Width = 450
     ReadOnly = True
     TabOrder = 3
     Text = 'BoxAns'
@@ -564,7 +564,7 @@ object Variables: TVariables
     Left = 98
     Height = 23
     Top = 302
-    Width = 449
+    Width = 450
     ReadOnly = True
     TabOrder = 5
     Text = 'BoxPreAns'
@@ -573,16 +573,16 @@ object Variables: TVariables
     Left = 98
     Height = 23
     Top = 272
-    Width = 449
+    Width = 450
     ReadOnly = True
     TabOrder = 6
     Text = 'BoxVarVal'
   end
   object BoxVarName: TEdit
-    Left = 18
+    Left = 19
     Height = 23
     Top = 272
-    Width = 75
+    Width = 73
     OnChange = BoxVarNameChange
     TabOrder = 7
     TextHint = 'Custom'

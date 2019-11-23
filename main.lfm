@@ -54,7 +54,7 @@ object MainWindow: TMainWindow
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
-    TextHint = 'Enter any expression, "help", "vars" or "exit".'
+    TextHint = 'Enter any expression, "/help", "/vars" or "/exit".'
   end
   object Calculate: TButton
     Left = 490

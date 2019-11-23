@@ -44,7 +44,7 @@ var
 
 resourcestring
   msgError = 'ERROR: ';
-  msgConsoleBegin = 'Type any expression to calculate, "help", "vars" to view and select variables, or "exit".';
+  msgConsoleBegin = 'Type any expression to calculate, "/help", "/vars" to view and select variables, or "/exit".';
   msgOverflow = 'Numbers in the calculation are too large, cannot compute.';
 
 function Translate(POFileName: string): boolean;
@@ -125,58 +125,60 @@ begin
   InputLabel.Top       := Self.Height- 80;
   Expression.Top       := Self.Height- 64;
   Expression.Width     := Self.Width - 20;
-  Calculate.Left       := Self.Width - 85;
-  Calculate.Top        := Self.Height- 35;
-  BtnVariables.Left    := Self.Width -165;
-  BtnVariables.Top     := Self.Height- 35;
-  Help.Left            := Self.Width -195;
-  Help.Top             := Self.Height- 35;
+  Calculate.Left       := Self.Width - 84;
+  Calculate.Top        := Self.Height- 34;
+  BtnVariables.Left    := Self.Width -164;
+  BtnVariables.Top     := Self.Height- 34;
+  Help.Left            := Self.Width -194;
+  Help.Top             := Self.Height- 34;
 end;
 
 const rFlags = [rfReplaceAll, rfIgnoreCase];
 
 procedure TMainWindow.calculateIt;
-var calculatedResult: extended;
+var calculatedResult: extended; currentExpression: String = ''; exprIn: String; c: char;
 begin
-  {if not dbgShown then begin
-    dbgWindow.show;
-    dbgShown := true;
-  end;}
   try
     case self.expression.text of
-      'help': begin
+      '/help': begin
                 HelpBox.ShowModal;
                 self.expression.text := '';
                 exit;
               end;
-      'vars': begin
+      '/vars': begin
                 Variables.showForm(Self);
                 Variables.show;
                 self.expression.text := '';
                 exit;
               end;
-      'exit': begin
+      '/exit': begin
                 Application.Terminate;
                 exit;
               end;
     end;
-    if (self.expression.text = '') then begin
-      if (lastSuccessful <> '') then begin
-        self.console.append(sLineBreak + lastSuccessful);
-        calculatedResult := self.Engine.calculate(lastSuccessful);
-        self.console.append('= ' + formatNumber(calculatedResult));
-        self.updateVariables;
-      end;
-    end else begin
-      self.console.append(sLineBreak + self.expression.text);
-      calculatedResult := self.Engine.calculate(self.Expression.Text);
-      self.console.append('= ' + formatNumber(calculatedResult));
-      lastSuccessful := self.expression.text;
-      self.expression.text := '';
-      self.updateVariables;
+    if self.expression.text = '' then
+      if lastSuccessful <> '' then exprIn := lastSuccessful else exit
+    else exprIn := self.expression.text;
+    for c in exprIn do begin
+      if c = '|' then
+        if length(currentExpression) <> 0 then begin
+          calculatedResult := self.Engine.calculate(currentExpression);
+          self.console.append(sLineBreak + currentExpression);
+          self.console.append('= ' + formatNumber(calculatedResult));
+          currentExpression := '';
+        end else continue
+      else currentExpression += c;
     end;
+    if length(currentExpression) <> 0 then begin
+      calculatedResult := self.Engine.calculate(currentExpression);
+      self.console.append(sLineBreak + currentExpression);
+      self.console.append('= ' + formatNumber(calculatedResult));
+    end;
+    lastSuccessful := exprIn;
+    self.expression.text := '';
   except
     on e: ExpressionInvalidException do begin
+      self.console.append(sLineBreak + currentExpression);
       self.Console.Append(msgError + e.exceptionMessage);
       if e.position > -1 then begin
         self.Expression.SelStart:=e.position;
@@ -184,7 +186,8 @@ begin
       end;
     end;
     on e: EOverflow do self.Console.Append(msgError + msgOverflow);
-  end;
+  end;                                                               
+  self.updateVariables;
 end;
 
 procedure TMainWindow.FormCreate(Sender: TObject);
