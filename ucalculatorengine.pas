@@ -2,6 +2,7 @@
    Original code can be found in CalcIt's repository: https://github.com/leduyquang753/CalcIt
 }
 
+{%RunFlags MESSAGES+}
 unit UCalculatorEngine;
 
 {$mode objfpc}{$H+}{$M+}{$R+}
@@ -9,78 +10,202 @@ unit UCalculatorEngine;
 interface
 
 uses
-  Classes, SysUtils, StrUtils, UExpressionInvalidException, Math, Crt{, DbgConsole};
+  Classes, SysUtils, StrUtils, UExpressionInvalidException, Operands, Functions, FGL{, DbgConsole};
 
 type
+  Variable = class
+  public
+    value: extended;
+    constructor create(valueIn: extended);
+  end;
+
+  OpMap = specialize TFPGMapObject<String, Op>;
+  VarMap = specialize TFPGMapObject<String, Variable>;
+  FuncMap = specialize TFPGMapObject<String, Func>;
+
+  NumberStack = class
+  private
+    values: array of extended;
+  public
+    constructor create;
+    function peek: extended;
+    procedure push(newValue: extended);
+    function pop: extended;
+    function isNotEmpty: boolean;
+    procedure printDebug;
+  end;
+
+  OperandStack = class
+  private
+    values: array of Op;
+  public
+    constructor create;
+    function peek: Op;
+    function peekPriority: longint;
+    procedure push(newValue: Op);
+    function pop: Op;
+    function isNotEmpty: boolean;
+    procedure printDebug;
+  end;
+
+  Bracelet = class
+  public
+    opening: string;
+    funcAssigned: Func;
+    arguments: AoE;
+    procedure pushArgument(argumentIn: extended);
+    constructor create(openingIn: string; funcIn: Func);
+    function getResult: extended;
+    procedure printDebug;
+  end;
+
+  BraceletStack = class
+  private
+    values: array of Bracelet;
+  public
+    constructor create;
+    function peek: Bracelet;
+    procedure push(newValue: Bracelet);
+    function pop: Bracelet;
+    function isNotEmpty: boolean;
+  end;
 
   { CalculatorEngine - The class that contains all of the calculation methods }
 
   CalculatorEngine = class
+  public
     function calculate(expression: string): extended;
-    function getVariable(variable: integer): extended;
+    function getVariable(variable: string): extended;
+    function getVariableString(variable: string): string;
     constructor new;
 
   private
     // The variables.
-    a: extended;
-    b: extended;
-    c: extended;
-    d: extended;
-    e: extended;
-    f: extended;
+    AtoZ: array['a'..'z'] of extended;
     ans: extended;
     preAns: extended;
-    function funcSplitExpression(expression: string): TStringList;
-    function calculate(splitExpression: TStringList; variable: byte): extended;
-    function calculate(splitExpression: TStringList; openingBrace: string): extended;
+    opRegistry: OpMap;
+    varRegistry: VarMap;
+    funcRegistry: FuncMap;
+
+    procedure registerOperand(operand: Op);
+    procedure registerFunction(funcIn: Func);
+    function processNumberToken(var negativity, hadNegation, isVar, hadComma: boolean; var strIn: string; pos: longint; NS, TNS: NumberStack; OS, TOS: OperandStack): extended;
+    function getVariableInternal(variable: string; pos: longint): extended;
+    function performCalculation(input: string): extended;
   end;
+
+  function lowercaseAndRemoveWhitespace(strIn: String): String;
 
 implementation
 
 uses Main;
 
 resourcestring
-  msgDivByZero = 'Division by zero.';
   msgUnexpectedEnd = 'Unexpected end of expression.';
   msgUnexpectedEqual = 'Unexpected equal sign.';
-  //msgUnexpectedEqualNotOperator = 'Unexpected equal sign. Please note that = is not an operator.';
+  msgUnexpectedDigit = 'Unexpected digit.';
+  msgUnexpectedClosingBrace = 'Unexpected closing brace.';
+  msgUnmatchingBraces = 'Unmatching braces.';
+  msgUnexpectedOperand = 'Unexpected operand.';
   msgUnexpectedPercent = 'Unexpected percent sign.';
-  msgUnexpectedPercentNotOperator = 'Unexpected percent sign. Please note that % is not an operator.';
-  msgUnexpectedPercentOnlyOne = 'Unexpected percent sign. Please note that only one percent sign is permitted at the end of a number.';
-  msgAndCalc = 'AND calculation only supports two integers, but given %s and %s.';
-  msgOrCalc = 'OR calculation only supports two integers, but given %s and %s.';
-  msgXorCalc = 'XOR calculation only supports two integers, but given %s and %s.';
-  msgInvalidNumbers = 'Invalid numbers: %s; %s.';
-  msgUnknownFunc = 'Unknown function.';
-  msgSuddenBrace = 'Sudden closing brace.';
-  msgUnmatchingBrace = 'Unmatching closing brace.';
   msgUnknownSymbol = 'Unknown symbol.';
-  msgMixedCharsAndNums = 'Mixed characters and numbers.';
-  msgInvalidOperatorPlacement = 'Invalid operator placement.';
-  msgMultipleCommas = 'Multiple commas in the same number.';
-  msgUnknownVar = 'Unknown variable.';
-  msgUnknownStuff = 'Unknown stuff.';
+  msgUnexpectedComma = 'Unexpected comma.';
+  msgUnknownVariable = 'Unknown variable.';
+  msgTrailingNegativePositiveSign = 'Trailing negative/positive sign(s).';
+  msgNothingToCalculate = 'There is nothing to calculate.';
+  msgReservedVariable = 'Ans and PreAns are reserved variables and cannot be assigned.';
+  msgInvalidVariable = 'Invalid variable name "%s", it must not start with a digit.';
+  msgNonAlphanumericVariableName = 'Invalid variable name "%s", it must include only a÷z, 0÷9 and _ characters.';
+  msgNotset = '[Not set.]';
+  msgEmptyVariableName = '[Empty variable name.]';
+  msgInvalidVariableNameWindow = '[Invalid variable name.]';
+  msgUnexpectedSemicolon = 'Unexpected semicolon.';
+  msgUnknownFunction = 'Unknown function "%s".';
 
 const
-  // These thing are used for the parser not to treat these as invalid.
-  functions    : array [0..5] of string = ( 'sin', 'cos', 'tan', 'cot', 'log', 'ln');
-  openingBraces: array [0..2] of char   = ( '(', '[', '{' );
-  closingBraces: array [0..2] of char   = ( ')', ']', '}' );
-  variables    : array[0..11] of string = ( 'a', 'b', 'c', 'd', 'e', 'f', '-a', '-b', '-c', '-d', '-e', '-f' );
-  ansVars      : array [0..1] of string = ( 'ans', 'preans' );
+  positiveInfinity = 99999;
+  negativeInfinity = -99999;
 
   rFlags = [rfReplaceAll, rfIgnoreCase];
 
+var dotlessMulOp: DotlessMultiplication;
+
+procedure CalculatorEngine.registerOperand(operand: Op);
+var s: string;
+begin
+  for s in operand.characters do opRegistry.addOrSetData(s, operand);
+end;
+
+procedure CalculatorEngine.registerFunction(funcIn: func);
+var s: string;
+begin
+  for s in funcIn.names do funcRegistry.addOrSetData(s, funcIn);
+end;
+
 constructor CalculatorEngine.new;
 begin
-  a := 0;
-  b := 0;
-  c := 0;
-  d := 0;
-  e := 0;
-  f := 0;
+  fillchar(AtoZ, sizeof(AtoZ), 0);
   ans := 0;
   preans := 0;
+  randomize;
+
+  dotlessMulOp := DotlessMultiplication.create;
+
+  opRegistry := OpMap.create;
+  registerOperand(Plus.create);
+  registerOperand(Minus.create);
+  registerOperand(Multiply.create);
+  registerOperand(Divide.create);      
+  registerOperand(Exponentiation.create);
+  registerOperand(Root.create);
+  registerOperand(OpeningBrace.create);
+  registerOperand(ClosingBrace.create);
+
+  varRegistry := VarMap.create;
+  varRegistry.add('pi', Variable.create(3.1415926535897932385));
+  varRegistry.add('lnb', Variable.create(2.71828182845904523536));
+  varRegistry.add('c0', Variable.create(299792458));
+
+  funcRegistry := FuncMap.create;
+  registerFunction(FuncSum.create);
+  registerFunction(FuncSin.create);
+  registerFunction(FuncCos.create);
+  registerFunction(FuncTan.create);
+  registerFunction(FuncCot.create);
+  registerFunction(FuncArcSin.create);
+  registerFunction(FuncArcCos.create);
+  registerFunction(FuncArcTan.create);
+  registerFunction(FuncArcCot.create);
+  registerFunction(FuncFloor.create);
+  registerFunction(FuncAbs.create);    
+  registerFunction(FuncGCD.create);          
+  registerFunction(FuncLCM.create);
+  registerFunction(FuncFact.create);
+  registerFunction(FuncLog.create);
+  registerFunction(FuncLn.create);
+  registerFunction(FuncP.create);
+  registerFunction(FuncC.create);
+  registerFunction(FuncRound.create);
+  registerFunction(FuncDegToRad.create);
+  registerFunction(FuncDegToGrad.create);
+  registerFunction(FuncRadToDeg.create);
+  registerFunction(FuncRadToGrad.create);
+  registerFunction(FuncGradToDeg.create);
+  registerFunction(FuncGradToRad.create);
+  registerFunction(FuncMax.create);
+  registerFunction(FuncMin.create);
+  registerFunction(FuncAverage.create);
+  registerFunction(FuncRandom.create);
+  registerFunction(FuncRandomInt.create);
+  registerFunction(FuncRandomInList.create);
+  registerFunction(FuncIsGreater.create);
+  registerFunction(FuncIsSmaller.create);
+  registerFunction(FuncIsEqual.create);
+  registerFunction(FuncIf.create);     
+  registerFunction(FuncAnd.create);
+  registerFunction(FuncOr.create);
+  registerFunction(FuncNot.create);
 end;
 
 // Conditional string.
@@ -120,522 +245,503 @@ begin
   exit(pos(subString, mainString) > 0);
 end;
 
-// Calculates the given expresion.
-function calculateIndividual(param1, operand, param2: string): extended;
-var number1, number2: extended; int1, int2: int64;
-begin
-  try
-    number1 := strToFloat(stringReplace(CS(param1 = '', '0', copy(param1, 1, param1.length - CI(ansiEndsStr('%', param1), 1, 0))), ',', '.', rFlags)) / CI(ansiEndsStr('%', param1), 100, 1);
-    number2 := strToFloat(stringReplace(CS(param2 = '', '0', copy(param2, 1, param2.length - CI(ansiEndsStr('%', param2), 1, 0))), ',', '.', rFlags)) / CI(ansiEndsStr('%', param2), 100, 1);
-  except on Exception do raise ExpressionInvalidException.createNew(format(msgInvalidNumbers, [param1, param2]));
-  end;
-
-  case operand of
-    '+': exit(number1 + number2);
-    '-': exit(number1 - number2);
-    '.', '*', 'x': exit(number1 * number2);
-    ':', '/': begin
-           if number2 = 0 then raise ExpressionInvalidException.createNew(msgDivByZero);
-           exit(number1 / number2);
-         end;
-    '^': begin
-           if number2 < 0 then
-           else exit(power(number1, number2));
-         end;
-    'v': begin
-           if number2 < 0 then
-           else exit(power(number2, 1/number1));
-         end;
-    '&': begin
-           try
-             int1 := strtoint64(param1);
-             int2 := strtoint64(param2);
-             exit(int1 and int2);
-           except on Exception do raise ExpressionInvalidException.createNew(format(msgAndCalc, [param1, param2]));
-           end;
-         end;
-    '|': begin
-           try
-             int1 := strtoint64(param1);
-             int2 := strtoint64(param2);
-             exit(int1 or int2);
-           except on Exception do raise ExpressionInvalidException.createNew(format(msgOrCalc, [param1, param2]));
-           end;
-         end;
-    '!': begin
-           try
-             int1 := strtoint64(param1);
-             int2 := strtoint64(param2);
-             exit(int1 xor int2);
-           except on Exception do raise ExpressionInvalidException.createNew(format(msgXorCalc, [param1, param2]));
-           end;
-         end;
-     else exit(0);
-  end;
-end;
-
-// Retrieves the operator's value. Used to determine which operation should be done first.
-function getOperatorValue(operand: string): byte;
-begin
-  case operand of
-    '|', '!': exit(1);
-    '&'     : exit(2);
-    '+', '-': exit(3);
-    '.', ':', '*', 'x', '/': exit(4);
-    '^'     : exit(5);
-    'v'     : exit(6);
-    else      exit(0);
-  end;
-end;
-
 function isNumber(c: char): boolean;
 begin
   exit((c>='0') and (c<='9'))
 end;
 
-function testBrace(c: char): byte;
+function isChar(c: char): boolean;
 begin
-  if charInArray(c, openingBraces) then exit(1);
-  if charInArray(c, closingBraces) then exit(2);
-  exit(0);
+  exit(((c>='a') and (c<='z')) or (c = '_'));
 end;
 
-function getOpeningBrace(c: char): char;
-var j:byte;
+function areBracesMatch(opening, closing: string): boolean;
 begin
-  for j:=0 to 2 do begin
-    if closingBraces[j] = c then exit(openingBraces[j]);
-  end;
-  exit('(');
-end;
-
-function getClosingBrace(c: char): char;
-var j:byte;
-begin
-  for j:=0 to 2 do begin
-    if openingBraces[j] = c then exit(closingBraces[j]);
-  end;
-  exit(')');
-end;
-
-function CalculatorEngine.funcSplitExpression(expression: string): TStringList;
-var
-  resultList: TStringList;
-  parsed: string = '';
-  current: string = '';
-  // The current braces that are open.
-  braces: string = '';
-
-  // Whether something else from equal sign has been parsed. Used to prevent unexpected equal signs in the middle of the expression.
-  metElse: boolean = false;
-  // Whether the previous is a number.
-  hadNumber: boolean = false;
-  // Whether the previous is a sign.
-  hadSign: boolean = true;
-  // Whether the previous is a closing brace.
-  hadClosingBrace: boolean = false;
-  // Whether a comma is parsed in a number.
-  metComma: boolean = false;
-  // The current sign of the current number. true is positive; false is negative.
-  sign: boolean = true;
-
-  currentPos, iter: longint;
-  charac: char;
-
-begin
-  resultList := TStringList.Create;
-
-  // Scan every character in the expression.
-  for currentPos:=1 to expression.length do begin
-    charac := expression[currentPos];
-    parsed += charac;
-
-    case testBrace(charac) of
-      // Opening brace
-      1: begin
-           if (current <> '') and (not strInArray(current, functions)) then raise ExpressionInvalidException.createNew(msgUnknownFunc, currentPos);
-           resultList.add(CS(sign, '', '-') + current + charac);
-           braces += charac;
-           current := '';
-           hadNumber := false;
-           hadClosingBrace := false;
-           sign := true;
-           hadSign := true;
-           metComma := false;
-           metElse := true;
-           continue;
-         end;
-
-      // Closing brace
-      2: begin
-           if braces.Length = 0 then raise ExpressionInvalidException.createNew(msgSuddenBrace, currentPos);
-           if not ansiEndsStr(getOpeningBrace(charac) + '', braces) then raise ExpressionInvalidException.createNew(msgUnmatchingBrace, currentPos);
-           if (current <> '') and (not hadNumber) and (current <> 'pi') and (not strInArray(current, variables)) and (not strInArray(current, ansVars)) then
-             raise ExpressionInvalidException.createNew(msgUnknownSymbol, currentPos);
-           if hadNumber or (strInArray(current, variables)) or (strInArray(current, ansVars)) then resultList.Add(CS(sign, '', '-') + current)
-             else if not hadClosingBrace then resultList.add(current);
-           resultList.add('' + charac);
-           setLength(braces, braces.length-1);
-           current := '';
-           hadNumber := false;
-           metElse := true;
-           hadClosingBrace := true;
-           metComma := false;
-           hadSign := true;
-           sign := true;
-           continue;
-         end;
-    end;
-    if isNumber(charac) then begin
-      if (not hadNumber) and (current <> '') and (not strInArray(current, variables)) and (not strInArray(current, ansVars)) then raise ExpressionInvalidException.createNew(msgMixedCharsAndNums, currentPos);
-      if ansiEndsStr('%', current) then raise ExpressionInvalidException.createNew(msgUnexpectedPercentNotOperator, currentPos);
-      hadNumber := true;
-      metElse := true;
-      hadSign := false;
-      hadClosingBrace := false;
-      current += charac;
-      continue;
-    end;
-    case charac of
-      '+': begin
-             if hadNumber or (current = 'pi') or (strInArray(current, variables)) or (strInArray(current, ansVars)) then begin
-               resultList.add(CS(sign, '', '-') + current);
-               sign := true;
-               current := '';
-               resultList.add('+');
-               hadNumber := false;
-               metElse := true;
-               hadClosingBrace := false;
-               hadSign := true;
-               metComma := false;
-               continue;
-             end else if hadClosingBrace then begin
-               sign := true;
-               current := '';
-               resultList.add('+');
-               hadNumber := false;
-               metElse := true;
-               hadClosingBrace := false;
-               hadSign := true;
-               metComma := false;
-               continue;
-             end else if not hadSign then raise ExpressionInvalidException.createNew(msgInvalidOperatorPlacement, currentPos);
-             continue;
-           end;
-      '-': begin
-             if hadNumber or (current = 'pi') or (strInArray(current, variables)) or (strInArray(current, ansVars)) then begin
-               resultList.add(CS(sign, '', '-') + current);
-               sign := true;
-               current := '';
-               resultList.add('-');
-               hadNumber := false;
-               metElse := true;
-               hadClosingBrace := false;
-               hadSign := true;
-               metComma := false;
-               continue;
-             end else if hadClosingBrace then begin
-               sign := true;
-               current := '';
-               resultList.add('-');
-               hadNumber := false;
-               metElse := true;
-               hadClosingBrace := false;
-               hadSign := true;
-               metComma := false;
-               continue;
-             end else if hadSign then begin
-               sign := not sign;
-               continue;
-             end else raise ExpressionInvalidException.createNew(msgInvalidOperatorPlacement, currentPos);
-           end;
-      '.', '*', 'x', ':', '/', '^', 'v', '|', '&', '!':
-        begin
-          if hadNumber or (current = 'pi') or (strInArray(current, variables)) or (strInArray(current, ansVars)) then begin
-            resultList.add(CS(sign, '', '-') + current);
-            sign := true;
-            current := '';
-            resultList.add(charac);
-            hadNumber := false;
-            metElse := true;
-            hadClosingBrace := false;
-            hadSign := true;
-            metComma := false;
-            continue;
-          end else if hadClosingBrace then begin
-            sign := true;
-            resultList.add(charac);
-            hadNumber := false;
-            metElse := true;
-            hadClosingBrace := false;
-            hadSign := true;
-            metComma := false;
-            continue;
-          end else raise ExpressionInvalidException.createNew(msgInvalidOperatorPlacement, currentPos);
-        end;
-      ',': begin
-             if metComma then raise ExpressionInvalidException.createNew(msgMultipleCommas, currentPos)
-             else begin
-               metComma := true;
-               current += charac;
-             end;
-           end;
-      '%': begin
-             if current = '' then raise ExpressionInvalidException.createNew(msgUnexpectedPercent, currentPos);
-             if (not hadNumber) and (current <> '') and (current <> 'pi') and (not strInArray(current, variables)) and (not strInArray(current, ansVars)) then raise ExpressionInvalidException.createNew('Unknown stuff', currentPos);
-             if strInStr('%', current) then raise ExpressionInvalidException.createNew(msgUnexpectedPercentOnlyOne, currentPos);
-             hadNumber := true;
-             hadSign := false;
-             hadClosingBrace := false;
-             current += charac;
-             continue;
-           end;
-      '=': begin
-             if metElse then raise ExpressionInvalidException.createNew(msgUnexpectedEqual, currentPos)
-             else begin
-               if not strInArray(current, variables) then raise ExpressionInvalidException.createNew(msgUnknownVar, currentPos);
-               resultList.add(current + '=');
-               hadSign := true;
-               current := '';
-               continue;
-             end;
-           end;
-      else begin
-        if hadNumber then raise ExpressionInvalidException.createNew(msgMixedCharsAndNums, currentPos);
-        hadNumber := false;
-        hadSign := false;
-        hadClosingBrace := false;
-        current += charac;
-        continue;
-      end;
-    end;
-  end;
-
-  // The final checks for the final component.
-  if hadSign and (not hadClosingBrace) then raise ExpressionInvalidException.createNew(msgUnexpectedEnd, currentPos);
-  if (not hadNumber) and (current <> '') and (current <> 'pi') and (not strInArray(current, variables)) and (not strInArray(current, ansVars)) then raise ExpressionInvalidException.createNew(msgUnknownStuff, currentPos);
-  if current <> '' then begin
-    resultList.add(CS((hadNumber or (strInArray(current, variables)) or (strInArray(current, ansVars))) and (not sign), '-', '') + current);
-  end;
-  if braces <> '' then for iter := braces.length downto 1 do resultList.add('' + getClosingBrace(braces[iter]));
-  exit(resultList);
-end;
-
-function trimFirst(list: TStringList): TStringList;
-var iter: longint; resultValue: TStringList;
-begin
-  resultValue := TStringList.Create;
-  for iter := 1 to list.Count-1 do resultValue.add(list.strings[iter]);
-  exit(resultValue);
-end;
-
-//function CalculatorEngine.calculate(splitExpression: TStringList; variable: byte): extended; forward;
-
-function CalculatorEngine.calculate(splitExpression: TStringList; openingBrace: string): extended;
-var
-  // The current expression.
-  input,
-  // The copy of the expression to be modified to prevent concurrent modification to input.
-  modified,
-  sub: TStringList;
-  s, s2, opening, str, toCheck: string;
-  j, k, tmpc: longint;
-  toAdd, outputValue, individual, sign, sinVal, cosVal: extended;
-
-  // The current position, used for tracing the bracelets.
-  currentPos,
-  // The most important operator position to be calculated.
-  maxPos,
-  // The current max operator value.
-  max,
-  // The location of the first opening brace, if any.
-  beginPos,
-  // Number of sub-braces inside the outmost bracelet.
-  subBraces: longint;
-
-  // Whether it is seeking for the matching closing brace to get the bracelet to calculate.
-  seeking,
-  // Whether the current component is an operator.
-  operand,
-  matched,
-  beginsWithMinus,
-  hasMinusSign,
-  endsWithPercent,
-  shouldContinue: boolean;
-
-  value: byte;
-
-begin
-  // Check whether this is an assignment.
-  if ansiEndsStr('=', splitExpression.Strings[0]) then begin
-    case splitExpression.Strings[0][1] of
-      'a': exit(self.calculate(trimFirst(splitExpression), 1));
-      'b': exit(self.calculate(trimFirst(splitExpression), 2));
-      'c': exit(self.calculate(trimFirst(splitExpression), 3));
-      'd': exit(self.calculate(trimFirst(splitExpression), 4));
-      'e': exit(self.calculate(trimFirst(splitExpression), 5));
-      'f': exit(self.calculate(trimFirst(splitExpression), 6));
-    end;
-    exit(0);
-  end;
-
-  input := splitExpression;
-  modified := nil;
-  sub := nil;
-
-  while true do begin
-    //MainWindow.Console.Append('');
-    if modified <> nil then input := modified;
-    modified := TStringList.create;
-    for tmpc := 0 to input.count-1 do modified.add(input.strings[tmpc]);
-    //for tmpc := 0 to modified.Count-1 do MainWindow.Console.Append(modified.strings[tmpc]);
-    currentPos := -1;
-    maxPos := -1;
-    max := 0;
-    beginPos := -1;
-    subBraces := -1;
-    operand := true;
-    seeking := false;
-    shouldContinue := false;
-
-    // Scan every component in the expression.
-    for tmpc := 0 to modified.Count-1 do begin
-      s := input.strings[tmpc];
-      currentPos += 1;
-
-      if seeking then begin
-        if strInStr('(', s) or strInStr('[', s) or strInStr('{', s) then subBraces += 1
-        else if strInStr(')', s) or strInStr(']', s) or strInStr('}', s) then begin
-          subBraces -= 1;
-          if subBraces = 0 then begin
-            opening := modified.strings[beginPos];
-            for j:=0 to currentPos-beginPos do modified.delete(beginPos);
-            modified.insert(beginPos, stringReplace(floatToStr(self.calculate(sub, opening)), '.', ',', rFlags));
-            seeking := false;
-            shouldContinue := true;
-            break;
-          end;
-        end;
-        sub.add(s);
-        continue;
-      end;
-
-      // Replace the variable / constant to its value, if the component is it.
-      matched := false;
-      s2 := CS(s = '', '0', s);
-      beginsWithMinus := s2[1] = '-';
-      endsWithPercent := ansiEndsStr('%', s2);
-      toCheck := CS(beginsWithMinus, copy(s2, 2, s2.length), s);
-      toCheck := CS(endsWithPercent, copy(toCheck, 1, toCheck.length-1), toCheck);
-      toAdd := 0;
-      case toCheck of
-        'ans': begin toAdd := self.ans; matched := true; end;
-        'preans': begin toAdd := self.preAns; matched := true; end;
-        'a': begin toAdd := self.a; matched := true; end;
-        'b': begin toAdd := self.b; matched := true; end;
-        'c': begin toAdd := self.c; matched := true; end;
-        'd': begin toAdd := self.d; matched := true; end;
-        'e': begin toAdd := self.e; matched := true; end;
-        'f': begin toAdd := self.f; matched := true; end;
-        'pi': begin toAdd := pi; matched := true; end;
-      end;
-      if beginsWithMinus then toAdd := -toAdd;
-      if endsWithPercent then toAdd /= 100;
-      if matched then begin
-        modified.delete(currentPos);
-        modified.insert(currentPos, stringReplace(floatToStr(toAdd), '.', ',', rFlags));
-      end;
-      if strInStr('(', s2) or strInStr('[', s2) or strInStr('{', s2) then begin
-        sub := TStringList.create;
-        beginPos := currentPos;
-        seeking := true;
-        subBraces := 1;
-        continue;
-      end;
-      operand := not operand;
-      if operand then begin
-        value := getOperatorValue(s2[1]);
-        if value > max then begin
-          max := value;
-          maxPos := currentPos;
-        end;
-      end;
-    end;
-
-    if shouldContinue then begin
-       shouldContinue := false;
-       continue;
-    end;
-
-    if currentPos = 0 then begin
-      // The expression contains only one number. Perform the function (if any) and then return the result.
-      str := stringReplace(modified.strings[0], ',', '.', rFlags);
-      outputValue := strToFloat(stringReplace(CS(str = '', '0', copy(str, 1, str.length - CI(ansiEndsStr('%', str), 1, 0))), ',', '.', rFlags)) / CI(ansiEndsStr('%', str), 100, 1);
-      if openingBrace.length < 2 then exit(outputValue);
-      hasMinusSign := openingBrace[1] = '-';
-      sign := CE(hasMinusSign, -1, 1);
-      sincos(degtorad(outputValue*sign), sinVal, cosVal);
-      case copy(openingBrace, CI(hasMinusSign, 2, 1), openingBrace.length - CI(hasMinusSign, 2, 1)) of
-        'sin': exit(sinVal);
-        'cos': exit(cosVal);
-        'tan': exit(sinVal/cosVal);
-        'cot': exit(cosVal/sinVal);
-        'log': exit(log10(outputValue*sign));
-        'ln' : exit(ln   (outputValue*sign));
-      end;
-      exit(outputValue*sign);
-    end;
-    if maxPos <> -1 then begin
-      individual := calculateIndividual(modified.strings[maxPos-1], modified.strings[maxPos], modified.strings[maxPos+1]);
-      for k := 1 to 3 do modified.delete(maxPos-1);
-      modified.insert(maxpos-1, stringReplace(floatToStr(individual), '.', ',', rFlags));
-    end;
+  case opening of
+    '(': exit(closing=')');
+    '[': exit(closing=']');
+    '{': exit(closing='}');
+    '<': exit(closing='>');
+  else exit(false);
   end;
 end;
 
-function CalculatorEngine.calculate(splitExpression: TStringList; variable: byte): extended;
-var res: extended = 0;
+procedure performBacktrackCalculation(NS, TNS: NumberStack; OS, TOS: OperandStack; BS: BraceletStack; shouldCalculateAll: boolean);
+var currentOp: Op; currentNum: extended; lastPriority: longint = positiveInfinity;
 begin
-  res := self.calculate(splitExpression, '');
-  case variable of
-    1: self.a := res;
-    2: self.b := res;
-    3: self.c := res;
-    4: self.d := res;
-    5: self.e := res;
-    6: self.f := res;
+  if not OS.isNotEmpty then exit;
+  currentOp := OS.pop; currentNum := NS.pop;
+  while shouldCalculateAll or not (currentOp is OpeningBrace) do begin
+    if shouldCalculateAll and (currentOp is OpeningBrace) then begin
+      while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+      lastPriority := positiveInfinity;
+      if OS.isNotEmpty then currentOp := OS.pop else begin
+        while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+        NS.push(currentNum);
+        exit;
+      end;
+    end;
+    if currentOp.priority <> lastPriority then while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+    if currentOp.reversed then currentNum := currentOp.calculate(NS.pop, currentNum) else begin
+      TNS.push(currentNum);
+      TOS.push(currentOp);
+      currentNum := NS.pop;
+    end;
+    lastPriority := currentOp.priority;
+    if OS.isNotEmpty then currentOp := OS.pop else begin
+      while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+      NS.push(currentNum);
+      exit;
+    end;
   end;
+  while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+  NS.push(currentNum);
+  OS.push(currentOp);
+end;
+
+procedure performBacktrackSameLevelCalculation(NS, TNS: NumberStack; OS, TOS: OperandStack);
+var currentOp: Op; currentNum: extended; lastPriority: longint;
+begin
+  if not OS.isNotEmpty then exit;
+  currentOp := OS.pop; currentNum := NS.pop; lastPriority := currentOp.priority;
+  while not (currentOp is OpeningBrace) do begin
+    if currentOp.priority <> lastPriority then begin
+      while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+      NS.push(currentNum);
+      OS.push(currentOp);
+      exit;
+    end;
+    if currentOp.reversed then currentNum := currentOp.calculate(NS.pop, currentNum) else begin
+      TNS.push(currentNum);
+      TOS.push(currentOp);
+      currentNum := NS.pop;
+    end;
+    lastPriority := currentOp.priority;
+    if OS.isNotEmpty then currentOp := OS.pop else begin
+      while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+      NS.push(currentNum);
+      exit;
+    end;
+  end;
+  while TOS.isNotEmpty do currentNum := TOS.pop.calculate(currentNum, TNS.pop);
+  NS.push(currentNum);
+  OS.push(currentOp);
+end;
+
+function CalculatorEngine.processNumberToken(var negativity, hadNegation, isVar, hadComma: boolean; var strIn: string; pos: longint; NS, TNS: NumberStack; OS, TOS: OperandStack): extended;
+var shouldDivide: boolean = false; res: extended;
+begin
+  if strIn[length(strIn)] = '%' then begin
+    shouldDivide := true;
+    setLength(strIn, length(strIn)-1);
+  end;
+  if not isVar then begin
+    strIn := stringReplace(strIn, ',', '.', rFlags);
+    res := strToFloat(strIn);
+    if shouldDivide then res /= 100;
+  end else begin
+    res := getVariableInternal(strIn, pos);
+    if shouldDivide then res /= 100;
+  end;
+  if negativity then begin
+    NS.push(-1);
+    OS.push(dotlessMulOp);
+  end;
+  negativity := false;
+  hadNegation := false;
+  hadComma := false;
+  strIn := '';
   exit(res);
+end;
+
+function CalculatorEngine.performCalculation(input: string): extended;
+var NS, TNS: NumberStack; OS, TOS: OperandStack; BS: BraceletStack;
+    i: longint; c: char;
+    status: boolean = false; // true: previous was number/closing brace; false: previous was operand/opening brace.
+    negativity: boolean = false;
+    hadNegation: boolean = false;
+    isVar: boolean = false;
+    hadClosingBrace: boolean = false;
+    hadComma: boolean = false;
+    currentToken: string = '';
+    currentOp: Op;
+    currentFunc: Func;
+    currentBracelet: Bracelet;
+begin
+  NS := NumberStack.create;
+  TNS := NumberStack.create;
+  OS := OperandStack.create;
+  TOS := OperandStack.create;
+  BS := BraceletStack.create;
+  for i:=1 to length(input) do begin
+    c := input[i];
+    if (c = '-') and not status then begin negativity := not negativity; hadNegation := true; end
+    else if c = '%' then if not status or (currentToken[length(currentToken)] = '%') then raise ExpressionInvalidException.createNew(msgUnexpectedPercent, i)
+      else currentToken += c
+    else if c = ';' then begin
+      if BS.isNotEmpty then begin
+        if status then begin
+          if length(currentToken) <> 0 then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS));
+          performBacktrackCalculation(NS, TNS, OS, TOS, BS, false);
+          BS.peek.pushArgument(NS.pop);
+          status := false;
+          hadClosingBrace := false;
+        end else if OS.peek is OpeningBrace then begin
+          BS.peek.pushArgument(0);
+          status := false;            
+          hadClosingBrace := false;
+        end else raise ExpressionInvalidException.createNew(msgUnexpectedSemicolon, i);
+      end else raise ExpressionInvalidException.createNew(msgUnexpectedSemicolon, i);
+    end
+    else if c = ',' then
+      if length(currentToken) = 0 then begin
+        if hadClosingBrace then begin
+          while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          OS.push(dotlessMulOp);
+          hadClosingBrace := false;
+        end;
+        currentToken := '0,';
+        status := true;
+        isVar := false;
+        hadComma := true;
+      end
+      else if status then
+        if isVar then raise ExpressionInvalidException.createNew(msgUnexpectedComma, i)
+        else if hadComma then raise ExpressionInvalidException.createNew(msgUnexpectedComma, i)
+        else begin
+          currentToken += c;
+          hadComma := true;
+        end
+      else begin end
+    else if isNumber(c) then
+      if length(currentToken) = 0 then begin
+        if hadClosingBrace then begin
+          while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          OS.push(dotlessMulOp);
+          hadClosingBrace := false;
+        end;
+        currentToken := c;
+        status := true;
+        isVar := false;
+      end
+      else if status then
+        if isVar then currentToken += c
+        else if currentToken[length(currentToken)] = '%' then raise ExpressionInvalidException.createNew(msgUnexpectedDigit, i)
+        else currentToken += c
+      else begin
+        currentToken := c;
+        status := true;
+        isVar := false;
+      end
+    else if isChar(c) then begin
+      if hadClosingBrace or ((length(currentToken) <> 0) and not isVar) then begin
+        if (length(currentToken) <> 0) and not isVar then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS));
+        while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+        OS.push(dotlessMulOp);
+        hadClosingBrace := false;
+      end;
+      currentToken += c;
+      isVar := true; status := true; hadClosingBrace := false;
+    end
+    else if opRegistry.tryGetData(c, currentOp) then begin
+      if currentOp is OpeningBrace then begin
+        if hadClosingBrace or ((length(currentToken) <> 0) and not isVar) then begin
+          if (length(currentToken) <> 0) and not isVar then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS));
+          while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          OS.push(dotlessMulOp);
+          hadClosingBrace := false;
+        end;
+        if not funcRegistry.tryGetData(currentToken, currentFunc) then raise ExpressionInvalidException.createNew(format(msgUnknownFunction, [currentToken]), i-1);
+        OS.push(currentOp);
+        BS.push(Bracelet.create(c, currentFunc));
+        status := false;
+        currentToken := '';
+      end
+      else if currentOp is ClosingBrace then begin
+        if not status then if not OS.isNotEmpty then begin
+          NS.push(0);
+          status := true;
+          hadClosingBrace := true;
+        end else if OS.peek is OpeningBrace then begin
+          if BS.isNotEmpty and not areBracesMatch(BS.peek.opening, c) then raise ExpressionInvalidException.createNew(msgUnmatchingBraces, i);
+          OS.pop;
+          currentBracelet := BS.pop;
+          currentBracelet.pushArgument(0);
+          NS.push(currentBracelet.getResult);
+          status := true;
+          hadClosingBrace := true;
+        end else raise ExpressionInvalidException.createNew(msgUnexpectedClosingBrace, i)
+        else if not BS.isNotEmpty or areBracesMatch(BS.peek.opening, c) then begin
+          if length(currentToken) <> 0 then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS));
+          performBacktrackCalculation(NS, TNS, OS, TOS, BS, false);
+          OS.pop;
+          currentBracelet := BS.pop;
+          currentBracelet.pushArgument(NS.pop);
+          NS.push(currentBracelet.getResult);
+          status := true;
+          hadClosingBrace := true;
+        end
+        else raise ExpressionInvalidException.createNew(msgUnmatchingBraces, i);
+      end
+      else begin
+        if status then begin
+          if length(currentToken) <> 0 then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS))
+          else if hadNegation then raise ExpressionInvalidException.createNew(msgUnexpectedOperand, i);
+          while OS.isNotEmpty and (currentOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
+          OS.push(currentOp);
+          status := false;
+          hadClosingBrace := false;
+        end else if c = '+' then hadNegation := true else raise ExpressionInvalidException.createNew(msgUnexpectedOperand, i);
+      end;
+    end else raise ExpressionInvalidException.createNew(msgUnknownSymbol, i);
+  end;
+  if status then
+    if (length(currentToken) <> 0) then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS))
+    else if hadNegation then raise ExpressionInvalidException.createNew(msgTrailingNegativePositiveSign)
+    else begin end
+  else raise ExpressionInvalidException.createNew(msgUnexpectedEnd);
+  while BS.isNotEmpty do begin
+    performBacktrackCalculation(NS, TNS, OS, TOS, BS, false);
+    currentBracelet := BS.pop;
+    currentBracelet.pushArgument(NS.pop);
+    NS.push(currentBracelet.getResult);
+  end;
+  performBacktrackCalculation(NS, TNS, OS, TOS, BS, true);
+  exit(NS.pop);
+end;
+
+function lowercaseAndRemoveWhitespace(strIn: String): String;
+begin
+  exit(lowercase(stringReplace(stringReplace(stringReplace(strIn, ' ', '', rFlags), '        ', '', rFlags), sLineBreak, '', rFlags)));
 end;
 
 function CalculatorEngine.calculate(expression: string): extended;
 var
-  input: string;
+  input, s: string;
   oldAns: extended;
-  split: TStringList;
-
+  toAssign: array of string;
+  ps: longint;
+  c: char;
 begin
-  input := lowercase(stringReplace(stringReplace(stringReplace(expression, ' ', '', rFlags), '        ', '', rFlags), sLineBreak, '', rFlags));
-  split := funcSplitExpression(input);
+  input := lowercaseAndRemoveWhitespace(expression);
+  setlength(toAssign, 0);
+  while true do begin
+    ps := pos('=', input);
+    if ps = 0 then break;
+    if ps = 1 then raise ExpressionInvalidException.createNew(msgUnexpectedEqual);
+    if ps = 2 then begin
+      if not isChar(input[1]) then raise ExpressionInvalidException.createNew(format(msgInvalidVariable, [input[1]]));
+      setlength(toAssign, length(toAssign)+1);
+      toAssign[length(toAssign)-1] := input[1];
+    end else begin
+      s := copy(input, 1, ps-1);
+      if (s = 'ans') or (s = 'preans') then raise ExpressionInvalidException.createNew(msgReservedVariable);
+      if isNumber(s[1]) then raise ExpressionInvalidException.createNew(format(msgInvalidVariable, [s]));
+      for c in s do if not isChar(c) and not isNumber(c) then raise ExpressionInvalidException.createNew(format(msgNonAlphanumericVariableName, [s]));
+      setlength(toAssign, length(toAssign)+1);
+      toAssign[length(toAssign)-1] := s;
+    end;
+    delete(input, 1, ps);
+  end;
+  if length(input) = 0 then raise ExpressionInvalidException.createNew(msgNothingToCalculate);
+  if input = '!' then begin
+    for s in toAssign do if length(s) = 1 then AtoZ[s[1]] := 0 else varRegistry.remove(s);
+    exit(0);
+    preAns := ans;
+    ans := 0;
+  end;
   oldAns := self.ans;
-  ans := self.calculate(split, '');
+  ans := self.performCalculation(input);
+  for s in toAssign do
+    if length(s) = 1 then AtoZ[s[1]] := ans else varRegistry.addOrSetData(s, Variable.create(ans));
   self.preAns := oldAns;
   exit(ans);
 end;
 
-function CalculatorEngine.getVariable(variable: integer): extended;
+function CalculatorEngine.getVariable(variable: string): extended;
 begin
+  variable := lowerCase(variable);
   case variable of
-    -1: exit(self.preAns);
-     0: exit(self.ans);
-     1: exit(self.a);
-     2: exit(self.b);
-     3: exit(self.c);
-     4: exit(self.d);
-     5: exit(self.e);
-     6: exit(self.f);
+    'PreAns': exit(PreAns);
+    'Ans': exit(Ans);
+  else if (length(variable) = 1) and (variable[1] >= 'a') and (variable[1] <= 'z') then exit(AtoZ[variable[1]])
   end;
   exit(0);
 end;
 
+function CalculatorEngine.getVariableString(variable: string): string;
+var p: variable; c: char;
+begin
+  variable := lowercaseAndRemoveWhitespace(variable);
+  if length(variable) = 0 then exit(msgEmptyVariableName);
+  if isNumber(variable[1]) then exit(msgInvalidVariableNameWindow);
+  for c in variable do if not isNumber(c) and not isChar(c) then exit(msgInvalidVariableNameWindow);
+  if (length(variable) = 1) and (variable[1] >= 'a') and (variable[1] <= 'z') then exit(formatNumber(AtoZ[variable[1]]));
+  case variable of
+    'ans': exit(formatNumber(ans));
+    'preans': exit(formatNumber(preans));
+  end;
+  if varRegistry.tryGetData(variable, p) then exit(formatNumber(p.value));
+  exit(msgNotSet);
+end;
+
+function CalculatorEngine.getVariableInternal(variable: string; pos: longint): extended;
+var p: Variable;
+begin
+  variable := lowercaseAndRemoveWhitespace(variable);
+  if (length(variable) = 1) and (variable[1] >= 'a') and (variable[1] <= 'z') then exit(AtoZ[variable[1]]);
+  case variable of
+    'ans': exit(ans);
+    'preans': exit(preans);
+  end;
+  if varRegistry.tryGetData(variable, p) then exit(p.value);
+  raise ExpressionInvalidException.createNew(msgUnknownVariable, pos);
+end;
+
+{ STACK IMPLEMENTATIONS }
+// NumberStack
+constructor NumberStack.create;
+begin
+  setlength(values, 0);
+end;
+
+function NumberStack.peek: extended;
+begin
+  if length(values) = 0 then exit(0) else exit(values[length(values)-1]);
+end;
+
+procedure NumberStack.push(newValue: extended);
+begin
+  setlength(values, length(values)+1);
+  values[length(values)-1] := newValue;
+end;
+
+function NumberStack.pop: extended;
+var oldValue: extended;
+begin
+  if length(values) = 0 then exit(0);
+  oldValue := values[length(values)-1];
+  setlength(values, length(values)-1);
+  exit(oldValue);
+end;
+
+function NumberStack.isNotEmpty: boolean;
+begin
+  exit(length(values) <> 0);
+end;
+
+procedure NumberStack.printDebug;
+var n: extended; s: string = '';
+begin
+  for n in values do s += floattoStr(n) + ' ';
+  mainWindow.Console.Append(s);
+end;
+
+// OperandStack
+constructor OperandStack.create;
+begin
+  setlength(values, 0);
+end;
+
+function OperandStack.peek: Op;
+begin
+  if length(values) = 0 then exit(nil) else exit(values[length(values)-1]);
+end;
+
+function OperandStack.peekPriority: longint;
+begin
+  if length(values) = 0 then exit(negativeInfinity) else exit(values[length(values)-1].priority);
+end;
+
+procedure OperandStack.push(newValue: Op);
+begin
+  setlength(values, length(values)+1);
+  values[length(values)-1] := newValue;
+end;
+
+function OperandStack.pop: Op;
+var oldValue: Op;
+begin
+  if length(values) = 0 then exit(nil);
+  oldValue := values[length(values)-1];
+  setlength(values, length(values)-1);
+  exit(oldValue);
+end;
+
+function OperandStack.isNotEmpty: boolean;
+begin
+  exit(length(values) <> 0);
+end;
+
+procedure OperandStack.printDebug;
+var n: Op; s: string = '';
+begin
+  for n in values do s += n.characters[0] + ' ';
+  mainWindow.Console.Append(s);
+end;
+
+// BraceletStack
+constructor BraceletStack.create;
+begin
+  setlength(values, 0);
+end;
+
+function BraceletStack.peek: Bracelet;
+begin
+  if length(values) = 0 then exit(nil) else exit(values[length(values)-1]);
+end;
+
+procedure BraceletStack.push(newValue: Bracelet);
+begin
+  setlength(values, length(values)+1);
+  values[length(values)-1] := newValue;
+end;
+
+function BraceletStack.pop: Bracelet;
+var oldValue: Bracelet;
+begin
+  if length(values) = 0 then exit(nil);
+  oldValue := values[length(values)-1];
+  setlength(values, length(values)-1);
+  exit(oldValue);
+end;
+
+function BraceletStack.isNotEmpty: boolean;
+begin
+  exit(length(values) <> 0);
+end;
+
+// Bracelet
+constructor Bracelet.create(openingIn: string; funcIn: Func);
+begin
+  opening := openingIn;
+  funcAssigned := funcIn;
+  setlength(arguments, 0);
+end;
+
+procedure Bracelet.pushArgument(argumentIn: extended);
+begin
+  setlength(arguments, length(arguments)+1);
+  arguments[length(arguments)-1] := argumentIn;
+end;
+
+function Bracelet.getResult: extended;
+begin
+  exit(funcAssigned.calculate(arguments));
+end;
+
+procedure Bracelet.printDebug;
+var n: extended; s: string = '';
+begin
+  for n in arguments do s += floatToStr(n) + ' ';
+  mainWindow.Console.Append(s);
+end;
+
+// Variable
+constructor Variable.create(valueIn: extended);
+begin
+  value := valueIn;
+end;
+
 end.
+

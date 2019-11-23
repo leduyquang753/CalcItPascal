@@ -1,12 +1,90 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: functions.msgcombinationnegativeparameters
+msgid "Combination function's arguments must not be negative."
+msgstr ""
+
+#: functions.msgcombinationwrongnumberofparameters
+msgid "Wrong number of arguments for combination function, there must be (only) two."
+msgstr ""
+
+#: functions.msgcomparisoninvalidnumberofarguments
+msgid "Wrong number of arguments for comparison function, there must be (only) two."
+msgstr ""
+
+#: functions.msgdivbyzero
+msgctxt "functions.msgdivbyzero"
+msgid "Division by zero."
+msgstr ""
+
+#: functions.msgifinvalidnumberofarguments
+msgid "Wrong number of arguments for conditional function, there must be at most three."
+msgstr ""
+
+#: functions.msginvalidfactorial
+msgid "Factorial's argument must not be negative."
+msgstr ""
+
+#: functions.msginvalidfunctionargument
+msgid "Invalid function argument."
+msgstr ""
+
+#: functions.msginvalidlogarithmnonpositivebase
+msgid "Logarithm's base must be positive."
+msgstr ""
+
+#: functions.msginvalidlogarithmnonpositiveinput
+msgid "Logarithm's input must be positive."
+msgstr ""
+
+#: functions.msgisequalinvalidnumberofarguments
+msgid "Wrong number of arguments for equation checking function, there must be at least two."
+msgstr ""
+
+#: functions.msgnotinvalidnumberofarguments
+msgid "Wrong number of arguments for invertion function, there must be (only) one."
+msgstr ""
+
+#: functions.msgpermutationnegativeparameters
+msgid "Permutation function's arguments must not be negative."
+msgstr ""
+
+#: functions.msgpermutationwrongnumberofparameters
+msgid "Wrong number of arguments for permutation function, there must be (only) two."
+msgstr ""
+
+#: functions.msgrandominvalidnumberofarguments
+msgid "Wrong number of arguments for random function, there must be at most two."
+msgstr ""
+
+#: functions.msgrandomnorandom
+msgid "There are no integers between the two numbers given to the random integer function."
+msgstr ""
+
 #: main.msgconsolebegin
-msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
+msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
 msgstr ""
 
 #: main.msgerror
 msgid "ERROR: "
+msgstr ""
+
+#: main.msgoverflow
+msgid "Numbers in the calculation are too large, cannot compute."
+msgstr ""
+
+#: operands.msgbracecalculated
+msgid "Brace is involved as an operator. This is a BUG, report it to the author."
+msgstr ""
+
+#: operands.msgdivbyzero
+msgctxt "operands.msgdivbyzero"
+msgid "Division by zero."
+msgstr ""
+
+#: operands.msgunsupportedexponentiation
+msgid "Unsupported exponentiation operation."
 msgstr ""
 
 #: thelpbox.caption
@@ -40,15 +118,15 @@ msgid "&Calculate"
 msgstr ""
 
 #: tmainwindow.caption
-msgid "CalcIt (Pascal port)"
+msgid "CalcIt"
 msgstr ""
 
 #: tmainwindow.consolelabel.caption
-msgid "Console"
+msgid "C&onsole"
 msgstr ""
 
 #: tmainwindow.expression.texthint
-msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
+msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
 msgstr ""
 
 #: tmainwindow.help.caption
@@ -56,124 +134,296 @@ msgid "?"
 msgstr ""
 
 #: tmainwindow.inputlabel.caption
-msgid "Input"
+msgid "&Input"
 msgstr ""
 
 #: tmainwindow.language.caption
 msgid "EN"
 msgstr ""
 
-#: tvariables.a.caption
-msgid "&A"
+#: tvariables.boxa.text
+msgid "BoxA"
 msgstr ""
 
-#: tvariables.ans.caption
-msgid "A&ns"
+#: tvariables.boxans.text
+msgid "BoxAns"
 msgstr ""
 
-#: tvariables.ans.hint
-msgid "The value of the latest expression."
+#: tvariables.boxb.text
+msgid "BoxB"
 msgstr ""
 
-#: tvariables.ansvalue.text
-msgid "AnsValue"
+#: tvariables.boxc.text
+msgid "BoxC"
 msgstr ""
 
-#: tvariables.avalue.text
-msgid "AValue"
+#: tvariables.boxd.text
+msgid "BoxD"
 msgstr ""
 
-#: tvariables.b.caption
-msgid "&B"
+#: tvariables.boxe.text
+msgid "BoxE"
+msgstr ""
+
+#: tvariables.boxf.text
+msgid "BoxF"
+msgstr ""
+
+#: tvariables.boxg.text
+msgid "BoxG"
+msgstr ""
+
+#: tvariables.boxh.text
+msgid "BoxH"
+msgstr ""
+
+#: tvariables.boxi.text
+msgid "BoxI"
+msgstr ""
+
+#: tvariables.boxj.text
+msgid "BoxJ"
+msgstr ""
+
+#: tvariables.boxk.text
+msgid "BoxK"
+msgstr ""
+
+#: tvariables.boxl.text
+msgid "BoxL"
+msgstr ""
+
+#: tvariables.boxm.text
+msgid "BoxM"
+msgstr ""
+
+#: tvariables.boxn.text
+msgid "BoxN"
+msgstr ""
+
+#: tvariables.boxo.text
+msgid "BoxO"
+msgstr ""
+
+#: tvariables.boxp.text
+msgid "BoxP"
+msgstr ""
+
+#: tvariables.boxpreans.text
+msgid "BoxPreAns"
+msgstr ""
+
+#: tvariables.boxq.text
+msgid "BoxQ"
+msgstr ""
+
+#: tvariables.boxr.text
+msgid "BoxR"
+msgstr ""
+
+#: tvariables.boxs.text
+msgid "BoxS"
+msgstr ""
+
+#: tvariables.boxt.text
+msgid "BoxT"
+msgstr ""
+
+#: tvariables.boxu.text
+msgid "BoxU"
+msgstr ""
+
+#: tvariables.boxv.text
+msgid "BoxV"
+msgstr ""
+
+#: tvariables.boxvarname.texthint
+msgid "Custom"
+msgstr ""
+
+#: tvariables.boxvarval.text
+msgid "BoxVarVal"
+msgstr ""
+
+#: tvariables.boxw.text
+msgid "BoxW"
+msgstr ""
+
+#: tvariables.boxx.text
+msgid "BoxX"
+msgstr ""
+
+#: tvariables.boxy.text
+msgid "BoxY"
+msgstr ""
+
+#: tvariables.boxz.text
+msgid "BoxZ"
+msgstr ""
+
+#: tvariables.buttona.caption
+msgid "A"
+msgstr ""
+
+#: tvariables.buttonans.caption
+msgid "Ans"
+msgstr ""
+
+#: tvariables.buttonb.caption
+msgid "B"
+msgstr ""
+
+#: tvariables.buttonc.caption
+msgid "C"
 msgstr ""
 
 #: tvariables.buttonclose.caption
-msgctxt "tvariables.buttonclose.caption"
 msgid "Close"
 msgstr ""
 
-#: tvariables.bvalue.text
-msgid "BValue"
+#: tvariables.buttond.caption
+msgid "D"
 msgstr ""
 
-#: tvariables.c.caption
-msgid "&C"
+#: tvariables.buttone.caption
+msgid "E"
+msgstr ""
+
+#: tvariables.buttonf.caption
+msgid "F"
+msgstr ""
+
+#: tvariables.buttong.caption
+msgid "G"
+msgstr ""
+
+#: tvariables.buttonh.caption
+msgid "H"
+msgstr ""
+
+#: tvariables.buttoni.caption
+msgid "I"
+msgstr ""
+
+#: tvariables.buttonj.caption
+msgid "J"
+msgstr ""
+
+#: tvariables.buttonk.caption
+msgid "K"
+msgstr ""
+
+#: tvariables.buttonl.caption
+msgid "L"
+msgstr ""
+
+#: tvariables.buttonm.caption
+msgid "M"
+msgstr ""
+
+#: tvariables.buttonn.caption
+msgid "N"
+msgstr ""
+
+#: tvariables.buttono.caption
+msgid "O"
+msgstr ""
+
+#: tvariables.buttonp.caption
+msgid "P"
+msgstr ""
+
+#: tvariables.buttonpreans.caption
+msgid "PreAns"
+msgstr ""
+
+#: tvariables.buttonq.caption
+msgid "Q"
+msgstr ""
+
+#: tvariables.buttonr.caption
+msgid "R"
+msgstr ""
+
+#: tvariables.buttons.caption
+msgid "S"
+msgstr ""
+
+#: tvariables.buttont.caption
+msgid "T"
+msgstr ""
+
+#: tvariables.buttonu.caption
+msgid "U"
+msgstr ""
+
+#: tvariables.buttonv.caption
+msgid "V"
+msgstr ""
+
+#: tvariables.buttonw.caption
+msgid "W"
+msgstr ""
+
+#: tvariables.buttonx.caption
+msgid "X"
+msgstr ""
+
+#: tvariables.buttony.caption
+msgid "Y"
+msgstr ""
+
+#: tvariables.buttonz.caption
+msgid "Z"
 msgstr ""
 
 #: tvariables.caption
 msgid "Variables"
 msgstr ""
 
-#: tvariables.cvalue.text
-msgid "CValue"
+#: ucalculatorengine.msgemptyvariablename
+msgid "[Empty variable name.]"
 msgstr ""
 
-#: tvariables.d.caption
-msgid "&D"
+#: ucalculatorengine.msginvalidvariable
+msgid "Invalid variable name \"%s\", it must not start with a digit."
 msgstr ""
 
-#: tvariables.dvalue.text
-msgid "DValue"
+#: ucalculatorengine.msginvalidvariablenamewindow
+msgid "[Invalid variable name.]"
 msgstr ""
 
-#: tvariables.e.caption
-msgid "&E"
+#: ucalculatorengine.msgnonalphanumericvariablename
+msgid "Invalid variable name \"%s\", it must include only a÷z, 0÷9 and _ characters."
 msgstr ""
 
-#: tvariables.evalue.text
-msgid "EValue"
+#: ucalculatorengine.msgnothingtocalculate
+msgid "There is nothing to calculate."
 msgstr ""
 
-#: tvariables.f.caption
-msgid "&F"
+#: ucalculatorengine.msgnotset
+msgid "[Not set.]"
 msgstr ""
 
-#: tvariables.fvalue.text
-msgid "FValue"
+#: ucalculatorengine.msgreservedvariable
+msgid "Ans and PreAns are reserved variables and cannot be assigned."
 msgstr ""
 
-#: tvariables.preans.caption
-msgid "&PreAns"
+#: ucalculatorengine.msgtrailingnegativepositivesign
+msgid "Trailing negative/positive sign(s)."
 msgstr ""
 
-#: tvariables.preans.hint
-msgid "The value of the calculation right before the last."
+#: ucalculatorengine.msgunexpectedclosingbrace
+msgid "Unexpected closing brace."
 msgstr ""
 
-#: tvariables.preansvalue.text
-msgid "PreAnsValue"
+#: ucalculatorengine.msgunexpectedcomma
+msgctxt "ucalculatorengine.msgunexpectedcomma"
+msgid "Unexpected comma."
 msgstr ""
 
-#: ucalculatorengine.msgandcalc
-msgid "AND calculation only supports two integers, but given %s and %s."
-msgstr ""
-
-#: ucalculatorengine.msgdivbyzero
-msgid "Division by zero."
-msgstr ""
-
-#: ucalculatorengine.msginvalidnumbers
-msgid "Invalid numbers: %s; %s."
-msgstr ""
-
-#: ucalculatorengine.msginvalidoperatorplacement
-msgid "Invalid operator placement."
-msgstr ""
-
-#: ucalculatorengine.msgmixedcharsandnums
-msgid "Mixed characters and numbers."
-msgstr ""
-
-#: ucalculatorengine.msgmultiplecommas
-msgid "Multiple commas in the same number."
-msgstr ""
-
-#: ucalculatorengine.msgorcalc
-msgid "OR calculation only supports two integers, but given %s and %s."
-msgstr ""
-
-#: ucalculatorengine.msgsuddenbrace
-msgid "Sudden closing brace."
+#: ucalculatorengine.msgunexpecteddigit
+msgid "Unexpected digit."
 msgstr ""
 
 #: ucalculatorengine.msgunexpectedend
@@ -184,128 +434,42 @@ msgstr ""
 msgid "Unexpected equal sign."
 msgstr ""
 
+#: ucalculatorengine.msgunexpectedoperand
+msgid "Unexpected operand."
+msgstr ""
+
 #: ucalculatorengine.msgunexpectedpercent
 msgid "Unexpected percent sign."
 msgstr ""
 
-#: ucalculatorengine.msgunexpectedpercentnotoperator
-msgid "Unexpected percent sign. Please note that % is not an operator."
+#: ucalculatorengine.msgunexpectedsemicolon
+msgid "Unexpected semicolon."
 msgstr ""
 
-#: ucalculatorengine.msgunexpectedpercentonlyone
-msgid "Unexpected percent sign. Please note that only one percent sign is permitted at the end of a number."
-msgstr ""
-
-#: ucalculatorengine.msgunknownfunc
-msgid "Unknown function."
-msgstr ""
-
-#: ucalculatorengine.msgunknownstuff
-msgid "Unknown stuff."
+#: ucalculatorengine.msgunknownfunction
+msgid "Unknown function \"%s\"."
 msgstr ""
 
 #: ucalculatorengine.msgunknownsymbol
 msgid "Unknown symbol."
 msgstr ""
 
-#: ucalculatorengine.msgunknownvar
+#: ucalculatorengine.msgunknownvariable
+msgctxt "ucalculatorengine.msgunknownvariable"
 msgid "Unknown variable."
 msgstr ""
 
-#: ucalculatorengine.msgunmatchingbrace
-msgid "Unmatching closing brace."
+#: ucalculatorengine.msgunmatchingbraces
+msgid "Unmatching braces."
 msgstr ""
 
-#: ucalculatorengine.msgxorcalc
-msgid "XOR calculation only supports two integers, but given %s and %s."
-msgstr ""
-
-#: uhelpbox.msghelp1
-msgid "CalcIt is a simple-to-use Java library/program used to perform single to medium-level mathematic expressions."
-msgstr ""
-
-#: uhelpbox.msghelp10
-msgid "    &  AND (for integers)"
-msgstr ""
-
-#: uhelpbox.msghelp11
-msgid "    |  OR (for integers)"
-msgstr ""
-
-#: uhelpbox.msghelp12
-msgid "    !  XOR (for integers)"
-msgstr ""
-
-#: uhelpbox.msghelp13
-msgid "Functions suported (syntax: <name>([value = 0])):"
-msgstr ""
-
-#: uhelpbox.msghelp14
-msgid "    sin  Trigonometric sine"
-msgstr ""
-
-#: uhelpbox.msghelp15
-msgid "    cos  Trigonometric cosine"
-msgstr ""
-
-#: uhelpbox.msghelp16
-msgid "    tan  Trigonometric tangent"
-msgstr ""
-
-#: uhelpbox.msghelp17
-msgid "    cot  Trigonometric cotangent"
-msgstr ""
-
-#: uhelpbox.msghelp18
-msgid "    log  Base 10 logarithm"
-msgstr ""
-
-#: uhelpbox.msghelp19
-msgid "    ln   Natural (base e) logarithm"
-msgstr ""
-
-#: uhelpbox.msghelp2
-msgid "This program is a port to Delphi for a GUI and ease of use (no need to install a JRE)."
-msgstr ""
-
-#: uhelpbox.msghelp20
-msgid "The program takes operators' priorities into account."
-msgstr ""
-
-#: uhelpbox.msghelp21
-msgid "Version %s built at %s. Copyright © 2019 Lê Duy Quang"
-msgstr ""
-
-#: uhelpbox.msghelp3
-msgid "Operators supported:"
-msgstr ""
-
-#: uhelpbox.msghelp4
-msgid "    +  Addition"
-msgstr ""
-
-#: uhelpbox.msghelp5
-msgid "    -  Subtraction"
-msgstr ""
-
-#: uhelpbox.msghelp6
-msgid "    .  Multiplication"
-msgstr ""
-
-#: uhelpbox.msghelp7
-msgid "    :  Division"
-msgstr ""
-
-#: uhelpbox.msghelp8
-msgid "    ^  Exponentiation"
-msgstr ""
-
-#: uhelpbox.msghelp9
-msgid "    v  Root"
-msgstr ""
-
-#: uvariables.ctnbuttonclose
-msgctxt "uvariables.ctnbuttonclose"
-msgid "Close"
+#: uhelpbox.msghelp
+msgid ""
+"CalcIt Pascal is a simple-to-use application for evaluating simple to medium-level mathematical expressions.\n"
+"Operator priorities are taken into account.\n"
+"\n"
+"For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcItPascal.html.\n"
+"\n"
+"Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
 msgstr ""
 

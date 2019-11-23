@@ -5,7 +5,9 @@ unit Main;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, UCalculatorEngine, UExpressionInvalidException, StrUtils, LCLType, LResources, Translations, LCLTranslator{, DbgConsole};
+  Classes, SysUtils, {FileUtil, }Forms, Controls, Graphics, Dialogs, StdCtrls,
+  UCalculatorEngine, UExpressionInvalidException, StrUtils, LCLType, LResources,
+  Translations, LCLTranslator, Menus{, DbgConsole};
 
 type
 
@@ -24,20 +26,15 @@ type
     procedure CalculateClick(Sender: TObject);
     procedure ExpressionKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure ExpressionKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState
-      );
+    procedure ExpressionKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormChangeBounds(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure HelpClick(Sender: TObject);
     procedure BtnVariablesClick(Sender: TObject);
     procedure calculateIt;
-    function getVariable(variable: integer): string;
+    function getVariable(variable: string): string;
     procedure LanguageClick(Sender: TObject);
     procedure updateVariables;
-  private
-
-  public
-
   end;
 
 var
@@ -47,11 +44,13 @@ var
 
 resourcestring
   msgError = 'ERROR: ';
-  msgConsoleBegin = 'Type any expression to calculate, "help", "vars" to view and select variables, or "exit".';
+  msgConsoleBegin = 'Type any expression to calculate, "/help", "/vars" to view and select variables, or "/exit".';
+  msgOverflow = 'Numbers in the calculation are too large, cannot compute.';
 
 function Translate(POFileName: string): boolean;
 procedure readLangConfig;
 procedure writeLangConfig(confLang: string);
+function formatNumber(num: extended): string;
 
 implementation
 
@@ -126,76 +125,75 @@ begin
   InputLabel.Top       := Self.Height- 80;
   Expression.Top       := Self.Height- 64;
   Expression.Width     := Self.Width - 20;
-  Calculate.Left       := Self.Width - 85;
-  Calculate.Top        := Self.Height- 35;
-  BtnVariables.Left    := Self.Width -165;
-  BtnVariables.Top     := Self.Height- 35;
-  Help.Left            := Self.Width -195;
-  Help.Top             := Self.Height- 35;
+  Calculate.Left       := Self.Width - 84;
+  Calculate.Top        := Self.Height- 34;
+  BtnVariables.Left    := Self.Width -164;
+  BtnVariables.Top     := Self.Height- 34;
+  Help.Left            := Self.Width -194;
+  Help.Top             := Self.Height- 34;
 end;
 
 const rFlags = [rfReplaceAll, rfIgnoreCase];
 
-function formatNumber(numberIn: extended): string;
-begin
-  exit(stringReplace(formatFloat('0.##########', numberIn), '.', ',', rFlags));
-end;
-
 procedure TMainWindow.calculateIt;
-var calculatedResult: extended;
+var calculatedResult: extended; currentExpression: String = ''; exprIn: String; c: char;
 begin
-  {if not dbgShown then begin
-    dbgWindow.show;
-    dbgShown := true;
-  end;}
   try
     case self.expression.text of
-      'help': begin
+      '/help': begin
                 HelpBox.ShowModal;
                 self.expression.text := '';
                 exit;
               end;
-      'vars': begin
+      '/vars': begin
                 Variables.showForm(Self);
                 Variables.show;
                 self.expression.text := '';
                 exit;
               end;
-      'exit': begin
+      '/exit': begin
                 Application.Terminate;
                 exit;
               end;
     end;
-    if (self.expression.text = '') then begin
-      if (lastSuccessful <> '') then begin
-        self.console.append(sLineBreak + lastSuccessful);
-        calculatedResult := self.Engine.calculate(lastSuccessful);
-        self.console.append('= ' + formatNumber(calculatedResult));
-        self.updateVariables;
-      end;
-    end else begin
-      self.console.append(sLineBreak + self.expression.text);
-      calculatedResult := self.Engine.calculate(self.Expression.Text);
-      self.console.append('= ' + formatNumber(calculatedResult));
-      lastSuccessful := self.expression.text;
-      self.expression.text := '';
-      self.updateVariables;
+    if self.expression.text = '' then
+      if lastSuccessful <> '' then exprIn := lastSuccessful else exit
+    else exprIn := self.expression.text;
+    for c in exprIn do begin
+      if c = '|' then
+        if length(currentExpression) <> 0 then begin
+          calculatedResult := self.Engine.calculate(currentExpression);
+          self.console.append(sLineBreak + currentExpression);
+          self.console.append('= ' + formatNumber(calculatedResult));
+          currentExpression := '';
+        end else continue
+      else currentExpression += c;
     end;
+    if length(currentExpression) <> 0 then begin
+      calculatedResult := self.Engine.calculate(currentExpression);
+      self.console.append(sLineBreak + currentExpression);
+      self.console.append('= ' + formatNumber(calculatedResult));
+    end;
+    lastSuccessful := exprIn;
+    self.expression.text := '';
   except
     on e: ExpressionInvalidException do begin
+      self.console.append(sLineBreak + currentExpression);
       self.Console.Append(msgError + e.exceptionMessage);
       if e.position > -1 then begin
         self.Expression.SelStart:=e.position;
         self.Expression.SelLength := 0;
       end;
     end;
-  end;
+    on e: EOverflow do self.Console.Append(msgError + msgOverflow);
+  end;                                                               
+  self.updateVariables;
 end;
 
 procedure TMainWindow.FormCreate(Sender: TObject);
-begin
-  confFileName := GetEnvironmentVariable('appdata') + '\CalcIt\calcitlang.dat';
-  confDir := GetEnvironmentVariable('appdata') + '\CalcIt';
+begin                                                        
+  confDir := getAppConfigDir(false);
+  confFileName := confDir + '\calcitlang.dat';
   Application.UpdateFormatSettings := false;
   DecimalSeparator := '.';
   self.KeyPreview := false;
@@ -215,12 +213,18 @@ begin
   Variables.show;
 end;
 
-function TMainWindow.getVariable(variable: integer): string;
+function TMainWindow.getVariable(variable: string): string;
+begin
+  exit(formatNumber(Engine.getVariable(variable)));
+end;
+
+function formatNumber(num: extended): string;
 begin
   exit(
-  stringReplace(formatFloat('0.##########',
-  self.Engine.getVariable(variable)), '.', ',', rFlags));
-  //exit('0a');
+  stringReplace(
+  stringReplace(
+  stringReplace(formatFloat('#,##0.##########',
+  num), ',', ' ', rFlags), '.', ',', rFlags), 'E', '.10^', rFlags));
 end;
 
 procedure TMainWindow.LanguageClick(Sender: TObject);
@@ -245,14 +249,7 @@ end;
 
 procedure TMainWindow.updateVariables;
 begin
-  Variables.AValue.Text := getVariable(1);
-  Variables.BValue.Text := getVariable(2);
-  Variables.CValue.Text := getVariable(3);
-  Variables.DValue.Text := getVariable(4);
-  Variables.EValue.Text := getVariable(5);
-  Variables.FValue.Text := getVariable(6);
-  Variables.AnsValue.Text := getVariable(0);
-  Variables.PreAnsValue.Text := getVariable(-1);
+  Variables.updateStuff;
 end;
 
 procedure TMainWindow.CalculateClick(Sender: TObject);
@@ -261,7 +258,7 @@ begin
 end;
 
 initialization
-  {$I internationalization/Calculator.lrs}
+  {$I internationalization\Calculator.lrs}
 
 end.
 

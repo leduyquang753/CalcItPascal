@@ -1,24 +1,26 @@
 object MainWindow: TMainWindow
-  Left = 471
+  Left = 115
   Height = 375
-  Top = 62
+  Top = 204
   Width = 575
   Anchors = [akRight, akBottom]
-  Caption = 'CalcIt (Pascal port)'
+  Caption = 'CalcIt'
   ClientHeight = 375
   ClientWidth = 575
   Constraints.MinHeight = 200
   Constraints.MinWidth = 250
+  DefaultMonitor = dmMainForm
   OnChangeBounds = FormChangeBounds
   OnCreate = FormCreate
-  ShowInTaskBar = stNever
-  LCLVersion = '1.8.4.0'
+  Position = poDefault
+  LCLVersion = '2.0.6.0'
   object ConsoleLabel: TLabel
     Left = 10
     Height = 15
     Top = 8
     Width = 43
-    Caption = 'Console'
+    Caption = 'C&onsole'
+    FocusControl = Console
     ParentColor = False
   end
   object Console: TMemo
@@ -35,7 +37,8 @@ object MainWindow: TMainWindow
     Height = 15
     Top = 295
     Width = 28
-    Caption = 'Input'
+    Caption = '&Input'
+    FocusControl = Expression
     ParentColor = False
   end
   object Expression: TEdit
@@ -51,7 +54,7 @@ object MainWindow: TMainWindow
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
-    TextHint = 'Enter any expression, "help", "vars" or "exit".'
+    TextHint = 'Enter any expression, "/help", "/vars" or "/exit".'
   end
   object Calculate: TButton
     Left = 490
@@ -93,7 +96,7 @@ object MainWindow: TMainWindow
     Left = 9
     Height = 25
     Top = 341
-    Width = 30
+    Width = 39
     Anchors = [akLeft, akBottom]
     Caption = 'EN'
     OnClick = LanguageClick

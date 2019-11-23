@@ -1,178 +1,590 @@
 object Variables: TVariables
-  Left = 499
-  Height = 285
-  Top = 104
+  Left = 271
+  Height = 385
+  Top = 134
   Width = 581
   BorderIcons = [biSystemMenu]
-  BorderStyle = bsDialog
   Caption = 'Variables'
-  ClientHeight = 285
+  ClientHeight = 385
   ClientWidth = 581
-  Constraints.MaxHeight = 285
+  Constraints.MaxHeight = 760
   Constraints.MaxWidth = 581
   Constraints.MinHeight = 285
   Constraints.MinWidth = 581
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poDefault
   ShowInTaskBar = stAlways
-  LCLVersion = '1.8.4.0'
-  object A: TButton
-    Left = 10
-    Height = 25
-    Top = 10
-    Width = 75
-    Caption = '&A'
-    OnClick = AClick
-    TabOrder = 0
-  end
-  object B: TButton
-    Left = 10
-    Height = 25
-    Top = 40
-    Width = 75
-    Caption = '&B'
-    OnClick = BClick
-    TabOrder = 1
-  end
-  object C: TButton
-    Left = 10
-    Height = 25
-    Top = 70
-    Width = 75
-    Caption = '&C'
-    OnClick = CClick
-    TabOrder = 2
-  end
-  object D: TButton
-    Left = 10
-    Height = 25
-    Top = 100
-    Width = 75
-    Caption = '&D'
-    OnClick = DClick
-    TabOrder = 3
-  end
-  object E: TButton
-    Left = 10
-    Height = 25
-    Top = 130
-    Width = 75
-    Caption = '&E'
-    OnClick = EClick
-    TabOrder = 4
-  end
-  object F: TButton
-    Left = 10
-    Height = 25
-    Top = 160
-    Width = 75
-    Caption = '&F'
-    OnClick = FClick
-    TabOrder = 5
-  end
-  object Ans: TButton
-    Left = 10
-    Height = 25
-    Hint = 'The value of the latest expression.'
-    Top = 219
-    Width = 75
-    Caption = 'A&ns'
-    OnClick = AnsClick
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 6
-  end
-  object PreAns: TButton
-    Left = 10
-    Height = 25
-    Hint = 'The value of the calculation right before the last.'
-    Top = 190
-    Width = 75
-    Caption = '&PreAns'
-    OnClick = PreAnsClick
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 7
-  end
+  LCLVersion = '2.0.6.0'
   object ButtonClose: TButton
-    Left = 496
+    Left = 474
     Height = 25
-    Top = 250
+    Top = 353
     Width = 75
     Cancel = True
     Caption = 'Close'
     ModalResult = 2
     OnClick = ButtonCloseClick
-    TabOrder = 8
+    TabOrder = 0
   end
-  object AValue: TEdit
-    Left = 88
-    Height = 23
-    Top = 11
-    Width = 483
-    ReadOnly = True
-    TabOrder = 9
-    Text = 'AValue'
+  object AtoZContainer: TScrollBox
+    Left = 10
+    Height = 254
+    Top = 9
+    Width = 560
+    HorzScrollBar.Page = 538
+    VertScrollBar.Page = 254
+    BorderStyle = bsNone
+    ClientHeight = 254
+    ClientWidth = 543
+    TabOrder = 1
+    object ButtonA: TButton
+      Left = 8
+      Height = 23
+      Top = 6
+      Width = 75
+      Caption = 'A'
+      OnClick = VarButtonClick
+      TabOrder = 0
+    end
+    object BoxA: TEdit
+      Left = 88
+      Height = 21
+      Top = 7
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 1
+      Text = 'BoxA'
+    end
+    object ButtonB: TButton
+      Left = 8
+      Height = 24
+      Top = 30
+      Width = 75
+      Caption = 'B'
+      OnClick = VarButtonClick
+      TabOrder = 2
+    end
+    object BoxB: TEdit
+      Left = 88
+      Height = 22
+      Top = 31
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 3
+      Text = 'BoxB'
+    end
+    object ButtonD: TButton
+      Left = 8
+      Height = 23
+      Top = 79
+      Width = 75
+      Caption = 'D'
+      OnClick = VarButtonClick
+      TabOrder = 4
+    end
+    object ButtonC: TButton
+      Left = 8
+      Height = 23
+      Top = 55
+      Width = 75
+      Caption = 'C'
+      OnClick = VarButtonClick
+      TabOrder = 5
+    end
+    object BoxC: TEdit
+      Left = 88
+      Height = 21
+      Top = 56
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 6
+      Text = 'BoxC'
+    end
+    object BoxD: TEdit
+      Left = 88
+      Height = 21
+      Top = 80
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 7
+      Text = 'BoxD'
+    end
+    object ButtonF: TButton
+      Left = 8
+      Height = 23
+      Top = 127
+      Width = 75
+      Caption = 'F'
+      OnClick = VarButtonClick
+      TabOrder = 8
+    end
+    object ButtonE: TButton
+      Left = 8
+      Height = 23
+      Top = 103
+      Width = 75
+      Caption = 'E'
+      OnClick = VarButtonClick
+      TabOrder = 9
+    end
+    object BoxE: TEdit
+      Left = 88
+      Height = 21
+      Top = 104
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 10
+      Text = 'BoxE'
+    end
+    object BoxF: TEdit
+      Left = 88
+      Height = 21
+      Top = 128
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 11
+      Text = 'BoxF'
+    end
+    object ButtonG: TButton
+      Left = 8
+      Height = 23
+      Top = 151
+      Width = 75
+      Caption = 'G'
+      OnClick = VarButtonClick
+      TabOrder = 12
+    end
+    object BoxG: TEdit
+      Left = 88
+      Height = 21
+      Top = 152
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 13
+      Text = 'BoxG'
+    end
+    object BoxH: TEdit
+      Left = 88
+      Height = 21
+      Top = 176
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 14
+      Text = 'BoxH'
+    end
+    object ButtonH: TButton
+      Left = 8
+      Height = 23
+      Top = 175
+      Width = 75
+      Caption = 'H'
+      OnClick = VarButtonClick
+      TabOrder = 15
+    end
+    object ButtonI: TButton
+      Left = 8
+      Height = 23
+      Top = 199
+      Width = 75
+      Caption = 'I'
+      OnClick = VarButtonClick
+      TabOrder = 16
+    end
+    object BoxI: TEdit
+      Left = 88
+      Height = 21
+      Top = 200
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 17
+      Text = 'BoxI'
+    end
+    object BoxJ: TEdit
+      Left = 88
+      Height = 21
+      Top = 224
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 18
+      Text = 'BoxJ'
+    end
+    object ButtonJ: TButton
+      Left = 8
+      Height = 23
+      Top = 223
+      Width = 75
+      Caption = 'J'
+      OnClick = VarButtonClick
+      TabOrder = 19
+    end
+    object ButtonK: TButton
+      Left = 8
+      Height = 23
+      Top = 247
+      Width = 75
+      Caption = 'K'
+      OnClick = VarButtonClick
+      TabOrder = 20
+    end
+    object BoxK: TEdit
+      Left = 88
+      Height = 21
+      Top = 248
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 21
+      Text = 'BoxK'
+    end
+    object BoxL: TEdit
+      Left = 88
+      Height = 21
+      Top = 272
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 22
+      Text = 'BoxL'
+    end
+    object ButtonL: TButton
+      Left = 8
+      Height = 23
+      Top = 271
+      Width = 75
+      Caption = 'L'
+      OnClick = VarButtonClick
+      TabOrder = 23
+    end
+    object ButtonP: TButton
+      Left = 8
+      Height = 23
+      Top = 367
+      Width = 75
+      Caption = 'P'
+      OnClick = VarButtonClick
+      TabOrder = 24
+    end
+    object BoxP: TEdit
+      Left = 88
+      Height = 21
+      Top = 368
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 25
+      Text = 'BoxP'
+    end
+    object BoxO: TEdit
+      Left = 88
+      Height = 21
+      Top = 344
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 26
+      Text = 'BoxO'
+    end
+    object ButtonN: TButton
+      Left = 8
+      Height = 23
+      Top = 319
+      Width = 75
+      Caption = 'N'
+      OnClick = VarButtonClick
+      TabOrder = 27
+    end
+    object ButtonM: TButton
+      Left = 8
+      Height = 23
+      Top = 295
+      Width = 75
+      Caption = 'M'
+      OnClick = VarButtonClick
+      TabOrder = 28
+    end
+    object BoxN: TEdit
+      Left = 88
+      Height = 21
+      Top = 320
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 29
+      Text = 'BoxN'
+    end
+    object BoxM: TEdit
+      Left = 88
+      Height = 21
+      Top = 296
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 30
+      Text = 'BoxM'
+    end
+    object ButtonO: TButton
+      Left = 8
+      Height = 23
+      Top = 343
+      Width = 75
+      Caption = 'O'
+      OnClick = VarButtonClick
+      TabOrder = 31
+    end
+    object ButtonQ: TButton
+      Left = 8
+      Height = 23
+      Top = 391
+      Width = 75
+      Caption = 'Q'
+      OnClick = VarButtonClick
+      TabOrder = 32
+    end
+    object BoxQ: TEdit
+      Left = 88
+      Height = 21
+      Top = 392
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 33
+      Text = 'BoxQ'
+    end
+    object ButtonR: TButton
+      Left = 8
+      Height = 23
+      Top = 415
+      Width = 75
+      Caption = 'R'
+      OnClick = VarButtonClick
+      TabOrder = 34
+    end
+    object ButtonS: TButton
+      Left = 8
+      Height = 23
+      Top = 439
+      Width = 75
+      Caption = 'S'
+      OnClick = VarButtonClick
+      TabOrder = 35
+    end
+    object ButtonT: TButton
+      Left = 8
+      Height = 23
+      Top = 463
+      Width = 75
+      Caption = 'T'
+      OnClick = VarButtonClick
+      TabOrder = 36
+    end
+    object ButtonW: TButton
+      Left = 8
+      Height = 23
+      Top = 535
+      Width = 75
+      Caption = 'W'
+      OnClick = VarButtonClick
+      TabOrder = 37
+    end
+    object ButtonV: TButton
+      Left = 8
+      Height = 23
+      Top = 511
+      Width = 75
+      Caption = 'V'
+      OnClick = VarButtonClick
+      TabOrder = 38
+    end
+    object ButtonU: TButton
+      Left = 8
+      Height = 23
+      Top = 487
+      Width = 75
+      Caption = 'U'
+      OnClick = VarButtonClick
+      TabOrder = 39
+    end
+    object ButtonX: TButton
+      Left = 8
+      Height = 23
+      Top = 559
+      Width = 75
+      Caption = 'X'
+      OnClick = VarButtonClick
+      TabOrder = 40
+    end
+    object ButtonY: TButton
+      Left = 8
+      Height = 23
+      Top = 583
+      Width = 75
+      Caption = 'Y'
+      OnClick = VarButtonClick
+      TabOrder = 41
+    end
+    object ButtonZ: TButton
+      Left = 8
+      Height = 23
+      Top = 607
+      Width = 75
+      Caption = 'Z'
+      OnClick = VarButtonClick
+      TabOrder = 42
+    end
+    object BoxT: TEdit
+      Left = 88
+      Height = 21
+      Top = 464
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 43
+      Text = 'BoxT'
+    end
+    object BoxU: TEdit
+      Left = 88
+      Height = 21
+      Top = 488
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 44
+      Text = 'BoxU'
+    end
+    object BoxW: TEdit
+      Left = 88
+      Height = 21
+      Top = 536
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 45
+      Text = 'BoxW'
+    end
+    object BoxY: TEdit
+      Left = 88
+      Height = 21
+      Top = 584
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 46
+      Text = 'BoxY'
+    end
+    object BoxZ: TEdit
+      Left = 88
+      Height = 21
+      Top = 608
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 47
+      Text = 'BoxZ'
+    end
+    object BoxV: TEdit
+      Left = 88
+      Height = 21
+      Top = 512
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 48
+      Text = 'BoxV'
+    end
+    object BoxX: TEdit
+      Left = 88
+      Height = 21
+      Top = 560
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 49
+      Text = 'BoxX'
+    end
+    object BoxS: TEdit
+      Left = 88
+      Height = 21
+      Top = 440
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 50
+      Text = 'BoxS'
+    end
+    object BoxR: TEdit
+      Left = 88
+      Height = 21
+      Top = 416
+      Width = 450
+      AutoSize = False
+      ReadOnly = True
+      TabOrder = 51
+      Text = 'BoxR'
+    end
   end
-  object BValue: TEdit
-    Left = 88
-    Height = 23
-    Top = 41
-    Width = 483
-    ReadOnly = True
-    TabOrder = 10
-    Text = 'BValue'
+  object ButtonAns: TButton
+    Left = 18
+    Height = 25
+    Top = 327
+    Width = 75
+    Caption = 'Ans'
+    OnClick = VarButtonClick
+    TabOrder = 2
   end
-  object CValue: TEdit
-    Left = 88
+  object BoxAns: TEdit
+    Left = 98
     Height = 23
-    Top = 71
-    Width = 483
+    Top = 328
+    Width = 450
     ReadOnly = True
-    TabOrder = 11
-    Text = 'CValue'
+    TabOrder = 3
+    Text = 'BoxAns'
   end
-  object DValue: TEdit
-    Left = 88
-    Height = 23
-    Top = 101
-    Width = 483
-    ReadOnly = True
-    TabOrder = 12
-    Text = 'DValue'
+  object ButtonPreAns: TButton
+    Left = 18
+    Height = 25
+    Top = 301
+    Width = 75
+    Caption = 'PreAns'
+    OnClick = VarButtonClick
+    TabOrder = 4
   end
-  object EValue: TEdit
-    Left = 88
+  object BoxPreAns: TEdit
+    Left = 98
     Height = 23
-    Top = 131
-    Width = 483
+    Top = 302
+    Width = 450
     ReadOnly = True
-    TabOrder = 13
-    Text = 'EValue'
+    TabOrder = 5
+    Text = 'BoxPreAns'
   end
-  object FValue: TEdit
-    Left = 88
+  object BoxVarVal: TEdit
+    Left = 98
     Height = 23
-    Top = 161
-    Width = 483
+    Top = 272
+    Width = 450
     ReadOnly = True
-    TabOrder = 14
-    Text = 'FValue'
+    TabOrder = 6
+    Text = 'BoxVarVal'
   end
-  object AnsValue: TEdit
-    Left = 88
+  object BoxVarName: TEdit
+    Left = 19
     Height = 23
-    Top = 220
-    Width = 483
-    ReadOnly = True
-    TabOrder = 15
-    Text = 'AnsValue'
-  end
-  object PreAnsValue: TEdit
-    Left = 88
-    Height = 23
-    Top = 191
-    Width = 483
-    ReadOnly = True
-    TabOrder = 16
-    Text = 'PreAnsValue'
+    Top = 272
+    Width = 73
+    OnChange = BoxVarNameChange
+    TabOrder = 7
+    TextHint = 'Custom'
   end
 end
