@@ -48,6 +48,7 @@ var
   enterCalculatesLast: boolean = true;
   upDownBeginEnd: boolean = false;
   maxExpressions: longint = 64;
+  startupExpressions: array of string;
 
 resourcestring
   msgError = 'ERROR: ';
@@ -185,7 +186,12 @@ var f: text; s: string;
 begin
   assign(f, startupFileName);
   rewrite(f);
-  for s in Settings.BoxStartupExpressions.Lines do writeln(f, s);
+  setlength(startUpExpressions, 0);
+  for s in Settings.BoxStartupExpressions.Lines do begin
+    writeln(f, s);
+    setlength(startUpExpressions, length(startupExpressions)+1);
+    startupExpressions[length(startupExpressions)-1] := s;
+  end;
   close(f);
 end;
 
@@ -201,7 +207,8 @@ begin
       readln(f, readString);
       expr := '';
       hadSlash := false;
-      Settings.BoxStartupExpressions.Append(readString);
+      setlength(startupExpressions, length(startupExpressions)+1);
+      startUpExpressions[length(startupExpressions)-1] := readString;
       for c in readString do if (c = '/') then if hadSlash then begin delete(expr, length(expr), 1); break; end else begin expr += c; hadSlash := true; end else begin expr += c; hadSlash := false; end;
       if expr <> '' then
         try MainWindow.engine.calculate(expr)
@@ -210,6 +217,7 @@ begin
           on e: EOverflow do MainWindow.Console.Append(expr + sLineBreak + msgError + msgOverflow + sLineBreak);
         end;
     end;
+    close(f);
   end else begin writeStartupExpressions; loadStartupExpressions; end;
 end;
 
@@ -330,7 +338,6 @@ begin
 
   readLangConfig;
   loadStartupExpressions;
-  Settings.Init;
   Console.clear;
   Console.Append(msgConsoleBegin);
   //Console.Append(langConfFileName);
@@ -425,6 +432,7 @@ end;
 
 procedure TMainWindow.BtnSettingsClick(Sender: TObject);
 begin
+  Settings.init;
   if Settings.ShowModal = mrOk then begin
     // PanelDecimalSeparator
     engine.decimalDot := Settings.RadioDecimalDot.Checked;
@@ -455,6 +463,7 @@ begin
     end;
 
     writeEngineConfig(engine);
+    writeStartupExpressions;
     updateNumberFormat(engine);
   end;
 end;

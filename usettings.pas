@@ -56,7 +56,7 @@ uses Main;
 { TSettings }
 
 procedure TSettings.Init;
-var engine: CalculatorEngine;
+var engine: CalculatorEngine; s: string;
 begin
   engine := MainWindow.Engine;
 
@@ -83,6 +83,9 @@ begin
   SpinMaxExpressions.Value := maxExpressions;
 
   CheckDefaultZero.Checked := engine.zeroUndefinedVars;
+
+  BoxStartupExpressions.clear;
+  for s in startupExpressions do BoxStartupExpressions.append(s);
 end;
 
 initialization
