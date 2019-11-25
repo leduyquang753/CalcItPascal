@@ -164,98 +164,6 @@ msgstr "&Input"
 msgid "EN"
 msgstr "EN"
 
-#: tsettings.boxstartupexpressions.hint
-msgid "[Nothing entered.]"
-msgstr "[Nothing entered.]"
-
-#: tsettings.caption
-msgid "Settings"
-msgstr "Settings"
-
-#: tsettings.checkdefaultzero.caption
-msgid "De&fault undefined non-single-character variables to 0."
-msgstr "De&fault undefined non-single-character variables to 0."
-
-#: tsettings.checkenforcedecimalseparator.caption
-msgctxt "tsettings.checkenforcedecimalseparator.caption"
-msgid "&Enforce in expression"
-msgstr "&Enforce in expression"
-
-#: tsettings.checkenforcemuldivstyle.caption
-msgctxt "tsettings.checkenforcemuldivstyle.caption"
-msgid "E&nforce in expression"
-msgstr "E&nforce in expression"
-
-#: tsettings.checkenterwhenempty.caption
-msgid "&Pressing Enter while the input box is empty re-calculates the last expression."
-msgstr "&Pressing Enter while the input box is empty re-calculates the last expression."
-
-#: tsettings.labeldecimalseparator.caption
-msgid "Decimal separator:"
-msgstr "Decimal separator:"
-
-#: tsettings.labelhistorysize.caption
-msgid "&Maximum expressions stored:"
-msgstr "&Maximum expressions stored:"
-
-#: tsettings.labelmuldivstyle.caption
-msgid "Multiplication, division signs' style:"
-msgstr "Multiplication, division signs' style:"
-
-#: tsettings.labelstartupexpressions.caption
-msgid "S&tartup expressions"
-msgstr "S&tartup expressions"
-
-#: tsettings.labelthousandseparator.caption
-msgid "Thousand separator:"
-msgstr "Thousand separator:"
-
-#: tsettings.labelupdownbehavior.caption
-msgid "Up, down keys' behavior:"
-msgstr "Up, down keys' behavior:"
-
-#: tsettings.radiocommadot.caption
-msgid "C&omma/Dot"
-msgstr "C&omma/Dot"
-
-#: tsettings.radiodecimalcomma.caption
-msgid "&Comma"
-msgstr "&Comma"
-
-#: tsettings.radiodecimaldot.caption
-msgid "&Dot"
-msgstr "&Dot"
-
-#: tsettings.radiomulasterisk.caption
-msgid "*&/"
-msgstr "*&/"
-
-#: tsettings.radiomuldot.caption
-msgid "&.:"
-msgstr "&.:"
-
-#: tsettings.radiospace.caption
-msgid "&Space"
-msgstr "&Space"
-
-#: tsettings.radioupdownbeginend.caption
-msgid "&Go to beginning, end"
-msgstr "&Go to beginning, end"
-
-#: tsettings.radioupdownhistory.caption
-msgid "&Browse expression history"
-msgstr "&Browse expression history"
-
-#: tsettings.settingsbuttoncancel.caption
-msgctxt "tsettings.settingsbuttoncancel.caption"
-msgid "Cancel"
-msgstr "Cancel"
-
-#: tsettings.settingsbuttonok.caption
-msgctxt "tsettings.settingsbuttonok.caption"
-msgid "OK"
-msgstr "OK"
-
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
 msgstr "[Empty variable name.]"
@@ -365,3 +273,4 @@ msgstr ""
 "For detailed documentation about how to use, please visit https://leduyquang753.github.io/CalcItPascal.html.\n"
 "\n"
 "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
+

@@ -163,98 +163,6 @@ msgstr "&Nhập"
 msgid "EN"
 msgstr "VI"
 
-#: tsettings.boxstartupexpressions.hint
-msgid "[Nothing entered.]"
-msgstr "[Không có gì được nhập.]"
-
-#: tsettings.caption
-msgid "Settings"
-msgstr "Cài đặt"
-
-#: tsettings.checkdefaultzero.caption
-msgid "De&fault undefined non-single-character variables to 0."
-msgstr "&Mặc định các biến nhiều chữ cái chưa xác định là 0."
-
-#: tsettings.checkenforcedecimalseparator.caption
-msgctxt "tsettings.checkenforcedecimalseparator.caption"
-msgid "&Enforce in expression"
-msgstr "&Bắt buộc trong biểu thức"
-
-#: tsettings.checkenforcemuldivstyle.caption
-msgctxt "tsettings.checkenforcemuldivstyle.caption"
-msgid "E&nforce in expression"
-msgstr "Bắ&t buộc trong biểu thức"
-
-#: tsettings.checkenterwhenempty.caption
-msgid "&Pressing Enter while the input box is empty re-calculates the last expression."
-msgstr "&Nhấn Enter khi hộp nhập trống tính biểu thức vừa được tính."
-
-#: tsettings.labeldecimalseparator.caption
-msgid "Decimal separator:"
-msgstr "Dấu thập phân:"
-
-#: tsettings.labelhistorysize.caption
-msgid "&Maximum expressions stored:"
-msgstr "&Số biểu thức tối đa được lưu:"
-
-#: tsettings.labelmuldivstyle.caption
-msgid "Multiplication, division signs' style:"
-msgstr "Kiểu dấu nhân, chia:"
-
-#: tsettings.labelstartupexpressions.caption
-msgid "S&tartup expressions"
-msgstr "Các biểu thức &khi bắt đầu chạy"
-
-#: tsettings.labelthousandseparator.caption
-msgid "Thousand separator:"
-msgstr "Dấu phân lớp:"
-
-#: tsettings.labelupdownbehavior.caption
-msgid "Up, down keys' behavior:"
-msgstr "Phím lên, xuống:"
-
-#: tsettings.radiocommadot.caption
-msgid "C&omma/Dot"
-msgstr "P&hẩy/Chấm"
-
-#: tsettings.radiodecimalcomma.caption
-msgid "&Comma"
-msgstr "&Phẩy"
-
-#: tsettings.radiodecimaldot.caption
-msgid "&Dot"
-msgstr "&Chấm"
-
-#: tsettings.radiomulasterisk.caption
-msgid "*&/"
-msgstr "*&/"
-
-#: tsettings.radiomuldot.caption
-msgid "&.:"
-msgstr "&.:"
-
-#: tsettings.radiospace.caption
-msgid "&Space"
-msgstr "Dấ&u cách"
-
-#: tsettings.radioupdownbeginend.caption
-msgid "&Go to beginning, end"
-msgstr "Đ&i đến đầu, cuối"
-
-#: tsettings.radioupdownhistory.caption
-msgid "&Browse expression history"
-msgstr "&Xem lịch sử"
-
-#: tsettings.settingsbuttoncancel.caption
-msgctxt "tsettings.settingsbuttoncancel.caption"
-msgid "Cancel"
-msgstr "Hủy"
-
-#: tsettings.settingsbuttonok.caption
-msgctxt "tsettings.settingsbuttonok.caption"
-msgid "OK"
-msgstr "OK"
-
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
 msgstr "[Tên biến trống.]"
@@ -355,3 +263,4 @@ msgstr ""
 "Để biết thông tin chi tiết về cách dùng, vui lòng truy cập https://leduyquang753.github.io/CalcItPascal.html.\n"
 "\n"
 "Phiên bản %s dựng lúc %s. Bản quyền © 2019 Lê Duy Quang. Phát hành dưới giấy phép MIT.\n"
+

@@ -17,9 +17,6 @@ begin
   Application.Title:='CalcIt';
   Application.Initialize;
   Application.CreateForm(TMainWindow, MainWindow);
-  Application.CreateForm(TVariables, Variables);
-  Application.CreateForm(TLangSelector, LangSelector);
-  Application.CreateForm(THelpBox, HelpBox);
   Application.Run;
 end.
 

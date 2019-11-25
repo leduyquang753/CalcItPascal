@@ -317,13 +317,18 @@ begin
   startupFileName := confDir + '\startup.dat';
   Application.UpdateFormatSettings := false;
   DecimalSeparator := '.';
-  self.KeyPreview := false;                 
-  readLangConfig;
+  self.KeyPreview := false;
   Engine := CalculatorEngine.new;
   Application.Title:=MainWindow.Caption;
   readEngineConfig(engine);
   updateNumberFormat(engine);
+
   Settings := TSettings.Create(self);
+  HelpBox := THelpBox.Create(self);
+  LangSelector := TLangSelector.Create(self);
+  Variables := TVariables.Create(self);
+
+  readLangConfig;
   loadStartupExpressions;
   Settings.Init;
   Console.clear;
