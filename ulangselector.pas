@@ -18,6 +18,7 @@ type
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
 
   public
@@ -45,6 +46,12 @@ var i: integer;
 begin
   langList.Clear;
   for i:=1 to length(langNames) do self.LangList.AddItem(langNames[i], TObject.Create);
+end;
+
+procedure TLangSelector.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = 13 then btnOKClick(sender);
 end;
 
 procedure TLangSelector.btnCancelClick(Sender: TObject);

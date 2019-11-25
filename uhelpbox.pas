@@ -17,6 +17,7 @@ type
     Content: TMemo;
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormResize(Sender: TObject);
     procedure OKClick(Sender: TObject);
     procedure updateBox;
@@ -101,8 +102,12 @@ begin
   appBuildTime += CS(tmpNum < 10, '0', '') + intToStr(tmpNum) + '  ';
   tmpNum := dayOfWeek(buildTime);
   appBuildTime += intToStr(CI(tmpNum = 1, 8, tmpNum)) + ' | ' + intToStr(dayOfTheMonth(buildTime)) + '/' + intToStr(monthOfTheYear(buildTime)) + '/' + intToStr(yearOf(buildTime));
-  readLangConfig;
-  MainWindow.Console.Append(msgConsoleBegin);
+end;
+
+procedure THelpBox.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = 13 then self.close;
 end;
 
 end.

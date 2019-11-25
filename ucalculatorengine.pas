@@ -74,6 +74,13 @@ type
 
   CalculatorEngine = class
   public
+    decimalDot: boolean;
+    enforceDecimalSeparator: boolean;
+    thousandDot: boolean;
+    mulAsterisk: boolean;
+    enforceMulDiv: boolean;
+    zeroUndefinedVars: boolean;
+
     function calculate(expression: string): extended;
     function getVariable(variable: string): extended;
     function getVariableString(variable: string): string;
@@ -92,6 +99,7 @@ type
     procedure registerFunction(funcIn: Func);
     function processNumberToken(var negativity, hadNegation, isVar, hadComma: boolean; var strIn: string; pos: longint; NS, TNS: NumberStack; OS, TOS: OperandStack): extended;
     function getVariableInternal(variable: string; pos: longint): extended;
+    function isDecimalSeparator(c: char): boolean;
     function performCalculation(input: string): extended;
   end;
 
@@ -110,7 +118,7 @@ resourcestring
   msgUnexpectedOperand = 'Unexpected operand.';
   msgUnexpectedPercent = 'Unexpected percent sign.';
   msgUnknownSymbol = 'Unknown symbol.';
-  msgUnexpectedComma = 'Unexpected comma.';
+  msgUnexpectedDecimalSeparator = 'Unexpected decimal separator.';
   msgUnknownVariable = 'Unknown variable.';
   msgTrailingNegativePositiveSign = 'Trailing negative/positive sign(s).';
   msgNothingToCalculate = 'There is nothing to calculate.';
@@ -122,6 +130,7 @@ resourcestring
   msgInvalidVariableNameWindow = '[Invalid variable name.]';
   msgUnexpectedSemicolon = 'Unexpected semicolon.';
   msgUnknownFunction = 'Unknown function "%s".';
+  msgUnexpectedThousandSeparator = 'Unexpected thousand separator.';
 
 const
   positiveInfinity = 99999;
@@ -145,6 +154,13 @@ end;
 
 constructor CalculatorEngine.new;
 begin
+  decimalDot := false;
+  enforceDecimalSeparator := false;
+  thousandDot := false;
+  mulAsterisk := false;
+  enforceMulDiv := false;
+  zeroUndefinedVars := false;
+
   fillchar(AtoZ, sizeof(AtoZ), 0);
   ans := 0;
   preans := 0;
@@ -354,9 +370,14 @@ begin
   exit(res);
 end;
 
+function CalculatorEngine.isDecimalSeparator(c: char): boolean;
+begin
+  if decimalDot then if enforceDecimalSeparator then exit(c = '.') else exit((c = '.') or (c = ',')) else exit(c = ',');
+end;
+
 function CalculatorEngine.performCalculation(input: string): extended;
 var NS, TNS: NumberStack; OS, TOS: OperandStack; BS: BraceletStack;
-    i: longint; c: char;
+    i: longint; c, thousandSeparator: char;
     status: boolean = false; // true: previous was number/closing brace; false: previous was operand/opening brace.
     negativity: boolean = false;
     hadNegation: boolean = false;
@@ -373,9 +394,11 @@ begin
   OS := OperandStack.create;
   TOS := OperandStack.create;
   BS := BraceletStack.create;
+  if decimalDot then thousandSeparator := ',' else thousandSeparator := '.';
   for i:=1 to length(input) do begin
     c := input[i];
-    if (c = '-') and not status then begin negativity := not negativity; hadNegation := true; end
+    if thousandDot and (c = thousandSeparator) then if status and not isVar then continue else raise ExpressionInvalidException.createNew(msgUnexpectedThousandSeparator, i)
+    else if (c = '-') and not status then begin negativity := not negativity; hadNegation := true; end
     else if c = '%' then if not status or (currentToken[length(currentToken)] = '%') then raise ExpressionInvalidException.createNew(msgUnexpectedPercent, i)
       else currentToken += c
     else if c = ';' then begin
@@ -393,7 +416,7 @@ begin
         end else raise ExpressionInvalidException.createNew(msgUnexpectedSemicolon, i);
       end else raise ExpressionInvalidException.createNew(msgUnexpectedSemicolon, i);
     end
-    else if c = ',' then
+    else if isDecimalSeparator(c) then
       if length(currentToken) = 0 then begin
         if hadClosingBrace then begin
           while OS.isNotEmpty and (dotlessMulOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
@@ -406,8 +429,8 @@ begin
         hadComma := true;
       end
       else if status then
-        if isVar then raise ExpressionInvalidException.createNew(msgUnexpectedComma, i)
-        else if hadComma then raise ExpressionInvalidException.createNew(msgUnexpectedComma, i)
+        if isVar then raise ExpressionInvalidException.createNew(msgUnexpectedDecimalSeparator, i)
+        else if hadComma then raise ExpressionInvalidException.createNew(msgUnexpectedDecimalSeparator, i)
         else begin
           currentToken += c;
           hadComma := true;
@@ -485,6 +508,10 @@ begin
       end
       else begin
         if status then begin
+          if enforceMulDiv then case c of
+            '.', ':': if mulAsterisk then raise ExpressionInvalidException.createNew(msgUnknownSymbol, i);
+            '*', '/': if not mulAsterisk then raise ExpressionInvalidException.createNew(msgUnknownSymbol, i);
+          end;
           if length(currentToken) <> 0 then NS.push(processNumberToken(negativity, hadNegation, isVar, hadComma, currentToken, i, NS, TNS, OS, TOS))
           else if hadNegation then raise ExpressionInvalidException.createNew(msgUnexpectedOperand, i);
           while OS.isNotEmpty and (currentOp.priority < OS.peekPriority) do performBacktrackSameLevelCalculation(NS, TNS, OS, TOS);
@@ -582,7 +609,7 @@ begin
     'preans': exit(formatNumber(preans));
   end;
   if varRegistry.tryGetData(variable, p) then exit(formatNumber(p.value));
-  exit(msgNotSet);
+  if zeroUndefinedVars then exit('0') else exit(msgNotSet);
 end;
 
 function CalculatorEngine.getVariableInternal(variable: string; pos: longint): extended;
@@ -595,7 +622,7 @@ begin
     'preans': exit(preans);
   end;
   if varRegistry.tryGetData(variable, p) then exit(p.value);
-  raise ExpressionInvalidException.createNew(msgUnknownVariable, pos);
+  if zeroUndefinedVars then exit(0) else raise ExpressionInvalidException.createNew(msgUnknownVariable, pos);
 end;
 
 { STACK IMPLEMENTATIONS }

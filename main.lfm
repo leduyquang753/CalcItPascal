@@ -1,14 +1,14 @@
 object MainWindow: TMainWindow
-  Left = 115
+  Left = 145
   Height = 375
-  Top = 204
+  Top = 175
   Width = 575
   Anchors = [akRight, akBottom]
   Caption = 'CalcIt'
   ClientHeight = 375
   ClientWidth = 575
   Constraints.MinHeight = 200
-  Constraints.MinWidth = 250
+  Constraints.MinWidth = 200
   DefaultMonitor = dmMainForm
   OnChangeBounds = FormChangeBounds
   OnCreate = FormCreate
@@ -30,7 +30,7 @@ object MainWindow: TMainWindow
     Width = 555
     ReadOnly = True
     ScrollBars = ssAutoVertical
-    TabOrder = 4
+    TabOrder = 7
   end
   object InputLabel: TLabel
     Left = 10
@@ -54,43 +54,43 @@ object MainWindow: TMainWindow
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
-    TextHint = 'Enter any expression, "/help", "/vars" or "/exit".'
+    TextHint = 'Enter any expression, "/clear", "/help", "/vars" or "/exit".'
   end
   object Calculate: TButton
-    Left = 490
+    Left = 501
     Height = 25
     Top = 341
-    Width = 75
+    Width = 65
     Anchors = [akRight, akBottom]
-    BorderSpacing.Right = 10
+    BorderSpacing.Right = 9
     BorderSpacing.Bottom = 10
     Caption = '&Calculate'
     OnClick = CalculateClick
-    TabOrder = 1
+    TabOrder = 6
   end
   object BtnVariables: TButton
-    Left = 408
+    Left = 431
     Height = 25
     Top = 341
-    Width = 75
+    Width = 65
     Anchors = [akRight, akBottom]
-    BorderSpacing.Right = 90
+    BorderSpacing.Right = 79
     BorderSpacing.Bottom = 10
     Caption = '&Variables'
     OnClick = BtnVariablesClick
-    TabOrder = 2
+    TabOrder = 5
   end
   object Help: TButton
-    Left = 375
+    Left = 261
     Height = 25
     Top = 341
     Width = 25
     Anchors = [akRight, akBottom]
-    BorderSpacing.Right = 170
+    BorderSpacing.Right = 289
     BorderSpacing.Bottom = 10
     Caption = '?'
     OnClick = HelpClick
-    TabOrder = 3
+    TabOrder = 2
   end
   object Language: TButton
     Left = 9
@@ -100,6 +100,30 @@ object MainWindow: TMainWindow
     Anchors = [akLeft, akBottom]
     Caption = 'EN'
     OnClick = LanguageClick
-    TabOrder = 5
+    TabOrder = 1
+  end
+  object BtnClear: TButton
+    Left = 361
+    Height = 25
+    Top = 341
+    Width = 65
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 149
+    BorderSpacing.Bottom = 10
+    Caption = 'C&lear'
+    OnClick = BtnClearClick
+    TabOrder = 4
+  end
+  object BtnSettings: TButton
+    Left = 291
+    Height = 25
+    Top = 341
+    Width = 65
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 219
+    BorderSpacing.Bottom = 10
+    Caption = '&Settings'
+    OnClick = BtnSettingsClick
+    TabOrder = 3
   end
 end

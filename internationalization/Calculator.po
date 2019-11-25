@@ -63,7 +63,7 @@ msgid "There are no integers between the two numbers given to the random integer
 msgstr ""
 
 #: main.msgconsolebegin
-msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
+msgid "Type any expression to calculate, \"/clear\", \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
 msgstr ""
 
 #: main.msgerror
@@ -97,6 +97,7 @@ msgid "OK"
 msgstr ""
 
 #: tlangselector.btncancel.caption
+msgctxt "tlangselector.btncancel.caption"
 msgid "Cancel"
 msgstr ""
 
@@ -107,6 +108,14 @@ msgstr ""
 
 #: tlangselector.caption
 msgid "Choose a language"
+msgstr ""
+
+#: tmainwindow.btnclear.caption
+msgid "C&lear"
+msgstr ""
+
+#: tmainwindow.btnsettings.caption
+msgid "&Settings"
 msgstr ""
 
 #: tmainwindow.btnvariables.caption
@@ -126,7 +135,7 @@ msgid "C&onsole"
 msgstr ""
 
 #: tmainwindow.expression.texthint
-msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
+msgid "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
 msgstr ""
 
 #: tmainwindow.help.caption
@@ -141,244 +150,96 @@ msgstr ""
 msgid "EN"
 msgstr ""
 
-#: tvariables.boxa.text
-msgid "BoxA"
+#: tsettings.boxstartupexpressions.hint
+msgid "[Nothing entered.]"
 msgstr ""
 
-#: tvariables.boxans.text
-msgid "BoxAns"
+#: tsettings.caption
+msgid "Settings"
 msgstr ""
 
-#: tvariables.boxb.text
-msgid "BoxB"
+#: tsettings.checkdefaultzero.caption
+msgid "De&fault undefined non-single-character variables to 0."
 msgstr ""
 
-#: tvariables.boxc.text
-msgid "BoxC"
+#: tsettings.checkenforcedecimalseparator.caption
+msgctxt "tsettings.checkenforcedecimalseparator.caption"
+msgid "&Enforce in expression"
 msgstr ""
 
-#: tvariables.boxd.text
-msgid "BoxD"
+#: tsettings.checkenforcemuldivstyle.caption
+msgctxt "tsettings.checkenforcemuldivstyle.caption"
+msgid "E&nforce in expression"
 msgstr ""
 
-#: tvariables.boxe.text
-msgid "BoxE"
+#: tsettings.checkenterwhenempty.caption
+msgid "&Pressing Enter while the input box is empty re-calculates the last expression."
 msgstr ""
 
-#: tvariables.boxf.text
-msgid "BoxF"
+#: tsettings.labeldecimalseparator.caption
+msgid "Decimal separator:"
 msgstr ""
 
-#: tvariables.boxg.text
-msgid "BoxG"
+#: tsettings.labelhistorysize.caption
+msgid "&Maximum expressions stored:"
 msgstr ""
 
-#: tvariables.boxh.text
-msgid "BoxH"
+#: tsettings.labelmuldivstyle.caption
+msgid "Multiplication, division signs' style:"
 msgstr ""
 
-#: tvariables.boxi.text
-msgid "BoxI"
+#: tsettings.labelstartupexpressions.caption
+msgid "S&tartup expressions"
 msgstr ""
 
-#: tvariables.boxj.text
-msgid "BoxJ"
+#: tsettings.labelthousandseparator.caption
+msgid "Thousand separator:"
 msgstr ""
 
-#: tvariables.boxk.text
-msgid "BoxK"
+#: tsettings.labelupdownbehavior.caption
+msgid "Up, down keys' behavior:"
 msgstr ""
 
-#: tvariables.boxl.text
-msgid "BoxL"
+#: tsettings.radiocommadot.caption
+msgid "C&omma/Dot"
 msgstr ""
 
-#: tvariables.boxm.text
-msgid "BoxM"
+#: tsettings.radiodecimalcomma.caption
+msgid "&Comma"
 msgstr ""
 
-#: tvariables.boxn.text
-msgid "BoxN"
+#: tsettings.radiodecimaldot.caption
+msgid "&Dot"
 msgstr ""
 
-#: tvariables.boxo.text
-msgid "BoxO"
+#: tsettings.radiomulasterisk.caption
+msgid "*&/"
 msgstr ""
 
-#: tvariables.boxp.text
-msgid "BoxP"
+#: tsettings.radiomuldot.caption
+msgid "&.:"
 msgstr ""
 
-#: tvariables.boxpreans.text
-msgid "BoxPreAns"
+#: tsettings.radiospace.caption
+msgid "&Space"
 msgstr ""
 
-#: tvariables.boxq.text
-msgid "BoxQ"
+#: tsettings.radioupdownbeginend.caption
+msgid "&Go to beginning, end"
 msgstr ""
 
-#: tvariables.boxr.text
-msgid "BoxR"
+#: tsettings.radioupdownhistory.caption
+msgid "&Browse expression history"
 msgstr ""
 
-#: tvariables.boxs.text
-msgid "BoxS"
+#: tsettings.settingsbuttoncancel.caption
+msgctxt "tsettings.settingsbuttoncancel.caption"
+msgid "Cancel"
 msgstr ""
 
-#: tvariables.boxt.text
-msgid "BoxT"
-msgstr ""
-
-#: tvariables.boxu.text
-msgid "BoxU"
-msgstr ""
-
-#: tvariables.boxv.text
-msgid "BoxV"
-msgstr ""
-
-#: tvariables.boxvarname.texthint
-msgid "Custom"
-msgstr ""
-
-#: tvariables.boxvarval.text
-msgid "BoxVarVal"
-msgstr ""
-
-#: tvariables.boxw.text
-msgid "BoxW"
-msgstr ""
-
-#: tvariables.boxx.text
-msgid "BoxX"
-msgstr ""
-
-#: tvariables.boxy.text
-msgid "BoxY"
-msgstr ""
-
-#: tvariables.boxz.text
-msgid "BoxZ"
-msgstr ""
-
-#: tvariables.buttona.caption
-msgid "A"
-msgstr ""
-
-#: tvariables.buttonans.caption
-msgid "Ans"
-msgstr ""
-
-#: tvariables.buttonb.caption
-msgid "B"
-msgstr ""
-
-#: tvariables.buttonc.caption
-msgid "C"
-msgstr ""
-
-#: tvariables.buttonclose.caption
-msgid "Close"
-msgstr ""
-
-#: tvariables.buttond.caption
-msgid "D"
-msgstr ""
-
-#: tvariables.buttone.caption
-msgid "E"
-msgstr ""
-
-#: tvariables.buttonf.caption
-msgid "F"
-msgstr ""
-
-#: tvariables.buttong.caption
-msgid "G"
-msgstr ""
-
-#: tvariables.buttonh.caption
-msgid "H"
-msgstr ""
-
-#: tvariables.buttoni.caption
-msgid "I"
-msgstr ""
-
-#: tvariables.buttonj.caption
-msgid "J"
-msgstr ""
-
-#: tvariables.buttonk.caption
-msgid "K"
-msgstr ""
-
-#: tvariables.buttonl.caption
-msgid "L"
-msgstr ""
-
-#: tvariables.buttonm.caption
-msgid "M"
-msgstr ""
-
-#: tvariables.buttonn.caption
-msgid "N"
-msgstr ""
-
-#: tvariables.buttono.caption
-msgid "O"
-msgstr ""
-
-#: tvariables.buttonp.caption
-msgid "P"
-msgstr ""
-
-#: tvariables.buttonpreans.caption
-msgid "PreAns"
-msgstr ""
-
-#: tvariables.buttonq.caption
-msgid "Q"
-msgstr ""
-
-#: tvariables.buttonr.caption
-msgid "R"
-msgstr ""
-
-#: tvariables.buttons.caption
-msgid "S"
-msgstr ""
-
-#: tvariables.buttont.caption
-msgid "T"
-msgstr ""
-
-#: tvariables.buttonu.caption
-msgid "U"
-msgstr ""
-
-#: tvariables.buttonv.caption
-msgid "V"
-msgstr ""
-
-#: tvariables.buttonw.caption
-msgid "W"
-msgstr ""
-
-#: tvariables.buttonx.caption
-msgid "X"
-msgstr ""
-
-#: tvariables.buttony.caption
-msgid "Y"
-msgstr ""
-
-#: tvariables.buttonz.caption
-msgid "Z"
-msgstr ""
-
-#: tvariables.caption
-msgid "Variables"
+#: tsettings.settingsbuttonok.caption
+msgctxt "tsettings.settingsbuttonok.caption"
+msgid "OK"
 msgstr ""
 
 #: ucalculatorengine.msgemptyvariablename
@@ -417,9 +278,8 @@ msgstr ""
 msgid "Unexpected closing brace."
 msgstr ""
 
-#: ucalculatorengine.msgunexpectedcomma
-msgctxt "ucalculatorengine.msgunexpectedcomma"
-msgid "Unexpected comma."
+#: ucalculatorengine.msgunexpecteddecimalseparator
+msgid "Unexpected decimal separator."
 msgstr ""
 
 #: ucalculatorengine.msgunexpecteddigit
@@ -444,6 +304,10 @@ msgstr ""
 
 #: ucalculatorengine.msgunexpectedsemicolon
 msgid "Unexpected semicolon."
+msgstr ""
+
+#: ucalculatorengine.msgunexpectedthousandseparator
+msgid "Unexpected thousand separator."
 msgstr ""
 
 #: ucalculatorengine.msgunknownfunction

@@ -76,8 +76,8 @@ msgid "There are no integers between the two numbers given to the random integer
 msgstr "Không có số nguyên nào nằm giữa hai số được đưa vào hàm số nguyên ngẫu nhiên."
 
 #: main.msgconsolebegin
-msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
-msgstr "Nhập một biểu thức để tính, \"/help\" để xem trợ giúp, \"/vars\" để xem và chọn các biến, hoặc \"/exit\"."
+msgid "Type any expression to calculate, \"/clear\", \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
+msgstr "Nhập một biểu thức để tính, \"/clear\" để xóa khung phản hồi, \"/help\" để xem trợ giúp, \"/vars\" để xem và chọn các biến, hoặc \"/exit\"."
 
 #: main.msgerror
 msgid "ERROR: "
@@ -110,6 +110,7 @@ msgid "OK"
 msgstr "OK"
 
 #: tlangselector.btncancel.caption
+msgctxt "tlangselector.btncancel.caption"
 msgid "Cancel"
 msgstr "Hủy"
 
@@ -121,6 +122,14 @@ msgstr "OK"
 #: tlangselector.caption
 msgid "Choose a language"
 msgstr "Chọn ngôn ngữ"
+
+#: tmainwindow.btnclear.caption
+msgid "C&lear"
+msgstr "&Xóa"
+
+#: tmainwindow.btnsettings.caption
+msgid "&Settings"
+msgstr "&Cài đặt"
 
 #: tmainwindow.btnvariables.caption
 msgid "&Variables"
@@ -139,8 +148,8 @@ msgid "C&onsole"
 msgstr "&Phản hồi"
 
 #: tmainwindow.expression.texthint
-msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
-msgstr "Nhập một biểu thức, \"/help\", \"/vars\" hoặc \"/exit\"."
+msgid "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
+msgstr "Nhập một biểu thức, \"/clear\", \"/help\", \"/vars\" hoặc \"/exit\"."
 
 #: tmainwindow.help.caption
 msgid "?"
@@ -154,245 +163,97 @@ msgstr "&Nhập"
 msgid "EN"
 msgstr "VI"
 
-#: tvariables.boxa.text
-msgid "BoxA"
-msgstr "BoxA"
+#: tsettings.boxstartupexpressions.hint
+msgid "[Nothing entered.]"
+msgstr "[Không có gì được nhập.]"
 
-#: tvariables.boxans.text
-msgid "BoxAns"
-msgstr "BoxAns"
+#: tsettings.caption
+msgid "Settings"
+msgstr "Cài đặt"
 
-#: tvariables.boxb.text
-msgid "BoxB"
-msgstr "BoxB"
+#: tsettings.checkdefaultzero.caption
+msgid "De&fault undefined non-single-character variables to 0."
+msgstr "&Mặc định các biến nhiều chữ cái chưa xác định là 0."
 
-#: tvariables.boxc.text
-msgid "BoxC"
-msgstr "BoxC"
+#: tsettings.checkenforcedecimalseparator.caption
+msgctxt "tsettings.checkenforcedecimalseparator.caption"
+msgid "&Enforce in expression"
+msgstr "&Bắt buộc trong biểu thức"
 
-#: tvariables.boxd.text
-msgid "BoxD"
-msgstr "BoxD"
+#: tsettings.checkenforcemuldivstyle.caption
+msgctxt "tsettings.checkenforcemuldivstyle.caption"
+msgid "E&nforce in expression"
+msgstr "Bắ&t buộc trong biểu thức"
 
-#: tvariables.boxe.text
-msgid "BoxE"
-msgstr "BoxE"
+#: tsettings.checkenterwhenempty.caption
+msgid "&Pressing Enter while the input box is empty re-calculates the last expression."
+msgstr "&Nhấn Enter khi hộp nhập trống tính biểu thức vừa được tính."
 
-#: tvariables.boxf.text
-msgid "BoxF"
-msgstr "BoxF"
+#: tsettings.labeldecimalseparator.caption
+msgid "Decimal separator:"
+msgstr "Dấu thập phân:"
 
-#: tvariables.boxg.text
-msgid "BoxG"
-msgstr "BoxG"
+#: tsettings.labelhistorysize.caption
+msgid "&Maximum expressions stored:"
+msgstr "&Số biểu thức tối đa được lưu:"
 
-#: tvariables.boxh.text
-msgid "BoxH"
-msgstr "BoxH"
+#: tsettings.labelmuldivstyle.caption
+msgid "Multiplication, division signs' style:"
+msgstr "Kiểu dấu nhân, chia:"
 
-#: tvariables.boxi.text
-msgid "BoxI"
-msgstr "BoxI"
+#: tsettings.labelstartupexpressions.caption
+msgid "S&tartup expressions"
+msgstr "Các biểu thức &khi bắt đầu chạy"
 
-#: tvariables.boxj.text
-msgid "BoxJ"
-msgstr "BoxJ"
+#: tsettings.labelthousandseparator.caption
+msgid "Thousand separator:"
+msgstr "Dấu phân lớp:"
 
-#: tvariables.boxk.text
-msgid "BoxK"
-msgstr "BoxK"
+#: tsettings.labelupdownbehavior.caption
+msgid "Up, down keys' behavior:"
+msgstr "Phím lên, xuống:"
 
-#: tvariables.boxl.text
-msgid "BoxL"
-msgstr "BoxL"
+#: tsettings.radiocommadot.caption
+msgid "C&omma/Dot"
+msgstr "P&hẩy/Chấm"
 
-#: tvariables.boxm.text
-msgid "BoxM"
-msgstr "BoxM"
+#: tsettings.radiodecimalcomma.caption
+msgid "&Comma"
+msgstr "&Phẩy"
 
-#: tvariables.boxn.text
-msgid "BoxN"
-msgstr "BoxN"
+#: tsettings.radiodecimaldot.caption
+msgid "&Dot"
+msgstr "&Chấm"
 
-#: tvariables.boxo.text
-msgid "BoxO"
-msgstr "BoxO"
+#: tsettings.radiomulasterisk.caption
+msgid "*&/"
+msgstr "*&/"
 
-#: tvariables.boxp.text
-msgid "BoxP"
-msgstr "BoxP"
+#: tsettings.radiomuldot.caption
+msgid "&.:"
+msgstr "&.:"
 
-#: tvariables.boxpreans.text
-msgid "BoxPreAns"
-msgstr "BoxPreAns"
+#: tsettings.radiospace.caption
+msgid "&Space"
+msgstr "Dấ&u cách"
 
-#: tvariables.boxq.text
-msgid "BoxQ"
-msgstr "BoxQ"
+#: tsettings.radioupdownbeginend.caption
+msgid "&Go to beginning, end"
+msgstr "Đ&i đến đầu, cuối"
 
-#: tvariables.boxr.text
-msgid "BoxR"
-msgstr "BoxR"
+#: tsettings.radioupdownhistory.caption
+msgid "&Browse expression history"
+msgstr "&Xem lịch sử"
 
-#: tvariables.boxs.text
-msgid "BoxS"
-msgstr "BoxS"
+#: tsettings.settingsbuttoncancel.caption
+msgctxt "tsettings.settingsbuttoncancel.caption"
+msgid "Cancel"
+msgstr "Hủy"
 
-#: tvariables.boxt.text
-msgid "BoxT"
-msgstr "BoxT"
-
-#: tvariables.boxu.text
-msgid "BoxU"
-msgstr "BoxU"
-
-#: tvariables.boxv.text
-msgid "BoxV"
-msgstr "BoxV"
-
-#: tvariables.boxvarname.texthint
-msgid "Custom"
-msgstr "Tùy ý"
-
-#: tvariables.boxvarval.text
-msgid "BoxVarVal"
-msgstr "BoxVarVal"
-
-#: tvariables.boxw.text
-msgid "BoxW"
-msgstr "BoxW"
-
-#: tvariables.boxx.text
-msgid "BoxX"
-msgstr "BoxX"
-
-#: tvariables.boxy.text
-msgid "BoxY"
-msgstr "BoxY"
-
-#: tvariables.boxz.text
-msgid "BoxZ"
-msgstr "BoxZ"
-
-#: tvariables.buttona.caption
-msgid "A"
-msgstr "A"
-
-#: tvariables.buttonans.caption
-msgid "Ans"
-msgstr "Ans"
-
-#: tvariables.buttonb.caption
-msgid "B"
-msgstr "B"
-
-#: tvariables.buttonc.caption
-msgid "C"
-msgstr "C"
-
-#: tvariables.buttonclose.caption
-msgid "Close"
-msgstr "Đóng"
-
-#: tvariables.buttond.caption
-msgid "D"
-msgstr "D"
-
-#: tvariables.buttone.caption
-msgid "E"
-msgstr "E"
-
-#: tvariables.buttonf.caption
-msgid "F"
-msgstr "F"
-
-#: tvariables.buttong.caption
-msgid "G"
-msgstr "G"
-
-#: tvariables.buttonh.caption
-msgid "H"
-msgstr "H"
-
-#: tvariables.buttoni.caption
-msgid "I"
-msgstr "I"
-
-#: tvariables.buttonj.caption
-msgid "J"
-msgstr "J"
-
-#: tvariables.buttonk.caption
-msgid "K"
-msgstr "K"
-
-#: tvariables.buttonl.caption
-msgid "L"
-msgstr "L"
-
-#: tvariables.buttonm.caption
-msgid "M"
-msgstr "M"
-
-#: tvariables.buttonn.caption
-msgid "N"
-msgstr "N"
-
-#: tvariables.buttono.caption
-msgid "O"
-msgstr "O"
-
-#: tvariables.buttonp.caption
-msgid "P"
-msgstr "P"
-
-#: tvariables.buttonpreans.caption
-msgid "PreAns"
-msgstr "PreAns"
-
-#: tvariables.buttonq.caption
-msgid "Q"
-msgstr "Q"
-
-#: tvariables.buttonr.caption
-msgid "R"
-msgstr "R"
-
-#: tvariables.buttons.caption
-msgid "S"
-msgstr "S"
-
-#: tvariables.buttont.caption
-msgid "T"
-msgstr "T"
-
-#: tvariables.buttonu.caption
-msgid "U"
-msgstr "U"
-
-#: tvariables.buttonv.caption
-msgid "V"
-msgstr "V"
-
-#: tvariables.buttonw.caption
-msgid "W"
-msgstr "W"
-
-#: tvariables.buttonx.caption
-msgid "X"
-msgstr "X"
-
-#: tvariables.buttony.caption
-msgid "Y"
-msgstr "Y"
-
-#: tvariables.buttonz.caption
-msgid "Z"
-msgstr "Z"
-
-#: tvariables.caption
-msgid "Variables"
-msgstr "Biến"
+#: tsettings.settingsbuttonok.caption
+msgctxt "tsettings.settingsbuttonok.caption"
+msgid "OK"
+msgstr "OK"
 
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
@@ -430,10 +291,9 @@ msgstr "Dấu âm/dương thừa ở cuối biểu thức."
 msgid "Unexpected closing brace."
 msgstr "Dấu đóng ngoặc không hợp lệ."
 
-#: ucalculatorengine.msgunexpectedcomma
-msgctxt "ucalculatorengine.msgunexpectedcomma"
-msgid "Unexpected comma."
-msgstr "Dấu phẩy không hợp lệ."
+#: ucalculatorengine.msgunexpecteddecimalseparator
+msgid "Unexpected decimal separator."
+msgstr "Dấu thập phân không hợp lệ."
 
 #: ucalculatorengine.msgunexpecteddigit
 msgid "Unexpected digit."
@@ -458,6 +318,10 @@ msgstr "Dấu phần trăm không hợp lệ."
 #: ucalculatorengine.msgunexpectedsemicolon
 msgid "Unexpected semicolon."
 msgstr "Dấu chấm phẩy không hợp lệ."
+
+#: ucalculatorengine.msgunexpectedthousandseparator
+msgid "Unexpected thousand separator."
+msgstr "Dấu hàng nghìn không hợp lệ."
 
 #: ucalculatorengine.msgunknownfunction
 msgid "Unknown function \"%s\"."

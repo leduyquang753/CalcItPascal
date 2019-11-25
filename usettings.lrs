@@ -1,0 +1,70 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TSettings','FORMDATA',[
+  'TPF0'#9'TSettings'#8'Settings'#4'Left'#3#23#1#6'Height'#3']'#1#3'Top'#3#143#0
+  +#5'Width'#3#213#1#11'BorderIcons'#11#12'biSystemMenu'#0#11'BorderStyle'#7#8
+  +'bsDialog'#7'Caption'#6#8'Settings'#12'ClientHeight'#3']'#1#11'ClientWidth'#3
+  +#213#1#8'Position'#7#16'poMainFormCenter'#10'LCLVersion'#6#7'2.0.6.0'#0#6'TP'
+  +'anel'#21'PanelDecimalSeparator'#4'Left'#2#24#6'Height'#2#20#3'Top'#2#10#5'W'
+  +'idth'#3#180#1#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#2#20#11'ClientWid'
+  +'th'#3#180#1#8'TabOrder'#2#0#0#12'TRadioButton'#15'RadioDecimalDot'#4'Left'#2
+  +'p'#6'Height'#2#19#3'Top'#2#0#5'Width'#2''''#7'Caption'#6#4'&Dot'#8'TabOrder'
+  +#2#0#0#0#12'TRadioButton'#17'RadioDecimalComma'#4'Left'#3#162#0#6'Height'#2
+  +#19#3'Top'#2#0#5'Width'#2'?'#7'Caption'#6#6'&Comma'#7'Checked'#9#8'TabOrder'
+  +#2#1#7'TabStop'#9#0#0#6'TLabel'#21'LabelDecimalSeparator'#4'Left'#2#2#6'Heig'
+  +'ht'#2#15#3'Top'#2#2#5'Width'#2'b'#7'Caption'#6#18'Decimal separator:'#11'Pa'
+  +'rentColor'#8#0#0#9'TCheckBox'#28'CheckEnforceDecimalSeparator'#4'Left'#3#235
+  +#0#6'Height'#2#19#3'Top'#2#0#5'Width'#3#132#0#7'Caption'#6#22'&Enforce in ex'
+  +'pression'#8'TabOrder'#2#2#0#0#0#6'TPanel'#22'PanelThousandSeparator'#4'Left'
+  +#2#24#6'Height'#2#20#3'Top'#2#30#5'Width'#3#180#1#10'BevelOuter'#7#6'bvNone'
+  +#12'ClientHeight'#2#20#11'ClientWidth'#3#180#1#8'TabOrder'#2#1#0#12'TRadioBu'
+  +'tton'#13'RadioCommaDot'#4'Left'#2'w'#6'Height'#2#19#3'Top'#2#0#5'Width'#2'W'
+  +#7'Caption'#6#10'C&omma/Dot'#8'TabOrder'#2#0#0#0#12'TRadioButton'#10'RadioSp'
+  +'ace'#4'Left'#3#223#0#6'Height'#2#19#3'Top'#2#0#5'Width'#2'3'#7'Caption'#6#6
+  +'&Space'#7'Checked'#9#8'TabOrder'#2#1#7'TabStop'#9#0#0#6'TLabel'#22'LabelTho'
+  +'usandSeparator'#4'Left'#2#2#6'Height'#2#15#3'Top'#2#2#5'Width'#2'k'#7'Capti'
+  +'on'#6#19'Thousand separator:'#11'ParentColor'#8#0#0#0#6'TPanel'#16'PanelMul'
+  +'DivStyle'#4'Left'#2#24#6'Height'#2#20#3'Top'#2'2'#5'Width'#3#180#1#10'Bevel'
+  +'Outer'#7#6'bvNone'#12'ClientHeight'#2#20#11'ClientWidth'#3#180#1#8'TabOrder'
+  +#2#2#0#12'TRadioButton'#11'RadioMulDot'#4'Left'#3#197#0#6'Height'#2#19#3'Top'
+  +#2#0#5'Width'#2#26#7'Caption'#6#3'&.:'#7'Checked'#9#8'TabOrder'#2#0#7'TabSto'
+  +'p'#9#0#0#12'TRadioButton'#16'RadioMulAsterisk'#4'Left'#3#238#0#6'Height'#2
+  +#19#3'Top'#2#0#5'Width'#2#30#7'Caption'#6#3'*&/'#8'TabOrder'#2#1#0#0#6'TLabe'
+  +'l'#16'LabelMulDivStyle'#4'Left'#2#2#6'Height'#2#15#3'Top'#2#2#5'Width'#3#184
+  +#0#7'Caption'#6'&Multiplication, division signs'' style:'#11'ParentColor'#8#0
+  +#0#9'TCheckBox'#23'CheckEnforceMulDivStyle'#4'Left'#3#27#1#6'Height'#2#19#3
+  +'Top'#2#0#5'Width'#3#132#0#7'Caption'#6#22'E&nforce in expression'#8'TabOrde'
+  +'r'#2#2#0#0#0#9'TCheckBox'#16'CheckDefaultZero'#4'Left'#2#10#6'Height'#2#19#3
+  +'Top'#2'F'#5'Width'#3'0'#1#7'Caption'#6'7De&fault undefined non-single-chara'
+  +'cter variables to 0.'#8'TabOrder'#2#3#0#0#9'TCheckBox'#19'CheckEnterWhenEmp'
+  +'ty'#4'Left'#2#10#6'Height'#2#19#3'Top'#2'Z'#5'Width'#3#164#1#7'Caption'#6'O'
+  +'&Pressing Enter while the input box is empty re-calculates the last express'
+  +'ion.'#7'Checked'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#4#0#0#6'TPanel'#19
+  +'PanelUpDownBehavior'#4'Left'#2#24#6'Height'#2#20#3'Top'#2'n'#5'Width'#3#180
+  +#1#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#2#20#11'ClientWidth'#3#180#1#8
+  +'TabOrder'#2#5#0#12'TRadioButton'#18'RadioUpDownHistory'#4'Left'#3#140#0#6'H'
+  +'eight'#2#19#3'Top'#2#0#5'Width'#3#156#0#7'Caption'#6#26'&Browse expression '
+  +'history'#8'TabOrder'#2#0#0#0#12'TRadioButton'#19'RadioUpDownBeginEnd'#4'Lef'
+  +'t'#3','#1#6'Height'#2#19#3'Top'#2#0#5'Width'#3#132#0#7'Caption'#6#21'&Go to'
+  +' beginning, end'#7'Checked'#9#8'TabOrder'#2#1#7'TabStop'#9#0#0#6'TLabel'#19
+  +'LabelUpDownBehavior'#4'Left'#2#2#6'Height'#2#15#3'Top'#2#2#5'Width'#3#132#0
+  +#7'Caption'#6#24'Up, down keys'' behavior:'#11'ParentColor'#8#0#0#0#6'TLabel'
+  +#23'LabelStartupExpressions'#4'Left'#2#9#6'Height'#2#15#3'Top'#3#160#0#5'Wid'
+  +'th'#2'f'#7'Caption'#6#20'S&tartup expressions'#12'FocusControl'#7#21'BoxSta'
+  +'rtupExpressions'#11'ParentColor'#8#0#0#7'TButton'#16'SettingsButtonOK'#4'Le'
+  +'ft'#3#129#1#6'Height'#2#25#3'Top'#3'@'#1#5'Width'#2'K'#7'Caption'#6#2'OK'#11
+  +'ModalResult'#2#1#8'TabOrder'#2#9#0#0#7'TButton'#20'SettingsButtonCancel'#4
+  +'Left'#3'6'#1#6'Height'#2#25#3'Top'#3'@'#1#5'Width'#2'K'#7'Caption'#6#6'Canc'
+  +'el'#11'ModalResult'#2#2#8'TabOrder'#2#8#0#0#5'TMemo'#21'BoxStartupExpressio'
+  +'ns'#4'Left'#2#9#6'Height'#3#136#0#4'Hint'#6#18'[Nothing entered.]'#3'Top'#3
+  +#180#0#5'Width'#3#194#1#13'Lines.Strings'#1#6'@// Enter expressions that are'
+  +' evaluated when CalcIt starts here.'#6'A// Everything behind double slashes'
+  +' on each line will be ignored.'#6'<// These will be performed silently unle'
+  +'ss there are errors.'#0#10'ScrollBars'#7#10'ssVertical'#8'TabOrder'#2#7#0#0
+  +#6'TLabel'#16'LabelHistorySize'#4'Left'#2#25#6'Height'#2#15#3'Top'#3#133#0#5
+  +'Width'#3#158#0#7'Caption'#6#28'&Maximum expressions stored:'#12'FocusContro'
+  +'l'#7#18'SpinMaxExpressions'#11'ParentColor'#8#0#0#9'TSpinEdit'#18'SpinMaxEx'
+  +'pressions'#4'Left'#3#200#0#6'Height'#2#23#3'Top'#3#130#0#5'Width'#2'<'#9'Al'
+  ,'ignment'#7#14'taRightJustify'#8'MaxValue'#4'?B'#15#0#8'TabOrder'#2#6#5'Valu'
+  +'e'#2'@'#0#0#0
+]);

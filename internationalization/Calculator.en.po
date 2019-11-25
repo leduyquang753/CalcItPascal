@@ -73,9 +73,9 @@ msgid "There are no integers between the two numbers given to the random integer
 msgstr "There are no integers between the two numbers given to the random integer function."
 
 #: main.msgconsolebegin
-#| msgid "Type any expression to calculate, \"help\", \"vars\" to view and select variables, or \"exit\"."
-msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
-msgstr "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
+#| msgid "Type any expression to calculate, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
+msgid "Type any expression to calculate, \"/clear\", \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
+msgstr "Type any expression to calculate, \"/clear\", \"/help\", \"/vars\" to view and select variables, or \"/exit\"."
 
 #: main.msgerror
 msgid "ERROR: "
@@ -108,6 +108,7 @@ msgid "OK"
 msgstr "OK"
 
 #: tlangselector.btncancel.caption
+msgctxt "tlangselector.btncancel.caption"
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -119,6 +120,14 @@ msgstr "OK"
 #: tlangselector.caption
 msgid "Choose a language"
 msgstr "Choose a language"
+
+#: tmainwindow.btnclear.caption
+msgid "C&lear"
+msgstr "C&lear"
+
+#: tmainwindow.btnsettings.caption
+msgid "&Settings"
+msgstr "&Settings"
 
 #: tmainwindow.btnvariables.caption
 msgid "&Variables"
@@ -138,9 +147,9 @@ msgid "C&onsole"
 msgstr "C&onsole"
 
 #: tmainwindow.expression.texthint
-#| msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."
-msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
-msgstr "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
+#| msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
+msgid "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
+msgstr "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
 
 #: tmainwindow.help.caption
 msgid "?"
@@ -155,245 +164,97 @@ msgstr "&Input"
 msgid "EN"
 msgstr "EN"
 
-#: tvariables.boxa.text
-msgid "BoxA"
-msgstr "BoxA"
+#: tsettings.boxstartupexpressions.hint
+msgid "[Nothing entered.]"
+msgstr "[Nothing entered.]"
 
-#: tvariables.boxans.text
-msgid "BoxAns"
-msgstr "BoxAns"
+#: tsettings.caption
+msgid "Settings"
+msgstr "Settings"
 
-#: tvariables.boxb.text
-msgid "BoxB"
-msgstr "BoxB"
+#: tsettings.checkdefaultzero.caption
+msgid "De&fault undefined non-single-character variables to 0."
+msgstr "De&fault undefined non-single-character variables to 0."
 
-#: tvariables.boxc.text
-msgid "BoxC"
-msgstr "BoxC"
+#: tsettings.checkenforcedecimalseparator.caption
+msgctxt "tsettings.checkenforcedecimalseparator.caption"
+msgid "&Enforce in expression"
+msgstr "&Enforce in expression"
 
-#: tvariables.boxd.text
-msgid "BoxD"
-msgstr "BoxD"
+#: tsettings.checkenforcemuldivstyle.caption
+msgctxt "tsettings.checkenforcemuldivstyle.caption"
+msgid "E&nforce in expression"
+msgstr "E&nforce in expression"
 
-#: tvariables.boxe.text
-msgid "BoxE"
-msgstr "BoxE"
+#: tsettings.checkenterwhenempty.caption
+msgid "&Pressing Enter while the input box is empty re-calculates the last expression."
+msgstr "&Pressing Enter while the input box is empty re-calculates the last expression."
 
-#: tvariables.boxf.text
-msgid "BoxF"
-msgstr "BoxF"
+#: tsettings.labeldecimalseparator.caption
+msgid "Decimal separator:"
+msgstr "Decimal separator:"
 
-#: tvariables.boxg.text
-msgid "BoxG"
-msgstr "BoxG"
+#: tsettings.labelhistorysize.caption
+msgid "&Maximum expressions stored:"
+msgstr "&Maximum expressions stored:"
 
-#: tvariables.boxh.text
-msgid "BoxH"
-msgstr "BoxH"
+#: tsettings.labelmuldivstyle.caption
+msgid "Multiplication, division signs' style:"
+msgstr "Multiplication, division signs' style:"
 
-#: tvariables.boxi.text
-msgid "BoxI"
-msgstr "BoxI"
+#: tsettings.labelstartupexpressions.caption
+msgid "S&tartup expressions"
+msgstr "S&tartup expressions"
 
-#: tvariables.boxj.text
-msgid "BoxJ"
-msgstr "BoxJ"
+#: tsettings.labelthousandseparator.caption
+msgid "Thousand separator:"
+msgstr "Thousand separator:"
 
-#: tvariables.boxk.text
-msgid "BoxK"
-msgstr "BoxK"
+#: tsettings.labelupdownbehavior.caption
+msgid "Up, down keys' behavior:"
+msgstr "Up, down keys' behavior:"
 
-#: tvariables.boxl.text
-msgid "BoxL"
-msgstr "BoxL"
+#: tsettings.radiocommadot.caption
+msgid "C&omma/Dot"
+msgstr "C&omma/Dot"
 
-#: tvariables.boxm.text
-msgid "BoxM"
-msgstr "BoxM"
+#: tsettings.radiodecimalcomma.caption
+msgid "&Comma"
+msgstr "&Comma"
 
-#: tvariables.boxn.text
-msgid "BoxN"
-msgstr "BoxN"
+#: tsettings.radiodecimaldot.caption
+msgid "&Dot"
+msgstr "&Dot"
 
-#: tvariables.boxo.text
-msgid "BoxO"
-msgstr "BoxO"
+#: tsettings.radiomulasterisk.caption
+msgid "*&/"
+msgstr "*&/"
 
-#: tvariables.boxp.text
-msgid "BoxP"
-msgstr "BoxP"
+#: tsettings.radiomuldot.caption
+msgid "&.:"
+msgstr "&.:"
 
-#: tvariables.boxpreans.text
-msgid "BoxPreAns"
-msgstr "BoxPreAns"
+#: tsettings.radiospace.caption
+msgid "&Space"
+msgstr "&Space"
 
-#: tvariables.boxq.text
-msgid "BoxQ"
-msgstr "BoxQ"
+#: tsettings.radioupdownbeginend.caption
+msgid "&Go to beginning, end"
+msgstr "&Go to beginning, end"
 
-#: tvariables.boxr.text
-msgid "BoxR"
-msgstr "BoxR"
+#: tsettings.radioupdownhistory.caption
+msgid "&Browse expression history"
+msgstr "&Browse expression history"
 
-#: tvariables.boxs.text
-msgid "BoxS"
-msgstr "BoxS"
+#: tsettings.settingsbuttoncancel.caption
+msgctxt "tsettings.settingsbuttoncancel.caption"
+msgid "Cancel"
+msgstr "Cancel"
 
-#: tvariables.boxt.text
-msgid "BoxT"
-msgstr "BoxT"
-
-#: tvariables.boxu.text
-msgid "BoxU"
-msgstr "BoxU"
-
-#: tvariables.boxv.text
-msgid "BoxV"
-msgstr "BoxV"
-
-#: tvariables.boxvarname.texthint
-msgid "Custom"
-msgstr "Custom"
-
-#: tvariables.boxvarval.text
-msgid "BoxVarVal"
-msgstr "BoxVarVal"
-
-#: tvariables.boxw.text
-msgid "BoxW"
-msgstr "BoxW"
-
-#: tvariables.boxx.text
-msgid "BoxX"
-msgstr "BoxX"
-
-#: tvariables.boxy.text
-msgid "BoxY"
-msgstr "BoxY"
-
-#: tvariables.boxz.text
-msgid "BoxZ"
-msgstr "BoxZ"
-
-#: tvariables.buttona.caption
-msgid "A"
-msgstr "A"
-
-#: tvariables.buttonans.caption
-msgid "Ans"
-msgstr "Ans"
-
-#: tvariables.buttonb.caption
-msgid "B"
-msgstr "B"
-
-#: tvariables.buttonc.caption
-msgid "C"
-msgstr "C"
-
-#: tvariables.buttonclose.caption
-msgid "Close"
-msgstr "Close"
-
-#: tvariables.buttond.caption
-msgid "D"
-msgstr "D"
-
-#: tvariables.buttone.caption
-msgid "E"
-msgstr "E"
-
-#: tvariables.buttonf.caption
-msgid "F"
-msgstr "F"
-
-#: tvariables.buttong.caption
-msgid "G"
-msgstr "G"
-
-#: tvariables.buttonh.caption
-msgid "H"
-msgstr "H"
-
-#: tvariables.buttoni.caption
-msgid "I"
-msgstr "I"
-
-#: tvariables.buttonj.caption
-msgid "J"
-msgstr "J"
-
-#: tvariables.buttonk.caption
-msgid "K"
-msgstr "K"
-
-#: tvariables.buttonl.caption
-msgid "L"
-msgstr "L"
-
-#: tvariables.buttonm.caption
-msgid "M"
-msgstr "M"
-
-#: tvariables.buttonn.caption
-msgid "N"
-msgstr "N"
-
-#: tvariables.buttono.caption
-msgid "O"
-msgstr "O"
-
-#: tvariables.buttonp.caption
-msgid "P"
-msgstr "P"
-
-#: tvariables.buttonpreans.caption
-msgid "PreAns"
-msgstr "PreAns"
-
-#: tvariables.buttonq.caption
-msgid "Q"
-msgstr "Q"
-
-#: tvariables.buttonr.caption
-msgid "R"
-msgstr "R"
-
-#: tvariables.buttons.caption
-msgid "S"
-msgstr "S"
-
-#: tvariables.buttont.caption
-msgid "T"
-msgstr "T"
-
-#: tvariables.buttonu.caption
-msgid "U"
-msgstr "U"
-
-#: tvariables.buttonv.caption
-msgid "V"
-msgstr "V"
-
-#: tvariables.buttonw.caption
-msgid "W"
-msgstr "W"
-
-#: tvariables.buttonx.caption
-msgid "X"
-msgstr "X"
-
-#: tvariables.buttony.caption
-msgid "Y"
-msgstr "Y"
-
-#: tvariables.buttonz.caption
-msgid "Z"
-msgstr "Z"
-
-#: tvariables.caption
-msgid "Variables"
-msgstr "Variables"
+#: tsettings.settingsbuttonok.caption
+msgctxt "tsettings.settingsbuttonok.caption"
+msgid "OK"
+msgstr "OK"
 
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
@@ -433,10 +294,9 @@ msgstr "Trailing negative/positive sign(s)."
 msgid "Unexpected closing brace."
 msgstr "Unexpected closing brace."
 
-#: ucalculatorengine.msgunexpectedcomma
-msgctxt "ucalculatorengine.msgunexpectedcomma"
-msgid "Unexpected comma."
-msgstr "Unexpected comma."
+#: ucalculatorengine.msgunexpecteddecimalseparator
+msgid "Unexpected decimal separator."
+msgstr "Unexpected decimal separator."
 
 #: ucalculatorengine.msgunexpecteddigit
 msgid "Unexpected digit."
@@ -461,6 +321,10 @@ msgstr "Unexpected percent sign."
 #: ucalculatorengine.msgunexpectedsemicolon
 msgid "Unexpected semicolon."
 msgstr "Unexpected semicolon."
+
+#: ucalculatorengine.msgunexpectedthousandseparator
+msgid "Unexpected thousand separator."
+msgstr "Unexpected thousand separator."
 
 #: ucalculatorengine.msgunknownfunction
 msgid "Unknown function \"%s\"."

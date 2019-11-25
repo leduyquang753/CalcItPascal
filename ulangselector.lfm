@@ -7,6 +7,7 @@ object LangSelector: TLangSelector
   ClientHeight = 351
   ClientWidth = 304
   OnActivate = FormActivate
+  OnKeyDown = FormKeyDown
   Position = poDefault
   LCLVersion = '2.0.6.0'
   object LangList: TListBox

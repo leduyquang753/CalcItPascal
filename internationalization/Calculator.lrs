@@ -47,165 +47,146 @@ LazarusResources.Add('Calculator.en','PO',[
   +'msgid "There are no integers between the two numbers given to the random in'
   +'teger function."'#13#10'msgstr "There are no integers between the two numbe'
   +'rs given to the random integer function."'#13#10#13#10'#: main.msgconsolebe'
-  +'gin'#13#10'#| msgid "Type any expression to calculate, \"help\", \"vars\" t'
-  +'o view and select variables, or \"exit\"."'#13#10'msgid "Type any expressio'
-  +'n to calculate, \"/help\", \"/vars\" to view and select variables, or \"/ex'
-  +'it\"."'#13#10'msgstr "Type any expression to calculate, \"/help\", \"/vars\'
-  +'" to view and select variables, or \"/exit\"."'#13#10#13#10'#: main.msgerro'
-  +'r'#13#10'msgid "ERROR: "'#13#10'msgstr "ERROR: "'#13#10#13#10'#: main.msgov'
-  +'erflow'#13#10'msgid "Numbers in the calculation are too large, cannot compu'
-  +'te."'#13#10'msgstr "Numbers in the calculation are too large, cannot comput'
-  +'e."'#13#10#13#10'#: operands.msgbracecalculated'#13#10'msgid "Brace is invo'
-  +'lved as an operator. This is a BUG, report it to the author."'#13#10'msgstr'
-  +' "Brace is involved as an operator. This is a BUG, report it to the author.'
-  +'"'#13#10#13#10'#: operands.msgdivbyzero'#13#10'msgctxt "operands.msgdivbyze'
-  +'ro"'#13#10'msgid "Division by zero."'#13#10'msgstr "Division by zero."'#13
-  +#10#13#10'#: operands.msgunsupportedexponentiation'#13#10'msgid "Unsupported'
-  +' exponentiation operation."'#13#10'msgstr "Unsupported exponentiation opera'
-  +'tion."'#13#10#13#10'#: thelpbox.caption'#13#10'msgid "About"'#13#10'msgstr '
-  ,'"About"'#13#10#13#10'#: thelpbox.ok.caption'#13#10'msgctxt "thelpbox.ok.cap'
-  +'tion"'#13#10'msgid "OK"'#13#10'msgstr "OK"'#13#10#13#10'#: tlangselector.bt'
-  +'ncancel.caption'#13#10'msgid "Cancel"'#13#10'msgstr "Cancel"'#13#10#13#10'#'
-  +': tlangselector.btnok.caption'#13#10'msgctxt "tlangselector.btnok.caption"'
-  +#13#10'msgid "OK"'#13#10'msgstr "OK"'#13#10#13#10'#: tlangselector.caption'
-  +#13#10'msgid "Choose a language"'#13#10'msgstr "Choose a language"'#13#10#13
-  +#10'#: tmainwindow.btnvariables.caption'#13#10'msgid "&Variables"'#13#10'msg'
-  +'str "&Variables"'#13#10#13#10'#: tmainwindow.calculate.caption'#13#10'msgid'
-  +' "&Calculate"'#13#10'msgstr "&Calculate"'#13#10#13#10'#: tmainwindow.captio'
-  +'n'#13#10'msgid "CalcIt"'#13#10'msgstr "CalcIt"'#13#10#13#10'#: tmainwindow.'
-  +'consolelabel.caption'#13#10'#| msgid "Console"'#13#10'msgid "C&onsole"'#13
-  +#10'msgstr "C&onsole"'#13#10#13#10'#: tmainwindow.expression.texthint'#13#10
-  +'#| msgid "Enter any expression, \"help\", \"vars\" or \"exit\"."'#13#10'msg'
-  +'id "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."'#13#10'msgstr'
-  +' "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."'#13#10#13#10'#:'
-  +' tmainwindow.help.caption'#13#10'msgid "?"'#13#10'msgstr "?"'#13#10#13#10'#'
-  +': tmainwindow.inputlabel.caption'#13#10'#| msgid "Input"'#13#10'msgid "&Inp'
-  +'ut"'#13#10'msgstr "&Input"'#13#10#13#10'#: tmainwindow.language.caption'#13
-  +#10'msgid "EN"'#13#10'msgstr "EN"'#13#10#13#10'#: tvariables.boxa.text'#13#10
-  +'msgid "BoxA"'#13#10'msgstr "BoxA"'#13#10#13#10'#: tvariables.boxans.text'#13
-  +#10'msgid "BoxAns"'#13#10'msgstr "BoxAns"'#13#10#13#10'#: tvariables.boxb.te'
-  +'xt'#13#10'msgid "BoxB"'#13#10'msgstr "BoxB"'#13#10#13#10'#: tvariables.boxc'
-  +'.text'#13#10'msgid "BoxC"'#13#10'msgstr "BoxC"'#13#10#13#10'#: tvariables.b'
-  +'oxd.text'#13#10'msgid "BoxD"'#13#10'msgstr "BoxD"'#13#10#13#10'#: tvariable'
-  +'s.boxe.text'#13#10'msgid "BoxE"'#13#10'msgstr "BoxE"'#13#10#13#10'#: tvaria'
-  +'bles.boxf.text'#13#10'msgid "BoxF"'#13#10'msgstr "BoxF"'#13#10#13#10'#: tva'
-  +'riables.boxg.text'#13#10'msgid "BoxG"'#13#10'msgstr "BoxG"'#13#10#13#10'#: '
-  +'tvariables.boxh.text'#13#10'msgid "BoxH"'#13#10'msgstr "BoxH"'#13#10#13#10
-  +'#: tvariables.boxi.text'#13#10'msgid "BoxI"'#13#10'msgstr "BoxI"'#13#10#13
-  +#10'#: tvariables.boxj.text'#13#10'msgid "BoxJ"'#13#10'msgstr "BoxJ"'#13#10
-  +#13#10'#: tvariables.boxk.text'#13#10'msgid "BoxK"'#13#10'msgstr "BoxK"'#13
-  +#10#13#10'#: tvariables.boxl.text'#13#10'msgid "BoxL"'#13#10'msgstr "BoxL"'
-  +#13#10#13#10'#: tvariables.boxm.text'#13#10'msgid "BoxM"'#13#10'msgstr "BoxM'
-  +'"'#13#10#13#10'#: tvariables.boxn.text'#13#10'msgid "BoxN"'#13#10'msgstr "B'
-  +'oxN"'#13#10#13#10'#: tvariables.boxo.text'#13#10'msgid "BoxO"'#13#10'msgstr'
-  +' "BoxO"'#13#10#13#10'#: tvariables.boxp.text'#13#10'msgid "BoxP"'#13#10'msg'
-  +'str "BoxP"'#13#10#13#10'#: tvariables.boxpreans.text'#13#10'msgid "BoxPreAn'
-  +'s"'#13#10'msgstr "BoxPreAns"'#13#10#13#10'#: tvariables.boxq.text'#13#10'ms'
-  +'gid "BoxQ"'#13#10'msgstr "BoxQ"'#13#10#13#10'#: tvariables.boxr.text'#13#10
-  +'msgid "BoxR"'#13#10'msgstr "BoxR"'#13#10#13#10'#: tvariables.boxs.text'#13
-  +#10'msgid "BoxS"'#13#10'msgstr "BoxS"'#13#10#13#10'#: tvariables.boxt.text'
-  +#13#10'msgid "BoxT"'#13#10'msgstr "BoxT"'#13#10#13#10'#: tvariables.boxu.tex'
-  +'t'#13#10'msgid "BoxU"'#13#10'msgstr "BoxU"'#13#10#13#10'#: tvariables.boxv.'
-  +'text'#13#10'msgid "BoxV"'#13#10'msgstr "BoxV"'#13#10#13#10'#: tvariables.bo'
-  +'xvarname.texthint'#13#10'msgid "Custom"'#13#10'msgstr "Custom"'#13#10#13#10
-  +'#: tvariables.boxvarval.text'#13#10'msgid "BoxVarVal"'#13#10'msgstr "BoxVar'
-  +'Val"'#13#10#13#10'#: tvariables.boxw.text'#13#10'msgid "BoxW"'#13#10'msgstr'
-  +' "BoxW"'#13#10#13#10'#: tvariables.boxx.text'#13#10'msgid "BoxX"'#13#10'msg'
-  +'str "BoxX"'#13#10#13#10'#: tvariables.boxy.text'#13#10'msgid "BoxY"'#13#10
-  +'msgstr "BoxY"'#13#10#13#10'#: tvariables.boxz.text'#13#10'msgid "BoxZ"'#13
-  +#10'msgstr "BoxZ"'#13#10#13#10'#: tvariables.buttona.caption'#13#10'msgid "A'
-  +'"'#13#10'msgstr "A"'#13#10#13#10'#: tvariables.buttonans.caption'#13#10'msg'
-  +'id "Ans"'#13#10'msgstr "Ans"'#13#10#13#10'#: tvariables.buttonb.caption'#13
-  +#10'msgid "B"'#13#10'msgstr "B"'#13#10#13#10'#: tvariables.buttonc.caption'
-  +#13#10'msgid "C"'#13#10'msgstr "C"'#13#10#13#10'#: tvariables.buttonclose.ca'
-  +'ption'#13#10'msgid "Close"'#13#10'msgstr "Close"'#13#10#13#10'#: tvariables'
-  +'.buttond.caption'#13#10'msgid "D"'#13#10'msgstr "D"'#13#10#13#10'#: tvariab'
-  +'les.buttone.caption'#13#10'msgid "E"'#13#10'msgstr "E"'#13#10#13#10'#: tvar'
-  +'iables.buttonf.caption'#13#10'msgid "F"'#13#10'msgstr "F"'#13#10#13#10'#: t'
-  +'variables.buttong.caption'#13#10'msgid "G"'#13#10'msgstr "G"'#13#10#13#10'#'
-  +': tvariables.buttonh.caption'#13#10'msgid "H"'#13#10'msgstr "H"'#13#10#13#10
-  +'#: tvariables.buttoni.caption'#13#10'msgid "I"'#13#10'msgstr "I"'#13#10#13
-  +#10'#: tvariables.buttonj.caption'#13#10'msgid "J"'#13#10'msgstr "J"'#13#10
-  +#13#10'#: tvariables.buttonk.caption'#13#10'msgid "K"'#13#10'msgstr "K"'#13
-  ,#10#13#10'#: tvariables.buttonl.caption'#13#10'msgid "L"'#13#10'msgstr "L"'
-  +#13#10#13#10'#: tvariables.buttonm.caption'#13#10'msgid "M"'#13#10'msgstr "M'
-  +'"'#13#10#13#10'#: tvariables.buttonn.caption'#13#10'msgid "N"'#13#10'msgstr'
-  +' "N"'#13#10#13#10'#: tvariables.buttono.caption'#13#10'msgid "O"'#13#10'msg'
-  +'str "O"'#13#10#13#10'#: tvariables.buttonp.caption'#13#10'msgid "P"'#13#10
-  +'msgstr "P"'#13#10#13#10'#: tvariables.buttonpreans.caption'#13#10'msgid "Pr'
-  +'eAns"'#13#10'msgstr "PreAns"'#13#10#13#10'#: tvariables.buttonq.caption'#13
-  +#10'msgid "Q"'#13#10'msgstr "Q"'#13#10#13#10'#: tvariables.buttonr.caption'
-  +#13#10'msgid "R"'#13#10'msgstr "R"'#13#10#13#10'#: tvariables.buttons.captio'
-  +'n'#13#10'msgid "S"'#13#10'msgstr "S"'#13#10#13#10'#: tvariables.buttont.cap'
-  +'tion'#13#10'msgid "T"'#13#10'msgstr "T"'#13#10#13#10'#: tvariables.buttonu.'
-  +'caption'#13#10'msgid "U"'#13#10'msgstr "U"'#13#10#13#10'#: tvariables.butto'
-  +'nv.caption'#13#10'msgid "V"'#13#10'msgstr "V"'#13#10#13#10'#: tvariables.bu'
-  +'ttonw.caption'#13#10'msgid "W"'#13#10'msgstr "W"'#13#10#13#10'#: tvariables'
-  +'.buttonx.caption'#13#10'msgid "X"'#13#10'msgstr "X"'#13#10#13#10'#: tvariab'
-  +'les.buttony.caption'#13#10'msgid "Y"'#13#10'msgstr "Y"'#13#10#13#10'#: tvar'
-  +'iables.buttonz.caption'#13#10'msgid "Z"'#13#10'msgstr "Z"'#13#10#13#10'#: t'
-  +'variables.caption'#13#10'msgid "Variables"'#13#10'msgstr "Variables"'#13#10
-  +#13#10'#: ucalculatorengine.msgemptyvariablename'#13#10'msgid "[Empty variab'
-  +'le name.]"'#13#10'msgstr "[Empty variable name.]"'#13#10#13#10'#: ucalculat'
-  +'orengine.msginvalidvariable'#13#10'msgid "Invalid variable name \"%s\", it '
-  +'must not start with a digit."'#13#10'msgstr "Invalid variable name \"%s\", '
-  +'it must not start with a digit."'#13#10#13#10'#: ucalculatorengine.msginval'
-  +'idvariablenamewindow'#13#10'msgid "[Invalid variable name.]"'#13#10'msgstr '
-  +'"[Invalid variable name.]"'#13#10#13#10'#: ucalculatorengine.msgnonalphanum'
-  +'ericvariablename'#13#10'msgid "Invalid variable name \"%s\", it must includ'
-  +'e only a'#195#183'z, 0'#195#183'9 and _ characters."'#13#10'msgstr "Invalid'
-  +' variable name \"%s\", it must include only a'#195#183'z, 0'#195#183'9 and '
-  +'_ characters."'#13#10#13#10'#: ucalculatorengine.msgnothingtocalculate'#13
-  +#10'#| msgid "There is nothing to calculate and assign to the variables."'#13
-  +#10'msgid "There is nothing to calculate."'#13#10'msgstr "There is nothing t'
-  +'o calculate."'#13#10#13#10'#: ucalculatorengine.msgnotset'#13#10'#| msgid "'
-  +'[Not set]"'#13#10'msgid "[Not set.]"'#13#10'msgstr "[Not set.]"'#13#10#13#10
-  +'#: ucalculatorengine.msgreservedvariable'#13#10'msgid "Ans and PreAns are r'
-  +'eserved variables and cannot be assigned."'#13#10'msgstr "Ans and PreAns ar'
-  +'e reserved variables and cannot be assigned."'#13#10#13#10'#: ucalculatoren'
-  +'gine.msgtrailingnegativepositivesign'#13#10'msgid "Trailing negative/positi'
-  +'ve sign(s)."'#13#10'msgstr "Trailing negative/positive sign(s)."'#13#10#13
-  +#10'#: ucalculatorengine.msgunexpectedclosingbrace'#13#10'msgid "Unexpected '
-  +'closing brace."'#13#10'msgstr "Unexpected closing brace."'#13#10#13#10'#: u'
-  +'calculatorengine.msgunexpectedcomma'#13#10'msgctxt "ucalculatorengine.msgun'
-  +'expectedcomma"'#13#10'msgid "Unexpected comma."'#13#10'msgstr "Unexpected c'
-  +'omma."'#13#10#13#10'#: ucalculatorengine.msgunexpecteddigit'#13#10'msgid "U'
-  +'nexpected digit."'#13#10'msgstr "Unexpected digit."'#13#10#13#10'#: ucalcul'
-  +'atorengine.msgunexpectedend'#13#10'msgid "Unexpected end of expression."'#13
-  +#10'msgstr "Unexpected end of expression."'#13#10#13#10'#: ucalculatorengine'
-  +'.msgunexpectedequal'#13#10'msgid "Unexpected equal sign."'#13#10'msgstr "Un'
-  +'expected equal sign."'#13#10#13#10'#: ucalculatorengine.msgunexpectedoperan'
-  +'d'#13#10'msgid "Unexpected operand."'#13#10'msgstr "Unexpected operand."'#13
-  +#10#13#10'#: ucalculatorengine.msgunexpectedpercent'#13#10'msgid "Unexpected'
-  +' percent sign."'#13#10'msgstr "Unexpected percent sign."'#13#10#13#10'#: uc'
-  +'alculatorengine.msgunexpectedsemicolon'#13#10'msgid "Unexpected semicolon."'
-  +#13#10'msgstr "Unexpected semicolon."'#13#10#13#10'#: ucalculatorengine.msgu'
-  +'nknownfunction'#13#10'msgid "Unknown function \"%s\"."'#13#10'msgstr "Unkno'
-  +'wn function \"%s\"."'#13#10#13#10'#: ucalculatorengine.msgunknownsymbol'#13
-  +#10'msgid "Unknown symbol."'#13#10'msgstr "Unknown symbol."'#13#10#13#10'#: '
-  +'ucalculatorengine.msgunknownvariable'#13#10'msgctxt "ucalculatorengine.msgu'
-  +'nknownvariable"'#13#10'msgid "Unknown variable."'#13#10'msgstr "Unknown var'
-  +'iable."'#13#10#13#10'#: ucalculatorengine.msgunmatchingbraces'#13#10'msgid '
-  +'"Unmatching braces."'#13#10'msgstr "Unmatching braces."'#13#10#13#10'#: uhe'
-  +'lpbox.msghelp'#13#10'#| msgid ""'#13#10'#| "CalcIt Pascal is a simple-to-us'
-  +'e application for evaluating simple to medium-level mathematical expression'
-  +'s.\n"'#13#10'#| "Operator priorities are taken into account.\n"'#13#10'#| "'
-  +'\n"'#13#10'#| "For detailed documentation about how to use, please visit ht'
-  ,'tps://leduyquang753.github.io/CalcIt.html.\n"'#13#10'#| "\n"'#13#10'#| "Ver'
-  +'sion %s built at %s. Copyright '#194#169' 2019 L'#195#170' Duy Quang. Licen'
-  +'sed under MIT.\n"'#13#10'msgid ""'#13#10'"CalcIt Pascal is a simple-to-use '
-  +'application for evaluating simple to medium-level mathematical expressions.'
-  +'\n"'#13#10'"Operator priorities are taken into account.\n"'#13#10'"\n"'#13
-  +#10'"For detailed documentation about how to use, please visit https://leduy'
-  +'quang753.github.io/CalcItPascal.html.\n"'#13#10'"\n"'#13#10'"Version %s bui'
-  +'lt at %s. Copyright '#194#169' 2019 L'#195#170' Duy Quang. Licensed under M'
-  +'IT.\n"'#13#10'msgstr ""'#13#10'"CalcIt Pascal is a simple-to-use applicatio'
-  +'n for evaluating simple to medium-level mathematical expressions.\n"'#13#10
-  +'"Operator priorities are taken into account.\n"'#13#10'"\n"'#13#10'"For det'
-  +'ailed documentation about how to use, please visit https://leduyquang753.gi'
-  +'thub.io/CalcItPascal.html.\n"'#13#10'"\n"'#13#10'"Version %s built at %s. C'
-  +'opyright '#194#169' 2019 L'#195#170' Duy Quang. Licensed under MIT.\n"'#13
-  +#10
+  +'gin'#13#10'#| msgid "Type any expression to calculate, \"/help\", \"/vars\"'
+  +' to view and select variables, or \"/exit\"."'#13#10'msgid "Type any expres'
+  +'sion to calculate, \"/clear\", \"/help\", \"/vars\" to view and select vari'
+  +'ables, or \"/exit\"."'#13#10'msgstr "Type any expression to calculate, \"/c'
+  +'lear\", \"/help\", \"/vars\" to view and select variables, or \"/exit\"."'
+  +#13#10#13#10'#: main.msgerror'#13#10'msgid "ERROR: "'#13#10'msgstr "ERROR: "'
+  +#13#10#13#10'#: main.msgoverflow'#13#10'msgid "Numbers in the calculation ar'
+  +'e too large, cannot compute."'#13#10'msgstr "Numbers in the calculation are'
+  +' too large, cannot compute."'#13#10#13#10'#: operands.msgbracecalculated'#13
+  +#10'msgid "Brace is involved as an operator. This is a BUG, report it to the'
+  +' author."'#13#10'msgstr "Brace is involved as an operator. This is a BUG, r'
+  +'eport it to the author."'#13#10#13#10'#: operands.msgdivbyzero'#13#10'msgct'
+  +'xt "operands.msgdivbyzero"'#13#10'msgid "Division by zero."'#13#10'msgstr "'
+  +'Division by zero."'#13#10#13#10'#: operands.msgunsupportedexponentiation'#13
+  +#10'msgid "Unsupported exponentiation operation."'#13#10'msgstr "Unsupported'
+  +' exponentiation operation."'#13#10#13#10'#: thelpbox.caption'#13#10'msgid "'
+  ,'About"'#13#10'msgstr "About"'#13#10#13#10'#: thelpbox.ok.caption'#13#10'msg'
+  +'ctxt "thelpbox.ok.caption"'#13#10'msgid "OK"'#13#10'msgstr "OK"'#13#10#13#10
+  +'#: tlangselector.btncancel.caption'#13#10'msgctxt "tlangselector.btncancel.'
+  +'caption"'#13#10'msgid "Cancel"'#13#10'msgstr "Cancel"'#13#10#13#10'#: tlang'
+  +'selector.btnok.caption'#13#10'msgctxt "tlangselector.btnok.caption"'#13#10
+  +'msgid "OK"'#13#10'msgstr "OK"'#13#10#13#10'#: tlangselector.caption'#13#10
+  +'msgid "Choose a language"'#13#10'msgstr "Choose a language"'#13#10#13#10'#:'
+  +' tmainwindow.btnclear.caption'#13#10'msgid "C&lear"'#13#10'msgstr "C&lear"'
+  +#13#10#13#10'#: tmainwindow.btnsettings.caption'#13#10'msgid "&Settings"'#13
+  +#10'msgstr "&Settings"'#13#10#13#10'#: tmainwindow.btnvariables.caption'#13
+  +#10'msgid "&Variables"'#13#10'msgstr "&Variables"'#13#10#13#10'#: tmainwindo'
+  +'w.calculate.caption'#13#10'msgid "&Calculate"'#13#10'msgstr "&Calculate"'#13
+  +#10#13#10'#: tmainwindow.caption'#13#10'msgid "CalcIt"'#13#10'msgstr "CalcIt'
+  +'"'#13#10#13#10'#: tmainwindow.consolelabel.caption'#13#10'#| msgid "Console'
+  +'"'#13#10'msgid "C&onsole"'#13#10'msgstr "C&onsole"'#13#10#13#10'#: tmainwin'
+  +'dow.expression.texthint'#13#10'#| msgid "Enter any expression, \"/help\", \'
+  +'"/vars\" or \"/exit\"."'#13#10'msgid "Enter any expression, \"/clear\", \"/'
+  +'help\", \"/vars\" or \"/exit\"."'#13#10'msgstr "Enter any expression, \"/cl'
+  +'ear\", \"/help\", \"/vars\" or \"/exit\"."'#13#10#13#10'#: tmainwindow.help'
+  +'.caption'#13#10'msgid "?"'#13#10'msgstr "?"'#13#10#13#10'#: tmainwindow.inp'
+  +'utlabel.caption'#13#10'#| msgid "Input"'#13#10'msgid "&Input"'#13#10'msgstr'
+  +' "&Input"'#13#10#13#10'#: tmainwindow.language.caption'#13#10'msgid "EN"'#13
+  +#10'msgstr "EN"'#13#10#13#10'#: tsettings.boxstartupexpressions.hint'#13#10
+  +'msgid "[Nothing entered.]"'#13#10'msgstr "[Nothing entered.]"'#13#10#13#10
+  +'#: tsettings.caption'#13#10'msgid "Settings"'#13#10'msgstr "Settings"'#13#10
+  +#13#10'#: tsettings.checkdefaultzero.caption'#13#10'msgid "De&fault undefine'
+  +'d non-single-character variables to 0."'#13#10'msgstr "De&fault undefined n'
+  +'on-single-character variables to 0."'#13#10#13#10'#: tsettings.checkenforce'
+  +'decimalseparator.caption'#13#10'msgctxt "tsettings.checkenforcedecimalsepar'
+  +'ator.caption"'#13#10'msgid "&Enforce in expression"'#13#10'msgstr "&Enforce'
+  +' in expression"'#13#10#13#10'#: tsettings.checkenforcemuldivstyle.caption'
+  +#13#10'msgctxt "tsettings.checkenforcemuldivstyle.caption"'#13#10'msgid "E&n'
+  +'force in expression"'#13#10'msgstr "E&nforce in expression"'#13#10#13#10'#:'
+  +' tsettings.checkenterwhenempty.caption'#13#10'msgid "&Pressing Enter while '
+  +'the input box is empty re-calculates the last expression."'#13#10'msgstr "&'
+  +'Pressing Enter while the input box is empty re-calculates the last expressi'
+  +'on."'#13#10#13#10'#: tsettings.labeldecimalseparator.caption'#13#10'msgid "'
+  +'Decimal separator:"'#13#10'msgstr "Decimal separator:"'#13#10#13#10'#: tset'
+  +'tings.labelhistorysize.caption'#13#10'msgid "&Maximum expressions stored:"'
+  +#13#10'msgstr "&Maximum expressions stored:"'#13#10#13#10'#: tsettings.label'
+  +'muldivstyle.caption'#13#10'msgid "Multiplication, division signs'' style:"'
+  +#13#10'msgstr "Multiplication, division signs'' style:"'#13#10#13#10'#: tset'
+  +'tings.labelstartupexpressions.caption'#13#10'msgid "S&tartup expressions"'
+  +#13#10'msgstr "S&tartup expressions"'#13#10#13#10'#: tsettings.labelthousand'
+  +'separator.caption'#13#10'msgid "Thousand separator:"'#13#10'msgstr "Thousan'
+  +'d separator:"'#13#10#13#10'#: tsettings.labelupdownbehavior.caption'#13#10
+  +'msgid "Up, down keys'' behavior:"'#13#10'msgstr "Up, down keys'' behavior:"'
+  +#13#10#13#10'#: tsettings.radiocommadot.caption'#13#10'msgid "C&omma/Dot"'#13
+  +#10'msgstr "C&omma/Dot"'#13#10#13#10'#: tsettings.radiodecimalcomma.caption'
+  +#13#10'msgid "&Comma"'#13#10'msgstr "&Comma"'#13#10#13#10'#: tsettings.radio'
+  +'decimaldot.caption'#13#10'msgid "&Dot"'#13#10'msgstr "&Dot"'#13#10#13#10'#:'
+  +' tsettings.radiomulasterisk.caption'#13#10'msgid "*&/"'#13#10'msgstr "*&/"'
+  +#13#10#13#10'#: tsettings.radiomuldot.caption'#13#10'msgid "&.:"'#13#10'msgs'
+  +'tr "&.:"'#13#10#13#10'#: tsettings.radiospace.caption'#13#10'msgid "&Space"'
+  +#13#10'msgstr "&Space"'#13#10#13#10'#: tsettings.radioupdownbeginend.caption'
+  +#13#10'msgid "&Go to beginning, end"'#13#10'msgstr "&Go to beginning, end"'
+  +#13#10#13#10'#: tsettings.radioupdownhistory.caption'#13#10'msgid "&Browse e'
+  +'xpression history"'#13#10'msgstr "&Browse expression history"'#13#10#13#10
+  +'#: tsettings.settingsbuttoncancel.caption'#13#10'msgctxt "tsettings.setting'
+  +'sbuttoncancel.caption"'#13#10'msgid "Cancel"'#13#10'msgstr "Cancel"'#13#10
+  +#13#10'#: tsettings.settingsbuttonok.caption'#13#10'msgctxt "tsettings.setti'
+  +'ngsbuttonok.caption"'#13#10'msgid "OK"'#13#10'msgstr "OK"'#13#10#13#10'#: u'
+  +'calculatorengine.msgemptyvariablename'#13#10'msgid "[Empty variable name.]"'
+  +#13#10'msgstr "[Empty variable name.]"'#13#10#13#10'#: ucalculatorengine.msg'
+  ,'invalidvariable'#13#10'msgid "Invalid variable name \"%s\", it must not sta'
+  +'rt with a digit."'#13#10'msgstr "Invalid variable name \"%s\", it must not '
+  +'start with a digit."'#13#10#13#10'#: ucalculatorengine.msginvalidvariablena'
+  +'mewindow'#13#10'msgid "[Invalid variable name.]"'#13#10'msgstr "[Invalid va'
+  +'riable name.]"'#13#10#13#10'#: ucalculatorengine.msgnonalphanumericvariable'
+  +'name'#13#10'msgid "Invalid variable name \"%s\", it must include only a'#195
+  +#183'z, 0'#195#183'9 and _ characters."'#13#10'msgstr "Invalid variable name'
+  +' \"%s\", it must include only a'#195#183'z, 0'#195#183'9 and _ characters."'
+  +#13#10#13#10'#: ucalculatorengine.msgnothingtocalculate'#13#10'#| msgid "The'
+  +'re is nothing to calculate and assign to the variables."'#13#10'msgid "Ther'
+  +'e is nothing to calculate."'#13#10'msgstr "There is nothing to calculate."'
+  +#13#10#13#10'#: ucalculatorengine.msgnotset'#13#10'#| msgid "[Not set]"'#13
+  +#10'msgid "[Not set.]"'#13#10'msgstr "[Not set.]"'#13#10#13#10'#: ucalculato'
+  +'rengine.msgreservedvariable'#13#10'msgid "Ans and PreAns are reserved varia'
+  +'bles and cannot be assigned."'#13#10'msgstr "Ans and PreAns are reserved va'
+  +'riables and cannot be assigned."'#13#10#13#10'#: ucalculatorengine.msgtrail'
+  +'ingnegativepositivesign'#13#10'msgid "Trailing negative/positive sign(s)."'
+  +#13#10'msgstr "Trailing negative/positive sign(s)."'#13#10#13#10'#: ucalcula'
+  +'torengine.msgunexpectedclosingbrace'#13#10'msgid "Unexpected closing brace.'
+  +'"'#13#10'msgstr "Unexpected closing brace."'#13#10#13#10'#: ucalculatorengi'
+  +'ne.msgunexpecteddecimalseparator'#13#10'msgid "Unexpected decimal separator'
+  +'."'#13#10'msgstr "Unexpected decimal separator."'#13#10#13#10'#: ucalculato'
+  +'rengine.msgunexpecteddigit'#13#10'msgid "Unexpected digit."'#13#10'msgstr "'
+  +'Unexpected digit."'#13#10#13#10'#: ucalculatorengine.msgunexpectedend'#13#10
+  +'msgid "Unexpected end of expression."'#13#10'msgstr "Unexpected end of expr'
+  +'ession."'#13#10#13#10'#: ucalculatorengine.msgunexpectedequal'#13#10'msgid '
+  +'"Unexpected equal sign."'#13#10'msgstr "Unexpected equal sign."'#13#10#13#10
+  +'#: ucalculatorengine.msgunexpectedoperand'#13#10'msgid "Unexpected operand.'
+  +'"'#13#10'msgstr "Unexpected operand."'#13#10#13#10'#: ucalculatorengine.msg'
+  +'unexpectedpercent'#13#10'msgid "Unexpected percent sign."'#13#10'msgstr "Un'
+  +'expected percent sign."'#13#10#13#10'#: ucalculatorengine.msgunexpectedsemi'
+  +'colon'#13#10'msgid "Unexpected semicolon."'#13#10'msgstr "Unexpected semico'
+  +'lon."'#13#10#13#10'#: ucalculatorengine.msgunexpectedthousandseparator'#13
+  +#10'msgid "Unexpected thousand separator."'#13#10'msgstr "Unexpected thousan'
+  +'d separator."'#13#10#13#10'#: ucalculatorengine.msgunknownfunction'#13#10'm'
+  +'sgid "Unknown function \"%s\"."'#13#10'msgstr "Unknown function \"%s\"."'#13
+  +#10#13#10'#: ucalculatorengine.msgunknownsymbol'#13#10'msgid "Unknown symbol'
+  +'."'#13#10'msgstr "Unknown symbol."'#13#10#13#10'#: ucalculatorengine.msgunk'
+  +'nownvariable'#13#10'msgctxt "ucalculatorengine.msgunknownvariable"'#13#10'm'
+  +'sgid "Unknown variable."'#13#10'msgstr "Unknown variable."'#13#10#13#10'#: '
+  +'ucalculatorengine.msgunmatchingbraces'#13#10'msgid "Unmatching braces."'#13
+  +#10'msgstr "Unmatching braces."'#13#10#13#10'#: uhelpbox.msghelp'#13#10'#| m'
+  +'sgid ""'#13#10'#| "CalcIt Pascal is a simple-to-use application for evaluat'
+  +'ing simple to medium-level mathematical expressions.\n"'#13#10'#| "Operator'
+  +' priorities are taken into account.\n"'#13#10'#| "\n"'#13#10'#| "For detail'
+  +'ed documentation about how to use, please visit https://leduyquang753.githu'
+  +'b.io/CalcIt.html.\n"'#13#10'#| "\n"'#13#10'#| "Version %s built at %s. Copy'
+  +'right '#194#169' 2019 L'#195#170' Duy Quang. Licensed under MIT.\n"'#13#10
+  +'msgid ""'#13#10'"CalcIt Pascal is a simple-to-use application for evaluatin'
+  +'g simple to medium-level mathematical expressions.\n"'#13#10'"Operator prio'
+  +'rities are taken into account.\n"'#13#10'"\n"'#13#10'"For detailed document'
+  +'ation about how to use, please visit https://leduyquang753.github.io/CalcIt'
+  +'Pascal.html.\n"'#13#10'"\n"'#13#10'"Version %s built at %s. Copyright '#194
+  +#169' 2019 L'#195#170' Duy Quang. Licensed under MIT.\n"'#13#10'msgstr ""'#13
+  +#10'"CalcIt Pascal is a simple-to-use application for evaluating simple to m'
+  +'edium-level mathematical expressions.\n"'#13#10'"Operator priorities are ta'
+  +'ken into account.\n"'#13#10'"\n"'#13#10'"For detailed documentation about h'
+  +'ow to use, please visit https://leduyquang753.github.io/CalcItPascal.html.\'
+  +'n"'#13#10'"\n"'#13#10'"Version %s built at %s. Copyright '#194#169' 2019 L'
+  +#195#170' Duy Quang. Licensed under MIT.\n"'#13#10
 ]);
 LazarusResources.Add('Calculator.vi','PO',[
   'msgid ""'#13#10'msgstr ""'#13#10'"Content-Type: text/plain; charset=UTF-8\n"'
@@ -280,116 +261,109 @@ LazarusResources.Add('Calculator.vi','PO',[
   +#196#145#198#176#225#187#163'c '#196#145#198#176'a v'#195#160'o h'#195#160'm'
   +' s'#225#187#145' nguy'#195#170'n ng'#225#186#171'u nhi'#195#170'n."'#13#10
   +#13#10'#: main.msgconsolebegin'#13#10'msgid "Type any expression to calculat'
-  +'e, \"/help\", \"/vars\" to view and select variables, or \"/exit\"."'#13#10
-  +'msgstr "Nh'#225#186#173'p m'#225#187#153't bi'#225#187#131'u th'#225#187#169
-  +'c '#196#145#225#187#131' t'#195#173'nh, \"/help\" '#196#145#225#187#131' xe'
-  +'m tr'#225#187#163' gi'#195#186'p, \"/vars\" '#196#145#225#187#131' xem v'
-  +#195#160' ch'#225#187#141'n c'#195#161'c bi'#225#186#191'n, ho'#225#186#183
-  +'c \"/exit\"."'#13#10#13#10'#: main.msgerror'#13#10'msgid "ERROR: "'#13#10'm'
-  +'sgstr "L'#225#187#150'I: "'#13#10#13#10'#: main.msgoverflow'#13#10'msgid "N'
-  +'umbers in the calculation are too large, cannot compute."'#13#10'msgstr "C'
-  +#195#161'c s'#225#187#145' trong ph'#195#169'p t'#195#173'nh qu'#195#161' l'
-  +#225#187#155'n, kh'#195#180'ng th'#225#187#131' t'#195#173'nh '#196#145#198
-  +#176#225#187#163'c."'#13#10#13#10'#: operands.msgbracecalculated'#13#10'msgi'
-  +'d "Brace is involved as an operator. This is a BUG, report it to the author'
-  +'."'#13#10'msgstr "D'#225#186#165'u ngo'#225#186#183'c b'#225#187#139' '#196
-  +#145#198#176'a v'#195#160'o nh'#198#176' m'#225#187#153't to'#195#161'n t'
-  +#225#187#173'. '#196#144#195#162'y l'#195#160' L'#225#187#150'I, h'#195#163
-  +'y b'#195#161'o c'#195#161'o cho t'#195#161'c gi'#225#186#163'."'#13#10#13#10
-  +'#: operands.msgdivbyzero'#13#10'msgctxt "operands.msgdivbyzero"'#13#10'msgi'
-  +'d "Division by zero."'#13#10'msgstr "Chia cho kh'#195#180'ng."'#13#10#13#10
-  +'#: operands.msgunsupportedexponentiation'#13#10'msgid "Unsupported exponent'
-  +'iation operation."'#13#10'msgstr "Thao t'#195#161'c l'#197#169'y th'#225#187
-  +#171'a kh'#195#180'ng '#196#145#198#176#225#187#163'c h'#225#187#151' tr'#225
-  +#187#163'."'#13#10#13#10'#: thelpbox.caption'#13#10'msgid "About"'#13#10'msg'
-  +'str "V'#225#187#129' ch'#198#176#198#161'ng tr'#195#172'nh"'#13#10#13#10'#:'
-  +' thelpbox.ok.caption'#13#10'msgctxt "thelpbox.ok.caption"'#13#10'msgid "OK"'
-  +#13#10'msgstr "OK"'#13#10#13#10'#: tlangselector.btncancel.caption'#13#10'ms'
-  +'gid "Cancel"'#13#10'msgstr "H'#225#187#167'y"'#13#10#13#10'#: tlangselector'
-  +'.btnok.caption'#13#10'msgctxt "tlangselector.btnok.caption"'#13#10'msgid "O'
-  +'K"'#13#10'msgstr "OK"'#13#10#13#10'#: tlangselector.caption'#13#10'msgid "C'
-  +'hoose a language"'#13#10'msgstr "Ch'#225#187#141'n ng'#195#180'n ng'#225#187
-  +#175'"'#13#10#13#10'#: tmainwindow.btnvariables.caption'#13#10'msgid "&Varia'
-  +'bles"'#13#10'msgstr "&Bi'#225#186#191'n"'#13#10#13#10'#: tmainwindow.calcul'
-  +'ate.caption'#13#10'msgid "&Calculate"'#13#10'msgstr "&T'#195#173'nh"'#13#10
-  +#13#10'#: tmainwindow.caption'#13#10'msgid "CalcIt"'#13#10'msgstr "CalcIt"'
-  +#13#10#13#10'#: tmainwindow.consolelabel.caption'#13#10'msgid "C&onsole"'#13
-  +#10'msgstr "&Ph'#225#186#163'n h'#225#187#147'i"'#13#10#13#10'#: tmainwindow'
-  +'.expression.texthint'#13#10'msgid "Enter any expression, \"/help\", \"/vars'
-  +'\" or \"/exit\"."'#13#10'msgstr "Nh'#225#186#173'p m'#225#187#153't bi'#225
-  +#187#131'u th'#225#187#169'c, \"/help\", \"/vars\" ho'#225#186#183'c \"/exit'
-  +'\"."'#13#10#13#10'#: tmainwindow.help.caption'#13#10'msgid "?"'#13#10'msgst'
-  +'r "?"'#13#10#13#10'#: tmainwindow.inputlabel.caption'#13#10'msgid "&Input"'
-  +#13#10'msgstr "&Nh'#225#186#173'p"'#13#10#13#10'#: tmainwindow.language.capt'
-  +'ion'#13#10'msgid "EN"'#13#10'msgstr "VI"'#13#10#13#10'#: tvariables.boxa.te'
-  +'xt'#13#10'msgid "BoxA"'#13#10'msgstr "BoxA"'#13#10#13#10'#: tvariables.boxa'
-  +'ns.text'#13#10'msgid "BoxAns"'#13#10'msgstr "BoxAns"'#13#10#13#10'#: tvaria'
-  +'bles.boxb.text'#13#10'msgid "BoxB"'#13#10'msgstr "BoxB"'#13#10#13#10'#: tva'
-  +'riables.boxc.text'#13#10'msgid "BoxC"'#13#10'msgstr "BoxC"'#13#10#13#10'#: '
-  +'tvariables.boxd.text'#13#10'msgid "BoxD"'#13#10'msgstr "BoxD"'#13#10#13#10
-  +'#: tvariables.boxe.text'#13#10'msgid "BoxE"'#13#10'msgstr "BoxE"'#13#10#13
-  +#10'#: tvariables.boxf.text'#13#10'msgid "BoxF"'#13#10'msgstr "BoxF"'#13#10
-  +#13#10'#: tvariables.boxg.text'#13#10'msgid "BoxG"'#13#10'msgstr "BoxG"'#13
-  +#10#13#10'#: tvariables.boxh.text'#13#10'msgid "BoxH"'#13#10'msgstr "BoxH"'
-  +#13#10#13#10'#: tvariables.boxi.text'#13#10'msgid "BoxI"'#13#10'msgstr "BoxI'
-  +'"'#13#10#13#10'#: tvariables.boxj.text'#13#10'msgid "BoxJ"'#13#10'msgstr "B'
-  +'oxJ"'#13#10#13#10'#: tvariables.boxk.text'#13#10'msgid "BoxK"'#13#10'msgstr'
-  +' "BoxK"'#13#10#13#10'#: tvariables.boxl.text'#13#10'msgid "BoxL"'#13#10'msg'
-  +'str "BoxL"'#13#10#13#10'#: tvariables.boxm.text'#13#10'msgid "BoxM"'#13#10
-  ,'msgstr "BoxM"'#13#10#13#10'#: tvariables.boxn.text'#13#10'msgid "BoxN"'#13
-  +#10'msgstr "BoxN"'#13#10#13#10'#: tvariables.boxo.text'#13#10'msgid "BoxO"'
-  +#13#10'msgstr "BoxO"'#13#10#13#10'#: tvariables.boxp.text'#13#10'msgid "BoxP'
-  +'"'#13#10'msgstr "BoxP"'#13#10#13#10'#: tvariables.boxpreans.text'#13#10'msg'
-  +'id "BoxPreAns"'#13#10'msgstr "BoxPreAns"'#13#10#13#10'#: tvariables.boxq.te'
-  +'xt'#13#10'msgid "BoxQ"'#13#10'msgstr "BoxQ"'#13#10#13#10'#: tvariables.boxr'
-  +'.text'#13#10'msgid "BoxR"'#13#10'msgstr "BoxR"'#13#10#13#10'#: tvariables.b'
-  +'oxs.text'#13#10'msgid "BoxS"'#13#10'msgstr "BoxS"'#13#10#13#10'#: tvariable'
-  +'s.boxt.text'#13#10'msgid "BoxT"'#13#10'msgstr "BoxT"'#13#10#13#10'#: tvaria'
-  +'bles.boxu.text'#13#10'msgid "BoxU"'#13#10'msgstr "BoxU"'#13#10#13#10'#: tva'
-  +'riables.boxv.text'#13#10'msgid "BoxV"'#13#10'msgstr "BoxV"'#13#10#13#10'#: '
-  +'tvariables.boxvarname.texthint'#13#10'msgid "Custom"'#13#10'msgstr "T'#195
-  +#185'y '#195#189'"'#13#10#13#10'#: tvariables.boxvarval.text'#13#10'msgid "B'
-  +'oxVarVal"'#13#10'msgstr "BoxVarVal"'#13#10#13#10'#: tvariables.boxw.text'#13
-  +#10'msgid "BoxW"'#13#10'msgstr "BoxW"'#13#10#13#10'#: tvariables.boxx.text'
-  +#13#10'msgid "BoxX"'#13#10'msgstr "BoxX"'#13#10#13#10'#: tvariables.boxy.tex'
-  +'t'#13#10'msgid "BoxY"'#13#10'msgstr "BoxY"'#13#10#13#10'#: tvariables.boxz.'
-  +'text'#13#10'msgid "BoxZ"'#13#10'msgstr "BoxZ"'#13#10#13#10'#: tvariables.bu'
-  +'ttona.caption'#13#10'msgid "A"'#13#10'msgstr "A"'#13#10#13#10'#: tvariables'
-  +'.buttonans.caption'#13#10'msgid "Ans"'#13#10'msgstr "Ans"'#13#10#13#10'#: t'
-  +'variables.buttonb.caption'#13#10'msgid "B"'#13#10'msgstr "B"'#13#10#13#10'#'
-  +': tvariables.buttonc.caption'#13#10'msgid "C"'#13#10'msgstr "C"'#13#10#13#10
-  +'#: tvariables.buttonclose.caption'#13#10'msgid "Close"'#13#10'msgstr "'#196
-  +#144#195#179'ng"'#13#10#13#10'#: tvariables.buttond.caption'#13#10'msgid "D"'
-  +#13#10'msgstr "D"'#13#10#13#10'#: tvariables.buttone.caption'#13#10'msgid "E'
-  +'"'#13#10'msgstr "E"'#13#10#13#10'#: tvariables.buttonf.caption'#13#10'msgid'
-  +' "F"'#13#10'msgstr "F"'#13#10#13#10'#: tvariables.buttong.caption'#13#10'ms'
-  +'gid "G"'#13#10'msgstr "G"'#13#10#13#10'#: tvariables.buttonh.caption'#13#10
-  +'msgid "H"'#13#10'msgstr "H"'#13#10#13#10'#: tvariables.buttoni.caption'#13
-  +#10'msgid "I"'#13#10'msgstr "I"'#13#10#13#10'#: tvariables.buttonj.caption'
-  +#13#10'msgid "J"'#13#10'msgstr "J"'#13#10#13#10'#: tvariables.buttonk.captio'
-  +'n'#13#10'msgid "K"'#13#10'msgstr "K"'#13#10#13#10'#: tvariables.buttonl.cap'
-  +'tion'#13#10'msgid "L"'#13#10'msgstr "L"'#13#10#13#10'#: tvariables.buttonm.'
-  +'caption'#13#10'msgid "M"'#13#10'msgstr "M"'#13#10#13#10'#: tvariables.butto'
-  +'nn.caption'#13#10'msgid "N"'#13#10'msgstr "N"'#13#10#13#10'#: tvariables.bu'
-  +'ttono.caption'#13#10'msgid "O"'#13#10'msgstr "O"'#13#10#13#10'#: tvariables'
-  +'.buttonp.caption'#13#10'msgid "P"'#13#10'msgstr "P"'#13#10#13#10'#: tvariab'
-  +'les.buttonpreans.caption'#13#10'msgid "PreAns"'#13#10'msgstr "PreAns"'#13#10
-  +#13#10'#: tvariables.buttonq.caption'#13#10'msgid "Q"'#13#10'msgstr "Q"'#13
-  +#10#13#10'#: tvariables.buttonr.caption'#13#10'msgid "R"'#13#10'msgstr "R"'
-  +#13#10#13#10'#: tvariables.buttons.caption'#13#10'msgid "S"'#13#10'msgstr "S'
-  +'"'#13#10#13#10'#: tvariables.buttont.caption'#13#10'msgid "T"'#13#10'msgstr'
-  +' "T"'#13#10#13#10'#: tvariables.buttonu.caption'#13#10'msgid "U"'#13#10'msg'
-  +'str "U"'#13#10#13#10'#: tvariables.buttonv.caption'#13#10'msgid "V"'#13#10
-  +'msgstr "V"'#13#10#13#10'#: tvariables.buttonw.caption'#13#10'msgid "W"'#13
-  +#10'msgstr "W"'#13#10#13#10'#: tvariables.buttonx.caption'#13#10'msgid "X"'
-  +#13#10'msgstr "X"'#13#10#13#10'#: tvariables.buttony.caption'#13#10'msgid "Y'
-  +'"'#13#10'msgstr "Y"'#13#10#13#10'#: tvariables.buttonz.caption'#13#10'msgid'
-  +' "Z"'#13#10'msgstr "Z"'#13#10#13#10'#: tvariables.caption'#13#10'msgid "Var'
-  +'iables"'#13#10'msgstr "Bi'#225#186#191'n"'#13#10#13#10'#: ucalculatorengine'
-  +'.msgemptyvariablename'#13#10'msgid "[Empty variable name.]"'#13#10'msgstr "'
-  +'[T'#195#170'n bi'#225#186#191'n tr'#225#187#145'ng.]"'#13#10#13#10'#: ucalc'
-  +'ulatorengine.msginvalidvariable'#13#10'msgid "Invalid variable name \"%s\",'
-  +' it must not start with a digit."'#13#10'msgstr "T'#195#170'n bi'#225#186
+  +'e, \"/clear\", \"/help\", \"/vars\" to view and select variables, or \"/exi'
+  +'t\"."'#13#10'msgstr "Nh'#225#186#173'p m'#225#187#153't bi'#225#187#131'u t'
+  +'h'#225#187#169'c '#196#145#225#187#131' t'#195#173'nh, \"/clear\" '#196#145
+  +#225#187#131' x'#195#179'a khung ph'#225#186#163'n h'#225#187#147'i, \"/help'
+  +'\" '#196#145#225#187#131' xem tr'#225#187#163' gi'#195#186'p, \"/vars\" '
+  +#196#145#225#187#131' xem v'#195#160' ch'#225#187#141'n c'#195#161'c bi'#225
+  +#186#191'n, ho'#225#186#183'c \"/exit\"."'#13#10#13#10'#: main.msgerror'#13
+  +#10'msgid "ERROR: "'#13#10'msgstr "L'#225#187#150'I: "'#13#10#13#10'#: main.'
+  +'msgoverflow'#13#10'msgid "Numbers in the calculation are too large, cannot '
+  +'compute."'#13#10'msgstr "C'#195#161'c s'#225#187#145' trong ph'#195#169'p t'
+  +#195#173'nh qu'#195#161' l'#225#187#155'n, kh'#195#180'ng th'#225#187#131' t'
+  +#195#173'nh '#196#145#198#176#225#187#163'c."'#13#10#13#10'#: operands.msgbr'
+  +'acecalculated'#13#10'msgid "Brace is involved as an operator. This is a BUG'
+  +', report it to the author."'#13#10'msgstr "D'#225#186#165'u ngo'#225#186#183
+  +'c b'#225#187#139' '#196#145#198#176'a v'#195#160'o nh'#198#176' m'#225#187
+  +#153't to'#195#161'n t'#225#187#173'. '#196#144#195#162'y l'#195#160' L'#225
+  +#187#150'I, h'#195#163'y b'#195#161'o c'#195#161'o cho t'#195#161'c gi'#225
+  +#186#163'."'#13#10#13#10'#: operands.msgdivbyzero'#13#10'msgctxt "operands.m'
+  +'sgdivbyzero"'#13#10'msgid "Division by zero."'#13#10'msgstr "Chia cho kh'
+  +#195#180'ng."'#13#10#13#10'#: operands.msgunsupportedexponentiation'#13#10'm'
+  +'sgid "Unsupported exponentiation operation."'#13#10'msgstr "Thao t'#195#161
+  +'c l'#197#169'y th'#225#187#171'a kh'#195#180'ng '#196#145#198#176#225#187
+  +#163'c h'#225#187#151' tr'#225#187#163'."'#13#10#13#10'#: thelpbox.caption'
+  +#13#10'msgid "About"'#13#10'msgstr "V'#225#187#129' ch'#198#176#198#161'ng t'
+  +'r'#195#172'nh"'#13#10#13#10'#: thelpbox.ok.caption'#13#10'msgctxt "thelpbox'
+  +'.ok.caption"'#13#10'msgid "OK"'#13#10'msgstr "OK"'#13#10#13#10'#: tlangsele'
+  +'ctor.btncancel.caption'#13#10'msgctxt "tlangselector.btncancel.caption"'#13
+  +#10'msgid "Cancel"'#13#10'msgstr "H'#225#187#167'y"'#13#10#13#10'#: tlangsel'
+  +'ector.btnok.caption'#13#10'msgctxt "tlangselector.btnok.caption"'#13#10'msg'
+  +'id "OK"'#13#10'msgstr "OK"'#13#10#13#10'#: tlangselector.caption'#13#10'msg'
+  +'id "Choose a language"'#13#10'msgstr "Ch'#225#187#141'n ng'#195#180'n ng'
+  +#225#187#175'"'#13#10#13#10'#: tmainwindow.btnclear.caption'#13#10'msgid "C&'
+  +'lear"'#13#10'msgstr "&X'#195#179'a"'#13#10#13#10'#: tmainwindow.btnsettings'
+  +'.caption'#13#10'msgid "&Settings"'#13#10'msgstr "&C'#195#160'i '#196#145#225
+  +#186#183't"'#13#10#13#10'#: tmainwindow.btnvariables.caption'#13#10'msgid "&'
+  +'Variables"'#13#10'msgstr "&Bi'#225#186#191'n"'#13#10#13#10'#: tmainwindow.c'
+  +'alculate.caption'#13#10'msgid "&Calculate"'#13#10'msgstr "&T'#195#173'nh"'
+  +#13#10#13#10'#: tmainwindow.caption'#13#10'msgid "CalcIt"'#13#10'msgstr "Cal'
+  +'cIt"'#13#10#13#10'#: tmainwindow.consolelabel.caption'#13#10'msgid "C&onsol'
+  +'e"'#13#10'msgstr "&Ph'#225#186#163'n h'#225#187#147'i"'#13#10#13#10'#: tmai'
+  +'nwindow.expression.texthint'#13#10'msgid "Enter any expression, \"/clear\",'
+  +' \"/help\", \"/vars\" or \"/exit\"."'#13#10'msgstr "Nh'#225#186#173'p m'#225
+  +#187#153't bi'#225#187#131'u th'#225#187#169'c, \"/clear\", \"/help\", \"/va'
+  +'rs\" ho'#225#186#183'c \"/exit\"."'#13#10#13#10'#: tmainwindow.help.caption'
+  +#13#10'msgid "?"'#13#10'msgstr "?"'#13#10#13#10'#: tmainwindow.inputlabel.ca'
+  +'ption'#13#10'msgid "&Input"'#13#10'msgstr "&Nh'#225#186#173'p"'#13#10#13#10
+  +'#: tmainwindow.language.caption'#13#10'msgid "EN"'#13#10'msgstr "VI"'#13#10
+  +#13#10'#: tsettings.boxstartupexpressions.hint'#13#10'msgid "[Nothing entere'
+  +'d.]"'#13#10'msgstr "[Kh'#195#180'ng c'#195#179' g'#195#172' '#196#145#198
+  +#176#225#187#163'c nh'#225#186#173'p.]"'#13#10#13#10'#: tsettings.caption'#13
+  +#10'msgid "Settings"'#13#10'msgstr "C'#195#160'i '#196#145#225#186#183't"'#13
+  +#10#13#10'#: tsettings.checkdefaultzero.caption'#13#10'msgid "De&fault undef'
+  +'ined non-single-character variables to 0."'#13#10'msgstr "&M'#225#186#183'c'
+  +' '#196#145#225#187#139'nh c'#195#161'c bi'#225#186#191'n nhi'#225#187#129'u'
+  +' ch'#225#187#175' c'#195#161'i ch'#198#176'a x'#195#161'c '#196#145#225#187
+  +#139'nh l'#195#160' 0."'#13#10#13#10'#: tsettings.checkenforcedecimalseparat'
+  ,'or.caption'#13#10'msgctxt "tsettings.checkenforcedecimalseparator.caption"'
+  +#13#10'msgid "&Enforce in expression"'#13#10'msgstr "&B'#225#186#175't bu'
+  +#225#187#153'c trong bi'#225#187#131'u th'#225#187#169'c"'#13#10#13#10'#: ts'
+  +'ettings.checkenforcemuldivstyle.caption'#13#10'msgctxt "tsettings.checkenfo'
+  +'rcemuldivstyle.caption"'#13#10'msgid "E&nforce in expression"'#13#10'msgstr'
+  +' "B'#225#186#175'&t bu'#225#187#153'c trong bi'#225#187#131'u th'#225#187
+  +#169'c"'#13#10#13#10'#: tsettings.checkenterwhenempty.caption'#13#10'msgid "'
+  +'&Pressing Enter while the input box is empty re-calculates the last express'
+  +'ion."'#13#10'msgstr "&Nh'#225#186#165'n Enter khi h'#225#187#153'p nh'#225
+  +#186#173'p tr'#225#187#145'ng t'#195#173'nh bi'#225#187#131'u th'#225#187#169
+  +'c v'#225#187#171'a '#196#145#198#176#225#187#163'c t'#195#173'nh."'#13#10#13
+  +#10'#: tsettings.labeldecimalseparator.caption'#13#10'msgid "Decimal separat'
+  +'or:"'#13#10'msgstr "D'#225#186#165'u th'#225#186#173'p ph'#195#162'n:"'#13
+  +#10#13#10'#: tsettings.labelhistorysize.caption'#13#10'msgid "&Maximum expre'
+  +'ssions stored:"'#13#10'msgstr "&S'#225#187#145' bi'#225#187#131'u th'#225
+  +#187#169'c t'#225#187#145'i '#196#145'a '#196#145#198#176#225#187#163'c l'
+  +#198#176'u:"'#13#10#13#10'#: tsettings.labelmuldivstyle.caption'#13#10'msgid'
+  +' "Multiplication, division signs'' style:"'#13#10'msgstr "Ki'#225#187#131'u'
+  +' d'#225#186#165'u nh'#195#162'n, chia:"'#13#10#13#10'#: tsettings.labelstar'
+  +'tupexpressions.caption'#13#10'msgid "S&tartup expressions"'#13#10'msgstr "C'
+  +#195#161'c bi'#225#187#131'u th'#225#187#169'c &khi b'#225#186#175't '#196
+  +#145#225#186#167'u ch'#225#186#161'y"'#13#10#13#10'#: tsettings.labelthousan'
+  +'dseparator.caption'#13#10'msgid "Thousand separator:"'#13#10'msgstr "D'#225
+  +#186#165'u ph'#195#162'n l'#225#187#155'p:"'#13#10#13#10'#: tsettings.labelu'
+  +'pdownbehavior.caption'#13#10'msgid "Up, down keys'' behavior:"'#13#10'msgst'
+  +'r "Ph'#195#173'm l'#195#170'n, xu'#225#187#145'ng:"'#13#10#13#10'#: tsettin'
+  +'gs.radiocommadot.caption'#13#10'msgid "C&omma/Dot"'#13#10'msgstr "P&h'#225
+  +#186#169'y/Ch'#225#186#165'm"'#13#10#13#10'#: tsettings.radiodecimalcomma.ca'
+  +'ption'#13#10'msgid "&Comma"'#13#10'msgstr "&Ph'#225#186#169'y"'#13#10#13#10
+  +'#: tsettings.radiodecimaldot.caption'#13#10'msgid "&Dot"'#13#10'msgstr "&Ch'
+  +#225#186#165'm"'#13#10#13#10'#: tsettings.radiomulasterisk.caption'#13#10'ms'
+  +'gid "*&/"'#13#10'msgstr "*&/"'#13#10#13#10'#: tsettings.radiomuldot.caption'
+  +#13#10'msgid "&.:"'#13#10'msgstr "&.:"'#13#10#13#10'#: tsettings.radiospace.'
+  +'caption'#13#10'msgid "&Space"'#13#10'msgstr "D'#225#186#165'&u c'#195#161'c'
+  +'h"'#13#10#13#10'#: tsettings.radioupdownbeginend.caption'#13#10'msgid "&Go '
+  +'to beginning, end"'#13#10'msgstr "'#196#144'&i '#196#145#225#186#191'n '#196
+  +#145#225#186#167'u, cu'#225#187#145'i"'#13#10#13#10'#: tsettings.radioupdown'
+  +'history.caption'#13#10'msgid "&Browse expression history"'#13#10'msgstr "&X'
+  +'em l'#225#187#139'ch s'#225#187#173'"'#13#10#13#10'#: tsettings.settingsbut'
+  +'toncancel.caption'#13#10'msgctxt "tsettings.settingsbuttoncancel.caption"'
+  +#13#10'msgid "Cancel"'#13#10'msgstr "H'#225#187#167'y"'#13#10#13#10'#: tsett'
+  +'ings.settingsbuttonok.caption'#13#10'msgctxt "tsettings.settingsbuttonok.ca'
+  +'ption"'#13#10'msgid "OK"'#13#10'msgstr "OK"'#13#10#13#10'#: ucalculatorengi'
+  +'ne.msgemptyvariablename'#13#10'msgid "[Empty variable name.]"'#13#10'msgstr'
+  +' "[T'#195#170'n bi'#225#186#191'n tr'#225#187#145'ng.]"'#13#10#13#10'#: uca'
+  +'lculatorengine.msginvalidvariable'#13#10'msgid "Invalid variable name \"%s\'
+  +'", it must not start with a digit."'#13#10'msgstr "T'#195#170'n bi'#225#186
   +#191'n \"%s\" kh'#195#180'ng h'#225#187#163'p l'#225#187#135', n'#195#179' k'
   +'h'#195#180'ng '#196#145#198#176#225#187#163'c b'#225#186#175't '#196#145#225
   +#186#167'u b'#225#186#177'ng m'#225#187#153't ch'#225#187#175' s'#225#187#145
@@ -400,14 +374,14 @@ LazarusResources.Add('Calculator.vi','PO',[
   +'ame \"%s\", it must include only a'#195#183'z, 0'#195#183'9 and _ character'
   +'s."'#13#10'msgstr "T'#195#170'n bi'#225#186#191'n \"%s\" kh'#195#180'ng h'
   +#225#187#163'p l'#225#187#135', n'#195#179' ch'#225#187#137' '#196#145#198
-  ,#176#225#187#163'c ph'#195#169'p ch'#225#187#169'a c'#195#161'c k'#195#173' '
+  +#176#225#187#163'c ph'#195#169'p ch'#225#187#169'a c'#195#161'c k'#195#173' '
   +'t'#225#187#177' a'#195#183'z, 0'#195#183'9 v'#195#160' _."'#13#10#13#10'#: '
   +'ucalculatorengine.msgnothingtocalculate'#13#10'msgid "There is nothing to c'
   +'alculate."'#13#10'msgstr "Kh'#195#180'ng c'#195#179' g'#195#172' '#196#145
   +#225#187#131' t'#195#173'nh."'#13#10#13#10'#: ucalculatorengine.msgnotset'#13
   +#10'msgid "[Not set.]"'#13#10'msgstr "[Ch'#198#176'a g'#195#161'n.]"'#13#10
   +#13#10'#: ucalculatorengine.msgreservedvariable'#13#10'msgid "Ans and PreAns'
-  +' are reserved variables and cannot be assigned."'#13#10'msgstr "Ans v'#195
+  ,' are reserved variables and cannot be assigned."'#13#10'msgstr "Ans v'#195
   +#160' PreAns l'#195#160' c'#195#161'c bi'#225#186#191'n '#196#145#225#186#183
   +'c bi'#225#187#135't v'#195#160' kh'#195#180'ng th'#225#187#131' '#196#145
   +#198#176#225#187#163'c g'#195#161'n."'#13#10#13#10'#: ucalculatorengine.msgt'
@@ -417,54 +391,56 @@ LazarusResources.Add('Calculator.vi','PO',[
   +#169'c."'#13#10#13#10'#: ucalculatorengine.msgunexpectedclosingbrace'#13#10
   +'msgid "Unexpected closing brace."'#13#10'msgstr "D'#225#186#165'u '#196#145
   +#195#179'ng ngo'#225#186#183'c kh'#195#180'ng h'#225#187#163'p l'#225#187#135
-  +'."'#13#10#13#10'#: ucalculatorengine.msgunexpectedcomma'#13#10'msgctxt "uca'
-  +'lculatorengine.msgunexpectedcomma"'#13#10'msgid "Unexpected comma."'#13#10
-  +'msgstr "D'#225#186#165'u ph'#225#186#169'y kh'#195#180'ng h'#225#187#163'p '
-  +'l'#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgunexpecteddigit'#13
-  +#10'msgid "Unexpected digit."'#13#10'msgstr "Ch'#225#187#175' s'#225#187#145
-  +' kh'#195#180'ng h'#225#187#163'p l'#225#187#135'."'#13#10#13#10'#: ucalcula'
-  +'torengine.msgunexpectedend'#13#10'msgid "Unexpected end of expression."'#13
-  +#10'msgstr "Bi'#225#187#131'u th'#225#187#169'c k'#225#186#191't th'#195#186
-  +'c kh'#195#180'ng h'#225#187#163'p l'#225#187#135'."'#13#10#13#10'#: ucalcul'
-  +'atorengine.msgunexpectedequal'#13#10'msgid "Unexpected equal sign."'#13#10
-  +'msgstr "D'#225#186#165'u b'#225#186#177'ng kh'#195#180'ng h'#225#187#163'p '
-  +'l'#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgunexpectedoperand'#13
-  +#10'msgid "Unexpected operand."'#13#10'msgstr "To'#195#161'n t'#225#187#173
-  +' kh'#195#180'ng h'#225#187#163'p l'#225#187#135'."'#13#10#13#10'#: ucalcula'
-  +'torengine.msgunexpectedpercent'#13#10'msgid "Unexpected percent sign."'#13
-  +#10'msgstr "D'#225#186#165'u ph'#225#186#167'n tr'#196#131'm kh'#195#180'ng '
-  +'h'#225#187#163'p l'#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgune'
-  +'xpectedsemicolon'#13#10'msgid "Unexpected semicolon."'#13#10'msgstr "D'#225
-  +#186#165'u ch'#225#186#165'm ph'#225#186#169'y kh'#195#180'ng h'#225#187#163
-  +'p l'#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgunknownfunction'#13
-  +#10'msgid "Unknown function \"%s\"."'#13#10'msgstr "H'#195#160'm kh'#195#180
-  +'ng x'#195#161'c '#196#145#225#187#139'nh: \"%s\"."'#13#10#13#10'#: ucalcula'
-  +'torengine.msgunknownsymbol'#13#10'msgid "Unknown symbol."'#13#10'msgstr "K'
-  +#195#173' t'#225#187#177' kh'#195#180'ng r'#195#181'."'#13#10#13#10'#: ucalc'
-  +'ulatorengine.msgunknownvariable'#13#10'msgctxt "ucalculatorengine.msgunknow'
-  +'nvariable"'#13#10'msgid "Unknown variable."'#13#10'msgstr "Bi'#225#186#191
-  +'n ch'#198#176'a '#196#145#198#176#225#187#163'c g'#195#161'n."'#13#10#13#10
-  +'#: ucalculatorengine.msgunmatchingbraces'#13#10'msgid "Unmatching braces."'
-  +#13#10'msgstr "C'#225#186#183'p ngo'#225#186#183'c kh'#195#180'ng kh'#225#187
-  +#155'p nhau."'#13#10#13#10'#: uhelpbox.msghelp'#13#10'msgid ""'#13#10'"CalcI'
-  +'t Pascal is a simple-to-use application for evaluating simple to medium-lev'
-  +'el mathematical expressions.\n"'#13#10'"Operator priorities are taken into '
-  +'account.\n"'#13#10'"\n"'#13#10'"For detailed documentation about how to use'
-  +', please visit https://leduyquang753.github.io/CalcItPascal.html.\n"'#13#10
-  +'"\n"'#13#10'"Version %s built at %s. Copyright '#194#169' 2019 L'#195#170' '
-  +'Duy Quang. Licensed under MIT.\n"'#13#10'msgstr ""'#13#10'"CalcIt Pascal l'
-  +#195#160' m'#225#187#153't '#225#187#169'ng d'#225#187#165'ng d'#225#187#133
-  +' s'#225#187#173' d'#225#187#165'ng '#196#145#225#187#131' t'#195#173'nh c'
-  +#195#161'c bi'#225#187#131'u th'#225#187#169'c t'#225#187#171' c'#198#161' b'
-  +#225#186#163'n '#196#145#225#186#191'n trung b'#195#172'nh.\n"'#13#10'"Th'
-  +#225#187#169' t'#225#187#177' '#198#176'u ti'#195#170'n c'#225#187#167'a bi'
-  +#225#187#131'u th'#225#187#169'c '#196#145#198#176#225#187#163'c t'#195#173
-  +'nh '#196#145#225#186#191'n.\n"'#13#10'"\n"'#13#10'"'#196#144#225#187#131' b'
-  +'i'#225#186#191't th'#195#180'ng tin chi ti'#225#186#191't v'#225#187#129' c'
-  +#195#161'ch d'#195#185'ng, vui l'#195#178'ng truy c'#225#186#173'p https://l'
-  +'eduyquang753.github.io/CalcItPascal.html.\n"'#13#10'"\n"'#13#10'"Phi'#195
-  +#170'n b'#225#186#163'n %s d'#225#187#177'ng l'#195#186'c %s. B'#225#186#163
-  ,'n quy'#225#187#129'n '#194#169' 2019 L'#195#170' Duy Quang. Ph'#195#161't h'
-  +#195#160'nh d'#198#176#225#187#155'i gi'#225#186#165'y ph'#195#169'p MIT.\n"'
-  +#13#10
+  +'."'#13#10#13#10'#: ucalculatorengine.msgunexpecteddecimalseparator'#13#10'm'
+  +'sgid "Unexpected decimal separator."'#13#10'msgstr "D'#225#186#165'u th'#225
+  +#186#173'p ph'#195#162'n kh'#195#180'ng h'#225#187#163'p l'#225#187#135'."'
+  +#13#10#13#10'#: ucalculatorengine.msgunexpecteddigit'#13#10'msgid "Unexpecte'
+  +'d digit."'#13#10'msgstr "Ch'#225#187#175' s'#225#187#145' kh'#195#180'ng h'
+  +#225#187#163'p l'#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgunexpe'
+  +'ctedend'#13#10'msgid "Unexpected end of expression."'#13#10'msgstr "Bi'#225
+  +#187#131'u th'#225#187#169'c k'#225#186#191't th'#195#186'c kh'#195#180'ng h'
+  +#225#187#163'p l'#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgunexpe'
+  +'ctedequal'#13#10'msgid "Unexpected equal sign."'#13#10'msgstr "D'#225#186
+  +#165'u b'#225#186#177'ng kh'#195#180'ng h'#225#187#163'p l'#225#187#135'."'
+  +#13#10#13#10'#: ucalculatorengine.msgunexpectedoperand'#13#10'msgid "Unexpec'
+  +'ted operand."'#13#10'msgstr "To'#195#161'n t'#225#187#173' kh'#195#180'ng h'
+  +#225#187#163'p l'#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgunexpe'
+  +'ctedpercent'#13#10'msgid "Unexpected percent sign."'#13#10'msgstr "D'#225
+  +#186#165'u ph'#225#186#167'n tr'#196#131'm kh'#195#180'ng h'#225#187#163'p l'
+  +#225#187#135'."'#13#10#13#10'#: ucalculatorengine.msgunexpectedsemicolon'#13
+  +#10'msgid "Unexpected semicolon."'#13#10'msgstr "D'#225#186#165'u ch'#225#186
+  +#165'm ph'#225#186#169'y kh'#195#180'ng h'#225#187#163'p l'#225#187#135'."'
+  +#13#10#13#10'#: ucalculatorengine.msgunexpectedthousandseparator'#13#10'msgi'
+  +'d "Unexpected thousand separator."'#13#10'msgstr "D'#225#186#165'u h'#195
+  +#160'ng ngh'#195#172'n kh'#195#180'ng h'#225#187#163'p l'#225#187#135'."'#13
+  +#10#13#10'#: ucalculatorengine.msgunknownfunction'#13#10'msgid "Unknown func'
+  +'tion \"%s\"."'#13#10'msgstr "H'#195#160'm kh'#195#180'ng x'#195#161'c '#196
+  +#145#225#187#139'nh: \"%s\"."'#13#10#13#10'#: ucalculatorengine.msgunknownsy'
+  +'mbol'#13#10'msgid "Unknown symbol."'#13#10'msgstr "K'#195#173' t'#225#187
+  +#177' kh'#195#180'ng r'#195#181'."'#13#10#13#10'#: ucalculatorengine.msgunkn'
+  +'ownvariable'#13#10'msgctxt "ucalculatorengine.msgunknownvariable"'#13#10'ms'
+  +'gid "Unknown variable."'#13#10'msgstr "Bi'#225#186#191'n ch'#198#176'a '#196
+  +#145#198#176#225#187#163'c g'#195#161'n."'#13#10#13#10'#: ucalculatorengine.'
+  +'msgunmatchingbraces'#13#10'msgid "Unmatching braces."'#13#10'msgstr "C'#225
+  +#186#183'p ngo'#225#186#183'c kh'#195#180'ng kh'#225#187#155'p nhau."'#13#10
+  +#13#10'#: uhelpbox.msghelp'#13#10'msgid ""'#13#10'"CalcIt Pascal is a simple'
+  +'-to-use application for evaluating simple to medium-level mathematical expr'
+  +'essions.\n"'#13#10'"Operator priorities are taken into account.\n"'#13#10'"'
+  +'\n"'#13#10'"For detailed documentation about how to use, please visit https'
+  +'://leduyquang753.github.io/CalcItPascal.html.\n"'#13#10'"\n"'#13#10'"Versio'
+  +'n %s built at %s. Copyright '#194#169' 2019 L'#195#170' Duy Quang. Licensed'
+  +' under MIT.\n"'#13#10'msgstr ""'#13#10'"CalcIt Pascal l'#195#160' m'#225#187
+  +#153't '#225#187#169'ng d'#225#187#165'ng d'#225#187#133' s'#225#187#173' d'
+  +#225#187#165'ng '#196#145#225#187#131' t'#195#173'nh c'#195#161'c bi'#225#187
+  +#131'u th'#225#187#169'c t'#225#187#171' c'#198#161' b'#225#186#163'n '#196
+  +#145#225#186#191'n trung b'#195#172'nh.\n"'#13#10'"Th'#225#187#169' t'#225
+  +#187#177' '#198#176'u ti'#195#170'n c'#225#187#167'a bi'#225#187#131'u th'
+  +#225#187#169'c '#196#145#198#176#225#187#163'c t'#195#173'nh '#196#145#225
+  +#186#191'n.\n"'#13#10'"\n"'#13#10'"'#196#144#225#187#131' bi'#225#186#191't '
+  +'th'#195#180'ng tin chi ti'#225#186#191't v'#225#187#129' c'#195#161'ch d'
+  +#195#185'ng, vui l'#195#178'ng truy c'#225#186#173'p https://leduyquang753.g'
+  +'ithub.io/CalcItPascal.html.\n"'#13#10'"\n"'#13#10'"Phi'#195#170'n b'#225#186
+  +#163'n %s d'#225#187#177'ng l'#195#186'c %s. B'#225#186#163'n quy'#225#187
+  +#129'n '#194#169' 2019 L'#195#170' Duy Quang. Ph'#195#161't h'#195#160'nh d'
+  +#198#176#225#187#155'i gi'#225#186#165'y ph'#195#169'p MIT.\n"'#13#10
 ]);

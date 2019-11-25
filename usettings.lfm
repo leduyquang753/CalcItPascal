@@ -1,0 +1,251 @@
+object Settings: TSettings
+  Left = 279
+  Height = 349
+  Top = 143
+  Width = 469
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Settings'
+  ClientHeight = 349
+  ClientWidth = 469
+  Position = poMainFormCenter
+  LCLVersion = '2.0.6.0'
+  object PanelDecimalSeparator: TPanel
+    Left = 24
+    Height = 20
+    Top = 10
+    Width = 436
+    BevelOuter = bvNone
+    ClientHeight = 20
+    ClientWidth = 436
+    TabOrder = 0
+    object RadioDecimalDot: TRadioButton
+      Left = 112
+      Height = 19
+      Top = 0
+      Width = 39
+      Caption = '&Dot'
+      TabOrder = 0
+    end
+    object RadioDecimalComma: TRadioButton
+      Left = 162
+      Height = 19
+      Top = 0
+      Width = 63
+      Caption = '&Comma'
+      Checked = True
+      TabOrder = 1
+      TabStop = True
+    end
+    object LabelDecimalSeparator: TLabel
+      Left = 2
+      Height = 15
+      Top = 2
+      Width = 98
+      Caption = 'Decimal separator:'
+      ParentColor = False
+    end
+    object CheckEnforceDecimalSeparator: TCheckBox
+      Left = 235
+      Height = 19
+      Top = 0
+      Width = 132
+      Caption = '&Enforce in expression'
+      TabOrder = 2
+    end
+  end
+  object PanelThousandSeparator: TPanel
+    Left = 24
+    Height = 20
+    Top = 30
+    Width = 436
+    BevelOuter = bvNone
+    ClientHeight = 20
+    ClientWidth = 436
+    TabOrder = 1
+    object RadioCommaDot: TRadioButton
+      Left = 119
+      Height = 19
+      Top = 0
+      Width = 87
+      Caption = 'C&omma/Dot'
+      TabOrder = 0
+    end
+    object RadioSpace: TRadioButton
+      Left = 223
+      Height = 19
+      Top = 0
+      Width = 51
+      Caption = '&Space'
+      Checked = True
+      TabOrder = 1
+      TabStop = True
+    end
+    object LabelThousandSeparator: TLabel
+      Left = 2
+      Height = 15
+      Top = 2
+      Width = 107
+      Caption = 'Thousand separator:'
+      ParentColor = False
+    end
+  end
+  object PanelMulDivStyle: TPanel
+    Left = 24
+    Height = 20
+    Top = 50
+    Width = 436
+    BevelOuter = bvNone
+    ClientHeight = 20
+    ClientWidth = 436
+    TabOrder = 2
+    object RadioMulDot: TRadioButton
+      Left = 197
+      Height = 19
+      Top = 0
+      Width = 26
+      Caption = '&.:'
+      Checked = True
+      TabOrder = 0
+      TabStop = True
+    end
+    object RadioMulAsterisk: TRadioButton
+      Left = 238
+      Height = 19
+      Top = 0
+      Width = 30
+      Caption = '*&/'
+      TabOrder = 1
+    end
+    object LabelMulDivStyle: TLabel
+      Left = 2
+      Height = 15
+      Top = 2
+      Width = 184
+      Caption = 'Multiplication, division signs'' style:'
+      ParentColor = False
+    end
+    object CheckEnforceMulDivStyle: TCheckBox
+      Left = 283
+      Height = 19
+      Top = 0
+      Width = 132
+      Caption = 'E&nforce in expression'
+      TabOrder = 2
+    end
+  end
+  object CheckDefaultZero: TCheckBox
+    Left = 10
+    Height = 19
+    Top = 70
+    Width = 304
+    Caption = 'De&fault undefined non-single-character variables to 0.'
+    TabOrder = 3
+  end
+  object CheckEnterWhenEmpty: TCheckBox
+    Left = 10
+    Height = 19
+    Top = 90
+    Width = 420
+    Caption = '&Pressing Enter while the input box is empty re-calculates the last expression.'
+    Checked = True
+    State = cbChecked
+    TabOrder = 4
+  end
+  object PanelUpDownBehavior: TPanel
+    Left = 24
+    Height = 20
+    Top = 110
+    Width = 436
+    BevelOuter = bvNone
+    ClientHeight = 20
+    ClientWidth = 436
+    TabOrder = 5
+    object RadioUpDownHistory: TRadioButton
+      Left = 140
+      Height = 19
+      Top = 0
+      Width = 156
+      Caption = '&Browse expression history'
+      TabOrder = 0
+    end
+    object RadioUpDownBeginEnd: TRadioButton
+      Left = 300
+      Height = 19
+      Top = 0
+      Width = 132
+      Caption = '&Go to beginning, end'
+      Checked = True
+      TabOrder = 1
+      TabStop = True
+    end
+    object LabelUpDownBehavior: TLabel
+      Left = 2
+      Height = 15
+      Top = 2
+      Width = 132
+      Caption = 'Up, down keys'' behavior:'
+      ParentColor = False
+    end
+  end
+  object LabelStartupExpressions: TLabel
+    Left = 9
+    Height = 15
+    Top = 160
+    Width = 102
+    Caption = 'S&tartup expressions'
+    FocusControl = BoxStartupExpressions
+    ParentColor = False
+  end
+  object SettingsButtonOK: TButton
+    Left = 385
+    Height = 25
+    Top = 320
+    Width = 75
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 9
+  end
+  object SettingsButtonCancel: TButton
+    Left = 310
+    Height = 25
+    Top = 320
+    Width = 75
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 8
+  end
+  object BoxStartupExpressions: TMemo
+    Left = 9
+    Height = 136
+    Hint = '[Nothing entered.]'
+    Top = 180
+    Width = 450
+    Lines.Strings = (
+      '// Enter expressions that are evaluated when CalcIt starts here.'
+      '// Everything behind double slashes on each line will be ignored.'
+      '// These will be performed silently unless there are errors.'
+    )
+    ScrollBars = ssVertical
+    TabOrder = 7
+  end
+  object LabelHistorySize: TLabel
+    Left = 25
+    Height = 15
+    Top = 133
+    Width = 158
+    Caption = '&Maximum expressions stored:'
+    FocusControl = SpinMaxExpressions
+    ParentColor = False
+  end
+  object SpinMaxExpressions: TSpinEdit
+    Left = 200
+    Height = 23
+    Top = 130
+    Width = 60
+    Alignment = taRightJustify
+    MaxValue = 999999
+    TabOrder = 6
+    Value = 64
+  end
+end

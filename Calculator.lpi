@@ -23,10 +23,10 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <MinorVersionNr Value="3"/>
-      <BuildNr Value="37"/>
+      <MinorVersionNr Value="4"/>
+      <BuildNr Value="3"/>
       <Attributes pvaPreRelease="True"/>
-      <StringTable Comments="Beta testing." LegalCopyright="© 2019 Lê Duy Quang. MIT" ProductName="CalcIt" ProductVersion="0.1"/>
+      <StringTable Comments="Alpha version with features in progress." LegalCopyright="© 2019 Lê Duy Quang. MIT" ProductName="CalcIt" ProductVersion="0.4"/>
     </VersionInfo>
     <BuildModes Count="2">
       <Item1 Name="Default" Default="True"/>
@@ -75,7 +75,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="11">
       <Unit0>
         <Filename Value="Calculator.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -140,6 +140,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Functions"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="usettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Settings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="USettings"/>
+      </Unit10>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
