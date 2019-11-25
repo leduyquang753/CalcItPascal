@@ -261,13 +261,13 @@ Calculates the factorial of the sum of the arguments floored, which must not be 
 
 *Aliases:* factorial
 
-**P(<n>; <k>)**
+**P(\<n\>; \<k\>)**
 
 Calculates the k-permutation of n elements. The arguments are floored and must not be negative.
 
 *Aliases:* permutation
 
-**C(<n>; <k>)**
+**C(\<n\>; \<k\>)**
 
 Calculates the k-combination of n elements. The arguments are floored and must not be negative.
 
@@ -333,11 +333,11 @@ Returns 1 if all arguments are greater than 0, 0 otherwise.
 
 Returns 1 if at least one of the arguments is greater than 0, 0 if all arguments are not greater than 0.
 
-**not(<number>)**
+**not(\<number\>)**
 
 Returns 0 if the argument is greater than 0, 1 otherwise.
 
-**if(<condition>[; <value if true>][; <value if false>])**
+**if(\<condition\>[; \<value if true\>][; \<value if false\>])**
 
 Returns <value if true> if <condition> is greater than 0, <value if false> otherwise.
 
