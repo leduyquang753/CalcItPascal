@@ -573,9 +573,9 @@ begin
   if length(input) = 0 then raise ExpressionInvalidException.createNew(msgNothingToCalculate);
   if input = '!' then begin
     for s in toAssign do if length(s) = 1 then AtoZ[s[1]] := 0 else varRegistry.remove(s);
-    exit(0);
     preAns := ans;
-    ans := 0;
+    ans := 0;                   
+    exit(0);
   end;
   oldAns := self.ans;
   ans := self.performCalculation(input);

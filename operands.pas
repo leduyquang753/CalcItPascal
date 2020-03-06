@@ -142,7 +142,7 @@ implementation
     if exponent < 0 then exit(1/funcPow(base, -exponent));
     roundedExponent := round(exponent);
     if abs(roundedExponent-exponent) < 1E-11 then
-      if (base > 0) or (roundedExponent and 1 = 1) then exit(power(base, roundedExponent)) else exit(-power(-base, roundedExponent))
+      if (base > 0) or (roundedExponent and 1 = 0) then exit(power(base, roundedExponent)) else exit(-power(-base, roundedExponent))
     else if base > 0 then exit(power(base, exponent)) else raise ExpressionInvalidException.createNew(msgUnsupportedExponentiation);
   end;
 
@@ -171,7 +171,7 @@ implementation
 
   function Root.calculate(val1, val2: extended): extended;
   begin
-    if val2 = 0 then raise ExpressionInvalidException.createNew('Level-0 root occured.');
+    if val1 = 0 then raise ExpressionInvalidException.createNew('Level-0 root occured.');
     exit(funcPow(val2, 1/val1));
   end;
 

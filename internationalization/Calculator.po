@@ -87,69 +87,6 @@ msgstr ""
 msgid "Unsupported exponentiation operation."
 msgstr ""
 
-#: thelpbox.caption
-msgid "About"
-msgstr ""
-
-#: thelpbox.ok.caption
-msgctxt "thelpbox.ok.caption"
-msgid "OK"
-msgstr ""
-
-#: tlangselector.btncancel.caption
-msgctxt "tlangselector.btncancel.caption"
-msgid "Cancel"
-msgstr ""
-
-#: tlangselector.btnok.caption
-msgctxt "tlangselector.btnok.caption"
-msgid "OK"
-msgstr ""
-
-#: tlangselector.caption
-msgid "Choose a language"
-msgstr ""
-
-#: tmainwindow.btnclear.caption
-msgid "C&lear"
-msgstr ""
-
-#: tmainwindow.btnsettings.caption
-msgid "&Settings"
-msgstr ""
-
-#: tmainwindow.btnvariables.caption
-msgid "&Variables"
-msgstr ""
-
-#: tmainwindow.calculate.caption
-msgid "&Calculate"
-msgstr ""
-
-#: tmainwindow.caption
-msgid "CalcIt"
-msgstr ""
-
-#: tmainwindow.consolelabel.caption
-msgid "C&onsole"
-msgstr ""
-
-#: tmainwindow.expression.texthint
-msgid "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
-msgstr ""
-
-#: tmainwindow.help.caption
-msgid "?"
-msgstr ""
-
-#: tmainwindow.inputlabel.caption
-msgid "&Input"
-msgstr ""
-
-#: tmainwindow.language.caption
-msgid "EN"
-msgstr ""
-
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
 msgstr ""

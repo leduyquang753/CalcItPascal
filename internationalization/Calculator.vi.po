@@ -100,69 +100,6 @@ msgstr "Chia cho không."
 msgid "Unsupported exponentiation operation."
 msgstr "Thao tác lũy thừa không được hỗ trợ."
 
-#: thelpbox.caption
-msgid "About"
-msgstr "Về chương trình"
-
-#: thelpbox.ok.caption
-msgctxt "thelpbox.ok.caption"
-msgid "OK"
-msgstr "OK"
-
-#: tlangselector.btncancel.caption
-msgctxt "tlangselector.btncancel.caption"
-msgid "Cancel"
-msgstr "Hủy"
-
-#: tlangselector.btnok.caption
-msgctxt "tlangselector.btnok.caption"
-msgid "OK"
-msgstr "OK"
-
-#: tlangselector.caption
-msgid "Choose a language"
-msgstr "Chọn ngôn ngữ"
-
-#: tmainwindow.btnclear.caption
-msgid "C&lear"
-msgstr "&Xóa"
-
-#: tmainwindow.btnsettings.caption
-msgid "&Settings"
-msgstr "&Cài đặt"
-
-#: tmainwindow.btnvariables.caption
-msgid "&Variables"
-msgstr "&Biến"
-
-#: tmainwindow.calculate.caption
-msgid "&Calculate"
-msgstr "&Tính"
-
-#: tmainwindow.caption
-msgid "CalcIt"
-msgstr "CalcIt"
-
-#: tmainwindow.consolelabel.caption
-msgid "C&onsole"
-msgstr "&Phản hồi"
-
-#: tmainwindow.expression.texthint
-msgid "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
-msgstr "Nhập một biểu thức, \"/clear\", \"/help\", \"/vars\" hoặc \"/exit\"."
-
-#: tmainwindow.help.caption
-msgid "?"
-msgstr "?"
-
-#: tmainwindow.inputlabel.caption
-msgid "&Input"
-msgstr "&Nhập"
-
-#: tmainwindow.language.caption
-msgid "EN"
-msgstr "VI"
-
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
 msgstr "[Tên biến trống.]"
@@ -263,3 +200,4 @@ msgstr ""
 "Để biết thông tin chi tiết về cách dùng, vui lòng truy cập https://github.com/leduyquang753/CalcItPascal/blob/master/README.md.\n"
 "\n"
 "Phiên bản %s dựng lúc %s. Bản quyền © 2019 Lê Duy Quang. Phát hành dưới giấy phép MIT.\n"
+

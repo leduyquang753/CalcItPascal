@@ -98,72 +98,6 @@ msgstr "Division by zero."
 msgid "Unsupported exponentiation operation."
 msgstr "Unsupported exponentiation operation."
 
-#: thelpbox.caption
-msgid "About"
-msgstr "About"
-
-#: thelpbox.ok.caption
-msgctxt "thelpbox.ok.caption"
-msgid "OK"
-msgstr "OK"
-
-#: tlangselector.btncancel.caption
-msgctxt "tlangselector.btncancel.caption"
-msgid "Cancel"
-msgstr "Cancel"
-
-#: tlangselector.btnok.caption
-msgctxt "tlangselector.btnok.caption"
-msgid "OK"
-msgstr "OK"
-
-#: tlangselector.caption
-msgid "Choose a language"
-msgstr "Choose a language"
-
-#: tmainwindow.btnclear.caption
-msgid "C&lear"
-msgstr "C&lear"
-
-#: tmainwindow.btnsettings.caption
-msgid "&Settings"
-msgstr "&Settings"
-
-#: tmainwindow.btnvariables.caption
-msgid "&Variables"
-msgstr "&Variables"
-
-#: tmainwindow.calculate.caption
-msgid "&Calculate"
-msgstr "&Calculate"
-
-#: tmainwindow.caption
-msgid "CalcIt"
-msgstr "CalcIt"
-
-#: tmainwindow.consolelabel.caption
-#| msgid "Console"
-msgid "C&onsole"
-msgstr "C&onsole"
-
-#: tmainwindow.expression.texthint
-#| msgid "Enter any expression, \"/help\", \"/vars\" or \"/exit\"."
-msgid "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
-msgstr "Enter any expression, \"/clear\", \"/help\", \"/vars\" or \"/exit\"."
-
-#: tmainwindow.help.caption
-msgid "?"
-msgstr "?"
-
-#: tmainwindow.inputlabel.caption
-#| msgid "Input"
-msgid "&Input"
-msgstr "&Input"
-
-#: tmainwindow.language.caption
-msgid "EN"
-msgstr "EN"
-
 #: ucalculatorengine.msgemptyvariablename
 msgid "[Empty variable name.]"
 msgstr "[Empty variable name.]"
@@ -273,3 +207,4 @@ msgstr ""
 "For detailed documentation about how to use, please visit https://github.com/leduyquang753/CalcItPascal/blob/master/README.md.\n"
 "\n"
 "Version %s built at %s. Copyright © 2019 Lê Duy Quang. Licensed under MIT.\n"
+
